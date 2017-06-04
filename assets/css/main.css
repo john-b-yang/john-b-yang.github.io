@@ -1327,9 +1327,11 @@ ol.default li {
 
 
 /* Wrappers
-	Green 7DDF64
+	Green 03CEA4
 	Blue: 3772FF
-	Yellow: FDCA40
+	Yellow:
+        Saffron: EAC435
+        Sunglow: FDCA40
 	Red: FF5A5F
 	White: E6E8E6
 */
@@ -1349,13 +1351,12 @@ ol.default li {
 }
 
 .wrapper.style2 {
-    background-color: #FF6368;
+    background-color: #ff565c;
     color: black;
 }
 
 .wrapper.style3 {
-    background-color: #00D8EA;
-    /*#f4f4f4;*/
+    background-color: #62A9FF;
 }
 
 .wrapper.style4 {
