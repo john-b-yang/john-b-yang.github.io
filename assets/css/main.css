@@ -1248,6 +1248,10 @@ ul.social li a.fa-youtube-play {
     background-color: #BF2E25;
 }
 
+ul.social li a.fa-dribbble {
+    background-color: #C73B6F;
+}
+
 ul.social li a.fa-envelope-o{
     background-color: #FFE800;
 }
@@ -1365,6 +1369,10 @@ ol.default li {
 
 .wrapper.style5 {
     background-color: #03CEA4;
+}
+
+.wrapper.style6 {
+    background-color: #F7B267;
 }
 
 /* Nav */
