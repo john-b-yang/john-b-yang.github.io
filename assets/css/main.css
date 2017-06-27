@@ -1260,6 +1260,10 @@ ul.social li a.fa-file-text-o {
     background-color: #59EA00;
 }
 
+ul.social li a.fa-pencil {
+    background-color: #F46036;
+}
+
 ul.social li a:hover {
     top: -5px;
 }
