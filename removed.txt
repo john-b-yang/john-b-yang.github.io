@@ -8,3 +8,16 @@ Projects
         <p>Biological Neural Networks Simulator</p>
     </section>
 </div> -->
+
+Skills
+------
+<h3>Development Tools</h3>
+<ul>
+    <li>Android Studio</li>
+    <li>Docker</li>
+    <li>Git Version Control</li>
+    <li>Illustrator</li>
+    <li>Linux</li>
+    <li>Sketch</li>
+    <li>XCode</li>
+</ul>
