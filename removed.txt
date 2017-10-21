@@ -1,0 +1,10 @@
+Projects
+--------
+***Neural Networks
+<!-- <div class="4u 12u(mobile)">
+    <section class="box style1">
+        <span class="image featured" target="_blank"><img src="images/Network.png" alt=""/></span>
+        <h3><a href="NeuralNetworks.pptx" target="_blank">Neural Networks</a></h3>
+        <p>Biological Neural Networks Simulator</p>
+    </section>
+</div> -->
