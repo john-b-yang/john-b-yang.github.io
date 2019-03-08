@@ -1,0 +1,259 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="John Yang">
+    <meta name="description" content="Programming technicalities and musings">
+
+    <title> 2017 NBA Hackathon Application  | John Yang</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link href="/static/pictures/favicon.ico" rel="shortcut icon">
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/button.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/popup.css">
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119942589-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-119942589-1');
+    </script>
+</head>
+
+<body style="background-image: url(../static/pictures/background-picture.png);">
+    <!--  -->
+    <div class="container">
+        <div id="wrapper" style="margin-top:10px; margin-bottom:10px">
+            <div style="float:left; margin-right:15px;" id="1">
+                <img style="border-radius:10px" src="/static/pictures/Picture.png" height=90 />
+            </div>
+            <div style="float:left;" id="2">
+                <h4 style="line-height: 15px;"><a href="/">John Yang</a></h4>
+                <p>EECS '20 at UC Berkeley <br> Former , <img style="margin-bottom:-2px" src="/static/pictures/google.png" height=15 /> SWE Intern</p>
+            </div>
+            <div style="float:right;padding-top:20px;padding-right:50px;" id="3">
+                <ul style="list-style:none;">
+                    <li id="link-list"><a href="/">Blog</a></li>
+                    <li id="link-list"><a href="/about/">About</a></li>
+                    <li id="link-list"><a href="/projects/">Projects</a></li>
+                    <li id="link-list"><a href="/resources/">Resources</a></li>
+                    <li id="link-list"><a href="http://github.com/john-b-yang" target="_blank">GitHub</a></li>
+                </ul>
+            </div>
+        </div>
+        <p><br><br><br><br></p>
+        <hr />
+        <main id="body-fade">
+            
+<br>
+<div style="text-align:center;">
+    <img src=/static/pictures/2017NBAHack/head-image.png alt="Head Image" height=100px />
+    <h3>2017 NBA Hackathon Application</h3>
+    <div class="light-text" style="color:rgb(200,200,200)">
+        <p>SUNDAY. NOVEMBER 11, 2017 &bull; 6 MINS </p>
+        <p>
+            
+            <div class="block">
+                <a href="/tag/Basketball/">Basketball</a>
+            </div>
+            <!--  |   -->
+            
+            <div class="block">
+                <a href="/tag/Python/">Python</a>
+            </div>
+            <!--   -->
+            
+        </p>
+    </div>
+</div>
+<hr>
+
+<div style="color:rgb(5,5,5)">
+    <p>Since 2016, the National Basketball Association began hosting an annual <a href="https://hackathon.nba.com/">NBA Hackathon</a>! As a basketball aficionado and computer science student, I think sports analytics is an exciting Wild West part of the growing trend of information driven decision making. This past year, I submitted an application for the NBA application. As a part of the application, I had to design and compute answers for two different questions. Both were interesting brain teasers, and I thought I'd share my approaches to these problems in this post!</p>
+<p><br></p>
+<h5>Q1: Probability of a Losing Streak</h5>
+<p><strong>Prompt</strong>: Calculate the probability that the 2016-2017 Warriors will lose consecutive game. Assume that the probability the Warriors win a game is fixed at 80%.</p>
+<p><strong>Introduction</strong><br>
+Before approaching the problem, there are a couple numbers required for contextualization. We assume that there are a total of 82 games in the NBA’s regular season. Given that there is a fixed 80% chance the Warriors win a single game, there would subsequently be a 20% chance they lose a game. The probability that the Warriors lose two games in a row would be (0.20)2 = 0.04 or 4% chance of losing two games in a row. However, this number by itself would not be enough to estimate the cumulative probability for two reasons:</p>
+<ol>
+<li>
+<p>The number of consecutive loses is not limited to two. Given n games and k losses, there are 'n choose k' ordered ways for the season of n games to
+k play out with k losses and n - k wins.</p>
+</li>
+<li>
+<p>Given a fixed number of losses, there is a specific probability associated with each quantity of losses.</p>
+</li>
+</ol>
+<p>From these observations, this problem can be modeled as a binomial distribution. By definition, the binomial distribution is the discrete probability distribution of the number of successes given n consecutive experiments with a binary set of outcomes. The parameters n and p would respectively be the number of games and the probability of winning.</p>
+<p><strong>Computation</strong><br>
+The formula for calculating the probability of a binomial distribution can be logically arrived upon. To calculate the probability of exactly k successes in n trials, the formula is:</p>
+<p><img src="/static/pictures/2017NBAHack/BinomialFormula.png" alt="Drawing" style="height: 30px;"/></p>
+<p>With this formula, assuming that a ”success” is a loss and ”p” would be the probability of losing, we could calculate the probability losing k games given all possible orders of losing those games out of 82. However, in this question, we’re focusing on consecutive games.</p>
+<p>An alternative approach would be to count the number of win-lose sequences that would not lead to two consecutive losses. Given 82 total games and k losses, there would be '83-k choose k' configurations that avoid consecutive losses. The logic starts with the assumption that given k losses, each loss must be followed by a win except the last game. From k - 1 losses, there would be 2k - 2 guaranteed games from above. There is one single game reflecting the final loss, and then 82 - (2k - 2) - 1 = 83 - 2k unassigned wins. Therefore, in total, there are (k - 1) + 1 + (83 - 2k) = 83 - k ”loss containing units” that we can choose losses from. In other words, '83-k choose k' choices.</p>
+<p>Given the number of choices, we can apply the probability formula above as the following:</p>
+<p><img src="/static/pictures/2017NBAHack/BinomialFormula2.png" alt="Drawing" style="height: 30px;"/></p>
+<p>We would need to calculate all probabilities of k losses from 0 to 41 losses (given that more than 41 losses would guarantee consecutive losses). Therefore, we could take the summation of probabilities across these range of losses. The final equation would be the following:</p>
+<p><img src="/static/pictures/2017NBAHack/BinomialFormula3.png" alt="Drawing" style="height: 30px;"/></p>
+<p>As we can see, there is a 5.88% chance that the Warriors do not lose consecutive games. Therefore, I would conclude that it is <em>highly unlikely the Warriors will not lose consecutive games during the regular season</em>.</p>
+<p><br></p>
+<h5>Q2: Playoff Contention Picture</h5>
+<p><strong>Prompt</strong>: Given two spreadsheets, one containing team division / conference information and the other containing the outcomes of every game in the past season, output the playoff result for each team. For teams that made the playoffs, simply indicate so. For teams eliminated from the playoffs, state the date they were eliminated from playoff contention.</p>
+<p><strong>Introduction</strong><br>
+My initial approach to the problem was defined by seeing which tools and which information was most useful. First and foremost, I decided to use Python because the Pandas library provides an absolutely fantastic grip on large data sets. My experience with Excel software is marred with crash reports, freezing, and unsaved progress so I decided not to proceed down that route.</p>
+<p>The data given to answer the above question came in the form of an excel file with three sheets. The first sheet contained information about which conference and division each team was a part of. In the NBA, teams are split into two conferences and six divisions. Each conference contains fifteen teams, and each division contains five teams. Some teams are part of the same conference, but not necessarily the same division. The second sheet was a list of every regular season game during the 2016-2017 NBA season. Each row stored information about one game, including the day of play, home team, away team, final score, and winner of the game (denoted as home / away). The third sheet was simply a template of what the output was supposed to look like.</p>
+<p>When looking at the three sheets and the information provided, I found some of the columns to be unnecessary. Given that the problem is asking for playoff elimination relative to conference, the 'division' column is not needed. In the ‘scores’ sheet, the final score is not required. We only care about the outcome, not the actual scores. After eliminating these columns from my data set, I had all the information required to tackle the problem: The team names, their respective conference membership, and the win/lose outcome of every regular season game.</p>
+<p><strong>Computation</strong><br>
+All my computation was completed within a Jupyter notebook. I'll take this section to walk through my code and explain what I did each step of the way. First up is a list of some of the more helpful libraries I decide to use. Pandas and Numpy are pretty standard libraries to do data processing. The assortment of Plotly, Cufflinks and Matplotlib commands are graphing tools.</p>
+<pre class="inline-block prettyprint lang-py" style="background-color: rgb(236, 243, 249);border: none;border-radius: 10px;padding: 15px;">
+import pandas as pd
+import numpy as np
+from plotly import __version__
+from plotly.offline import download_plotlyjs, init_notebook_mode, plot, iplot
+import cufflinks as cf
+</pre>
+
+<p>%matplotlib inline
+init_notebook_mode(connected=True)
+cf.go_offline()</p>
+<p>Before diving into the actual computation process, I cleaned up and reorganized some of the data. The rearrangement made it easier to perform data traversal later in the code. One cool feature of Pandas is the ability to perform multi-indexing aka setting and organizing multiple columns as indices for your table. Through multi-indexing, I was able to group games by the day they occurred. This made for an easier traversal process.</p>
+<pre class="inline-block prettyprint lang-py" style="background-color: rgb(236, 243, 249);border: none;border-radius: 10px;padding: 15px;">
+# Read excel data sheets in as Panda Tables
+division_info = pd.read_excel("Analytics_Attachment.xlsx", sheetname="Division_Info")
+scores = pd.read_excel("Analytics_Attachment.xlsx", sheetname="2016_17_NBA_Scores")
+
+# For our purposes, the 'division' columns in division_info and 'Home Score', 'Away Score'
+# columns in scores are unnecessary, so we will remove them.
+division_info.drop('Division_id', axis=1, inplace=True)
+scores.drop(['Home Score', 'Away Score'], axis=1, inplace=True)
+
+# Adding Columns to 'Division Info' table to count wins, loses, and elimination date (by default set to "Playoffs")
+division_info['Wins'] = 0
+division_info['Losses'] = 0
+division_info['Elimination Date'] = "Playoffs"
+
+# Using a MultiIndex Pandas Dataframe, we group the games occurring on the same with each other to make traversal
+# easier. The reason a 'Dummy' column is b/c multiple index groups are required.
+scores['Game No.'] = range(0, scores['Date'].count())
+scores.set_index(['Date', 'Game No.'], inplace=True)
+</pre>
+
+<p>Now that the data has been organized properly, we'll proceed to iterate through the table and make the appropriate modifications to the division_info table to reflect the correct answers. The general idea is to have an outer 'for' loop that iterates through every single date. We pull the games associated with each date and iterate through those, updating the 'division_info' table as we go. Then, we perform elimination calculation as follows: Find the eighth place team and the last place team that has not been eliminated yet. If the number of games left + last place team's wins is less than the eighth place team's wins, then the last place team is eliminated. If and when a team is eliminated, the day of the game in that iteration is registered under the 'Eliminate Date' column (created in line 13 in the previous code block).</p>
+<pre class="inline-block prettyprint lang-py" style="background-color: rgb(236, 243, 249);border: none;border-radius: 10px;padding: 15px;">
+# Iterating through the MultiIndex Dataframe by Date
+for value in scores.index.get_level_values('Date').unique():
+    currentDate = value.strftime('%Y-%m-%d') # Reformatting the date index value
+    miniFrame = scores.xs(currentDate) # Returns cross section of data based on 'date' layer index
+
+    # Iterate through all games that occurred on 'currentDate' and adjust records accordingly
+    for index, row in miniFrame.iterrows():
+        if (row['Winner'] == 'Home'):
+            # Home Team Won, find matching home team and iterate wins, matching away team and iterate losses
+            division_info.loc[division_info['Team_Name'] == row['Home Team'], 'Wins'] += 1
+            division_info.loc[division_info['Team_Name'] == row['Away Team'], 'Losses'] += 1
+        elif (row['Winner'] == 'Away'):
+            # Away Team Won, matching home team +1 loss, team +1 win
+            division_info.loc[division_info['Team_Name'] == row['Home Team'], 'Losses'] += 1
+            division_info.loc[division_info['Team_Name'] == row['Away Team'], 'Wins'] += 1
+        else:
+            print("Error: Invalid 'Winner' Value")
+
+    # Split teams into eastern and western conferences, sort by number of wins, limit to uneliminated teams
+    eastern_Conference = division_info[(division_info['Conference_id'] == 'East') & (division_info['Elimination Date'] == "Playoffs")].sort_values(['Wins'], ascending=False)
+    western_Conference = division_info[(division_info['Conference_id'] == 'West') & (division_info['Elimination Date'] == "Playoffs")].sort_values(['Wins'], ascending=False)
+
+    # Find last place, non-eliminated team in each conference
+    eastLast = eastern_Conference[eastern_Conference['Losses'] == max(eastern_Conference['Losses'])]
+    westLast = western_Conference[western_Conference['Losses'] == max(western_Conference['Losses'])]
+
+    # Find eighth place team (off by 1 indexing)
+    eastEighth = eastern_Conference.iloc[[7]]
+    westEighth = western_Conference.iloc[[7]]
+
+    # Find maximum possible wins for last place team. If less than 8th place team's wins, they're eliminated
+    maxWins = eastLast['Wins'].values[0] + (82 - eastLast['Wins'].values[0] - eastLast['Losses'].values[0])
+    if (eastEighth['Wins'].values[0] > maxWins):
+        division_info.loc[division_info['Team_Name'] == eastLast['Team_Name'].values[0], ['Elimination Date']] = currentDate
+
+    maxWins = westLast['Wins'].values[0] + (82 - westLast['Wins'].values[0] - westLast['Losses'].values[0])
+    if (westEighth['Wins'].values[0] > maxWins):
+        division_info.loc[division_info['Team_Name'] == westLast['Team_Name'].values[0], ['Elimination Date']] = currentDate
+</pre>
+
+<p>Here is a screenshot of the results for the Western Conference standings the code above generated:</p>
+<p><img src="/static/pictures/2017NBAHack/ConferenceResults-West.png" alt="Drawing" style="height: 500px;"/></p>
+<p>And now, a screenshot of the Eastern Conference standings:</p>
+<p><img src="/static/pictures/2017NBAHack/ConferenceResults-East.png" alt="Drawing" style="height: 470px;"/></p>
+<p>Based on the results I received, I believe my algorithm worked quite well. The only obstacle I failed to overcome was resolving tiebreakers. This year, the Chicago Bulls and the Miami Heat tied for the eighth seed in the Eastern Conference. In reality, the Chicago Bulls broke the tie by having a better conference record. However, my program only tracks the raw win-loss record, not conference or home wins and losses, so the Bulls and Heat are listed as both making the playoffs. In addition, the ties between the Cleveland Cavaliers - Toronto Raptors and LA Clippers – Utah Jazz are suspect to being in the wrong order. The NBA rule book features a series of criteria for tiebreakers, including head to head records, division / conference win percentages, and win/loss percentages versus conferences. Implementing these tiebreakers would require creating additional columns to store the aforementioned statistics.</p>
+</div>
+<br>
+<hr class="fade">
+
+<div>
+    <div id="disqus_thread"></div>
+    
+        <script type="text/javascript">
+            (function() {
+                var d = document,
+                    s = d.createElement('script');
+                s.src = 'https://blog-byjohnyang.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+        <noscript>
+            Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+    
+</div>
+
+<br>
+<hr class="fade">
+
+<div class="share">
+    <h5 class="light-text">Share this blog!</h5>
+    <a href="http://www.facebook.com/sharer.php?u=https://blog-byjohnyang.herokuapp.com" target="_blank" class="icon-button facebook">
+        <i class="icon-facebook"></i><span></span></a>
+        <!-- <img src="/static/pictures/Icons/facebook.png" height=30px alt="Facebook" /> -->
+
+    &nbsp; <a href="https://twitter.com/share?text=Check%20out%20this%20blog!%20https://blog-byjohnyang.herokuapp.com" target="_blank" class="icon-button twitter">
+        <i class="icon-twitter"></i><span></span></a>
+
+    &nbsp; <a href="https://plus.google.com/share?url=https://blog-byjohnyang.herokuapp.com" target="_blank" class="icon-button google-plus">
+        <i class="icon-google-plus"></i><span></span></a>
+
+    &nbsp; <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://blog-byjohnyang.herokuapp.com" target="_blank" class="icon-button linkedin">
+        <i class="icon-linkedin"></i><span></span></a>
+
+    &nbsp; <a href="mailto:?Subject=John Yang's Blog&amp;Body=Check%20out%20this%20blog:%20https://blog-byjohnyang.herokuapp.com" class="icon-button mail-forward">
+        <i class="icon-mail-forward"></i><span></span></a>
+</div>
+
+        </main>
+        <hr><br>
+        <div style="text-align:center;">
+            <footer>
+                <a href="https://www.linkedin.com/in/jyang20" target="_blank"><i class="fa fa-linkedin fa-lg"></i></a>
+                &emsp; <a href="http://github.com/john-b-yang" target="_blank"><i class="fa fa-github fa-lg"></i></a>
+                &emsp; <a href="https://www.canva.com/byjohnyang" target="_blank"><i class="fa fa-paint-brush fa-lg"></i></a>
+                &emsp; <a href="https://john-b-yang.github.io" target="_blank"><i class="fa fa-desktop fa-lg"></i></a>
+            </footer>
+            <p class="light-text" style="color:gray"> John Yang &copy; 2018 </p>
+        </div>
+        <p><br></p>
+    </div>
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+    <script src="/static/js/button.js"></script>
+</body>
+
+</html>

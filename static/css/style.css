@@ -1,0 +1,196 @@
+body {
+    font-family: 'Helvetica Neue', 'Arial', sans-serif;
+}
+
+.container {
+    padding: 10px 30px 10px 30px;
+    background-color: white;
+    margin: auto;
+    height: 100%;
+    overflow: auto;
+    min-height: 100vh;
+}
+
+#picture-header {
+    line-height: 0px;
+    margin-top: -5px;
+}
+
+/* Upper Right Links Animations */
+
+#link-list {
+    display: inline-block;
+    font-family: 'HelveticaNeue-Light', 'Arial', sans-serif;
+    font-size: 20px;
+    zoom: 1;
+    *display: inline;
+    padding-left: 25px;
+    color: black;
+}
+
+/* Text Fade Animation */
+
+#body-fade {
+    animation: fadein 1s;
+    -moz-animation: fadein 1s;
+    /* Firefox */
+    -webkit-animation: fadein 1s;
+    /* Safari and Chrome */
+    -o-animation: fadein 1s;
+    /* Opera */
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes fadein {
+    /* Firefox */
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadein {
+    /* Safari and Chrome */
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@-o-keyframes fadein {
+    /* Opera */
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Tag Blocks */
+
+.block {
+    width: auto;
+    padding: 1px 5px 1px 5px;
+    margin: auto;
+    background-color: rgb(225, 225, 225);
+    display: inline-block;
+    border-radius: 5px;
+    -moz-transition: all .2s ease-in;
+    -o-transition: all .2s ease-in;
+    -webkit-transition: all .2s ease-in;
+    transition: all .2s ease-in;
+}
+
+.block a {
+    color: gray;
+}
+
+.block:hover {
+    background-color: rgb(27, 156, 226);
+}
+
+.block a:hover {
+    color: white;
+}
+
+.share {
+    text-align: center;
+}
+
+/* Fonts */
+
+.light-text {
+    font-family: 'HelveticaNeue-Light', 'Arial', sans-serif;
+}
+
+.post-title {
+    font-family: 'Raleway', sans-serif;
+    text-align: left;
+}
+
+/* Tag Level Styling */
+
+i {
+    -moz-transition: all .2s ease-in;
+    -o-transition: all .2s ease-in;
+    -webkit-transition: all .2s ease-in;
+    transition: all .2s ease-in;
+    color: black;
+}
+
+i:hover {
+    color: rgb(27, 156, 226);
+}
+
+hr.fade {
+    border: 0;
+    height: 1px;
+    background-image: -webkit-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+    background-image: -moz-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+    background-image: -ms-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+    background-image: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+}
+
+/* Project Section Boxes */
+
+.card-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card {
+    background: #fff;
+    display: inline-block;
+    height: 300px;
+    margin: 1rem;
+    position: relative;
+    width: 300px;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 15px;
+    padding: 25px 15px 15px 15px;
+}
+
+.card-1 {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+}
+
+.card-1:hover {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+/* Project Section Text */
+
+#card-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-color: black;
+    border-width: 2px;
+}
+
+.project-title {
+    color: black;
+    -webkit-transition: all 0.50s;
+    transition: all 0.50s;
+    font-size: 20px;
+}
+
+.project-title:hover {
+    color: rgb(27, 156, 226);
+}
