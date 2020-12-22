@@ -102,14 +102,29 @@ git add (name of change here)
 </pre>
 
 <p>'git add' is the Git command responsible for selecting modifications. When a file is modified, your computer has no idea which modifications are or aren't important. 'git add' is essentially your way of picking out the modifications that you're telling your computer you'd like to keep. A file that has been added is considered 'staged'. To select a change individually, just 'git add (name of modification here)'. Out of the options, you will most likely be using 'git add -A' the most.</p>
-<p><img src="/static/pictures/GitCS61B/add-options.png" alt="Add Options" style="width:400px;"/></p>
+<table class="resourceTable">
+  <tr><th>Option</th><th>Purpose</th></tr>
+  <tr><td>-A</td><td>Stage all recorded changes. Same combination of '.' and '-u'</td></tr>
+  <tr><td>.</td><td>Stage new and changed files, but not deleted files</td></tr>
+  <tr><td>-u</td><td>Stage changed and deleted files, but not new files</td></tr>
+  <tr><td>-v</td><td>Verbose, provides more information about execution</td></tr>
+  <tr><td>-f</td><td>Allows you to add ignored files</td></tr>
+  <tr><td>-i</td><td>Interactive Mode</td></tr>
+</table>
+
 <p><strong>Committing Staged Changes</strong></p>
 <pre class="prettyprint lang-bsh background">
 git commit -m 'Commit Message Here'
 </pre>
 
 <p>It's time to ship the apples. 'git commit'  finalizes the staged changes you want to keep and revises the .git file to store a new latest version of the directory. With git commit, you can view previous versions of the directory, compare different commits, and revert back to a previous commit in case something happens to your project.</p>
-<p><img src="/static/pictures/GitCS61B/commit-options.png" alt="Commit Options" style="width:400px;"/></p>
+<table class="resourceTable">
+  <tr><th>Option</th><th>Purpose</th></tr>
+  <tr><td>-a/--all</td><td>Stage changed and deleted files, but not untracked files</td></tr>
+  <tr><td>-p</td><td>Interactive patch allowing you to choose changes to commit</td></tr>
+  <tr><td>-m</td><td>Edit commit message, multiple -m's are separated into paragraphs</td></tr>
+</table>
+
 <p><strong>Removing or Postponing Changes</strong><br>
 <pre class="prettyprint lang-bsh background">
 git checkout -- (filename)
@@ -127,7 +142,35 @@ git remote prune
 </pre></p>
 <p>So far, the above commands have been enacting change on a local level. With 'git remote', we are able to manage Github repositories stored in remote servers. Most remote commands will revolve around getting/setting repository URLs or renaming branches. A sizable set of remote commands also deal with branch management, so we will touch on them in this table, but if you're unclear as to what those are, refer to the collaboration section.</p>
 <p><strong>Miscellaneous Commands</strong><br></p>
-<p><img src="/static/pictures/GitCS61B/commands-misc.png" alt="Commit Options" style="width:500px;"/></p>
+<table class="resourceTable">
+  <tr><th>Command</th><th>Purpose</th><th>Options</th></tr>
+  <tr>
+    <td>git config</td>
+    <td>Configuration. Change your username and password, use --global for every repository</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>git blame</td>
+    <td>Show who, what, and when something changed in a file</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>git diff</td>
+    <td>View changes that have occurred in tracked files</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>git log</td>
+    <td>Show history of commits starting with latest commit.</td>
+    <td>-p (file changes over time)</td>
+  </tr>
+  <tr>
+    <td>git status</td>
+    <td>Show the status of different files and changes since the most recent commit</td>
+    <td>-s (short)</td>
+  </tr>
+</table>
+
 <p><br></p>
 <h5>Workflow</h5>
 <p>This next setcion is intended to give you a working understanding of how you can use Git and Github with the commands we just introduced. By the end of the this section, you should know how to create local and remote repositories, push changes to both, and remove both.</p>
@@ -188,11 +231,53 @@ So your game's going pretty well so far. It's a RPG game set in the 1970s with g
 <p><strong>Commands</strong></p>
 <p><em>Creating / Switching Branches</em></p>
 <p>Let's start from the basics: creating and switching from branch to branch! Every repository has at least one branch, commonly called the master branch. When you create another branch, you're photo-copying your project at its latest commit. Local branches have a corresponding remote branch that exists on Github. With branches, your 'push' command will look a bit different. Instead of 'git push origin master', you'd replace 'origin' and 'master' with your remote and local branch names in that order.</p>
-<p><img src="/static/pictures/GitCS61B/commands-branch.png" alt="Branch Options" style="width:400px;"/></p>
+<table class="resourceTable">
+  <tr><th>Commands + Options</th><th>Purpose</th></tr>
+  <tr>
+    <td>git branch</td>
+    <td>View list of all branches</td>
+  </tr>
+  <tr>
+    <td>git branch (name)</td>
+    <td>Create a new branch with 'name'</td>
+  </tr>
+  <tr>
+    <td>git branch -d (name)</td>
+    <td>Delete a branch with 'name'</td>
+  </tr>
+  <tr>
+    <td>git branch -r</td>
+    <td>List remote branches</td>
+  </tr>
+  <tr>
+    <td>git branch -a</td>
+    <td>List local + remote branches</td>
+  </tr>
+  <tr>
+    <td>git checkout (name)</td>
+    <td>Switch onto existing branch named 'name'</td>
+  </tr>
+</table>
+
 <p><em>Retrieve Updates from Remote Repository</em></p>
 <p>Continuing with Randy, let's say Randy pushed a couple changes to the remote repository. Now, before you keep working, it's important that you retrieve Randy's changes so that your local directory reflects those changes. This is where the 'pull' and 'fetch' commands prove helpful. These commands take unseen remote repository changes and update your local repository.</p>
 <p>Keep in mind, however, that this command is where merge conflicts most often appear. If the same file is modified both locally and remotely, git pull is what exposes the conflict. Some best practices are to make sure to 'git stash' conflicting changes before pulling.</p>
-<p><img src="/static/pictures/GitCS61B/commands-remote.png" alt="Remote Options" style="width:500px;"/></p>
+<table class="resourceTable">
+  <tr><th>Commands + Options</th><th>Purpose</th></tr>
+  <tr>
+    <td>git pull (remote) (branch)</td>
+    <td>Applies 'remote' modifications to local 'branch'</td>
+  </tr>
+  <tr>
+    <td>git fetch (remote)</td>
+    <td>Retrieves changes from 'remote', does not apply them locally</td>
+  </tr>
+  <tr>
+    <td>git merge (branch)</td>
+    <td>Combines two branches by creating a new commit or fast forwarding</td>
+  </tr>
+</table>
+
 <p><br></p>
 <h5>The Grand Finale!!</h5>
 <p>Whew, that was a lot! Great job getting through all that material! At the end of the day, all of the above boils down to the below!</p>
