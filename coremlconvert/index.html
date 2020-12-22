@@ -43,7 +43,7 @@
         </div>
       </div>
     </nav>
-    <div class="container">
+    <div class="container" style="padding-bottom:100px;">
         <br>
         <main id="body-fade">
             
@@ -51,26 +51,26 @@
 <div style="text-align:center;">
     <img src=/static/pictures/CoreMLConvert/CoreMLLogo.png alt="Head Image" height=100px />
     <h3>Automated CoreML Conversion V1.0</h3>
-    <div class="light-text" style="color:rgb(200,200,200)">
+    <div class="light-text">
         <p>MONDAY. JANUARY 29, 2018 &bull; 9 MINS </p>
         <p>
             
             <div class="block">
-                <a href="/tag/ML/">ML</a>
+                <b><a href="/tag/ML/">ML</a></b>
             </div>
             <!--  |   -->
             
             <div class="block">
-                <a href="/tag/Python/">Python</a>
+                <b><a href="/tag/Python/">Python</a></b>
             </div>
             <!--   -->
             
         </p>
     </div>
 </div>
-<hr>
+<br>
 
-<div style="color:rgb(5,5,5)">
+<div class="blog">
     <p>In recent years, the advent of machine learning has produced ripple effects felt across the software development process. Individuals and corporations have whipped up absolutely fantastic, futuristic concepts into reality with the help of machine learning tools, from <a href="https://www.nato.int/docu/review/2017/Also-in-2017/autonomous-military-drones-no-longer-science-fiction/EN/index.htm">autonomous drones</a>, to a <a href="https://www.youtube.com/watch?v=qv6UVOQ0F44">flawless Mario</a>, to the most elite <a href="https://deepmind.com/research/alphago/">Go player</a> in human history!</p>
 <p>However, while machine learning has become a familiar term, the technical strata that defines the mathematics behind it is relatively less accessible. As machine learning gains social momentum, one of the more important initiatives may become making it more comprehensible and available. Recently, Google released their <a href="https://cloud.google.com/automl/">AutoML</a> product on Google Cloud Platform, allowing developers to intuitively construct and deploy their own machine learning infrastructure.</p>
 <p>At Apple's 2017 World Wide Developer's Conference, one of many newly unveiled developer tools included <a href="https://developer.apple.com/videos/play/wwdc2017/703/">CoreML</a>, Apple's own integration framework allowing developers to create, train, and run customized machine learning on iOS applications. With localized ML models, apps can produce results faster, eliminating latency issues often associated with server side ML infrastructure. All it requires is creating your own customized MLModel file, then placing it into your application.</p>
@@ -79,7 +79,7 @@
 <h5>A Brief Primer on CoreML Conversion</h5>
 <p>Before diving into the technicalities of the application itself, I thought it'd be worthwhile to quickly explain exactly how creating a custom CoreML model works from a developer's standpoint. Keep in mind, in this article I'm discussing how to <em>create</em> a CoreML file from a Python script, not how to use one in an iOS application. Currently, Apple has a single page of official documentation <a href="https://developer.apple.com/documentation/coreml/converting_trained_models_to_core_ml">here</a> that teaches you how to take ML models created with 3rd party libraries and refactor them into the ML Model format. There's a wide variety of available models, from Neural Networks to Support Vector Machines to Pipeline Models. All custom ML models must be written in Python using one of the following libraries: Scikit-learn 0.18, XGBoost 0.6, Caffe v1, Keras 1.2.2+, or LIBSVM 3.22.</p>
 <p>Creating an MLModel file isn't all that difficult. In fact, it's a pretty redundant process. First, you'll import the corresponding libraries for the models that you're looking to convert. Then, you'll take whatever data set you're using for predictions and train the model around it. Finally, once you've trained the model, Apple's <em>coremltools</em> python <a href="https://apple.github.io/coremltools/">package</a> provides a simple 'convert' function that takes in your trained Python model as a parameter and spits out an '.mlmodel' file. In code, it's as simple as running the following code. In this example, I'll be using the acclaimed Titanic data set and a Random Forest Classifier to predict which passengers survived the icy debacle (full disclosure, this model's performance is terrible and is only intended for demonstration purposes).</p>
-<pre class="inline-block prettyprint lang-py" style="background-color: rgb(236, 243, 249);border: none;border-radius: 10px;padding: 15px;">
+<pre class="prettyprint lang-py background">
 # Importing Sklearn, Pandas, and Numpy Libraries
 import sklearn
 from sklearn.ensemble import RandomForestClassifier
@@ -118,7 +118,7 @@ coreml_model.save('TitanicSurvival.mlmodel')
 <p>As we can see from above, the actual code that goes into creating a customized CoreML file isn't all that hard. What's interesting to note is that this same structure of code will persist pretty much across the board. Whether it's a regression or classification problem, different models can be fed through essentially the same structure of code without any drastic changes. For example, if I were to create a Random Forest Classifier as opposed to a Support Vector Machine, the only change that's required is instead of <em>model = RandomForestClassifier()</em>, we would import the SVM library (i.e. <em>from sklearn.svm import SVC()</em>) and use <em>model = SVC()</em> instead.</p>
 <p>This singular observation is the foundation of my idea for automated CoreML conversion. Instead of forcing developers to rewrite this same set of redundant code, what if we could add a platform on top of this Python script that could change the model being trained with just a click of the button? This is where the "automated" aspect of CoreML conversion comes in. With this idea in mind, it's easy to see how making that one line of code dynamic can make this script a recyclable method for generating different machine learning models with all sorts of test sets.</p>
 <p>My implementation is as follows:</p>
-<pre class="inline-block prettyprint lang-py" style="background-color: rgb(236, 243, 249);border: none;border-radius: 10px;padding: 15px;">
+<pre class="prettyprint lang-py background">
 # Basics
 import sys
 import numpy as np
@@ -206,8 +206,8 @@ def conversion(data_file, split_ratio, user_models, y_data_column):
 <p>As you can see, this project is far from finished, but I'd like to think I'm off to a good start. The two most prioritized, overarching goals at the moment would be 1. Improving the flexibility of the conversion script and 2. Creating a better and more dynamic website that reflects the increased flexibility. As detailed above, I want the script to be more dynamic not only in terms of which machine learning models are available to be trained, but also with regards to customizing the respective set of parameters that go into each model. When discussing the front end, I'm hoping that the website won't look as static in the future. Instead, I'd probably break each of the steps into separate pages. Ideally, the pages being displayed would change based on what the user selects for different parameters. For example, if the user wanted to test a KNN classification structure, the next page would be a list of KNN model parameters that the user could set. On the other hand, if he or she selected a Decision Tree classifier, the parameters page would look different.</p>
 <p>Hope you enjoyed the read! As this is a project in the works, I'd love to hear any critiques and suggestions you have in the comments below!</p>
 </div>
-<br>
-<hr class="fade">
+
+<br><hr class="fade"><br>
 
 <div>
     <div id="disqus_thread"></div>
@@ -227,8 +227,7 @@ def conversion(data_file, split_ratio, user_models, y_data_column):
     
 </div>
 
-<br>
-<hr class="fade">
+<br><hr class="fade"><br>
 
 <div class="share">
     <h5 class="light-text">Share this blog!</h5>
@@ -250,17 +249,15 @@ def conversion(data_file, split_ratio, user_models, y_data_column):
 </div>
 
         </main>
-        <br><hr><br>
-        <div style="text-align:center;">
-            <footer>
-                <a href="https://www.linkedin.com/in/jyang20"><i class="fa fa-linkedin fa-lg"></i></a>
-                &emsp; <a href="http://github.com/john-b-yang"><i class="fa fa-github fa-lg"></i></a>
-                &emsp; <a href="https://vsco.co/krucyfixor/gallery"><i class="fa fa-camera-retro fa-lg"></i></a>
-            </footer>
-            <p class="light-text" style="color:gray"> John Yang &copy; 2020 </p>
-        </div>
-        <p><br></p>
     </div>
+    <nav class="navfoot">
+      <div style="text-align:center;">
+        &copy; 2020 |
+        &thinsp; <a href="https://www.linkedin.com/in/jyang20" class="tag-link"><i class="fa fa-linkedin fa-lg"></i></a>
+        &thinsp; <a href="http://github.com/john-b-yang" class="tag-link"><i class="fa fa-github fa-lg tag-link"></i></a>
+        &thinsp; <a href="https://vsco.co/krucyfixor/gallery" class="tag-link"><i class="fa fa-camera-retro fa-lg"></i></a>
+      </div>
+    </nav>
     <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
     <script src="/static/js/button.js"></script>
 </body>

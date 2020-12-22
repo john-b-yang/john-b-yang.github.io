@@ -43,7 +43,7 @@
         </div>
       </div>
     </nav>
-    <div class="container">
+    <div class="container" style="padding-bottom:100px;">
         <br>
         <main id="body-fade">
             
@@ -51,26 +51,26 @@
 <div style="text-align:center;">
     <img src=/static/pictures/TwitterBot/head-image.png alt="Head Image" height=100px />
     <h3>Build a Twitter Bot!</h3>
-    <div class="light-text" style="color:rgb(200,200,200)">
+    <div class="light-text">
         <p>SUNDAY. NOVEMBER 11, 2017 &bull; 11 MINS </p>
         <p>
             
             <div class="block">
-                <a href="/tag/Python/">Python</a>
+                <b><a href="/tag/Python/">Python</a></b>
             </div>
             <!--  |   -->
             
             <div class="block">
-                <a href="/tag/Tutorial/">Tutorial</a>
+                <b><a href="/tag/Tutorial/">Tutorial</a></b>
             </div>
             <!--   -->
             
         </p>
     </div>
 </div>
-<hr>
+<br>
 
-<div style="color:rgb(5,5,5)">
+<div class="blog">
     <p>Today, around 15% of Twitter, or 48 million accounts, are bots (<a href="http://cnb.cx/2zqKaEH">CNBC</a>)! From more helpful bots like <a href="http://bit.ly/2iNDvhc">@earthquakeSF</a> to the more notorious use of <a href="http://nyti.ms/2mNTwnk">propaganda machines</a> in the recent U.S. election, bots have taken on new roles influencing society on cultural, economic and political levels. This tutorial teaches you how to create a full scale Twitter Bot. We'll go through how to generate original sentences, post tweets to a public account, and automate the entire process!</p>
 <p><br></p>
 <h5>Step 1: Selecting + Cleaning a Corpus</h5>
@@ -87,7 +87,7 @@
 <p><br>
 In the original sentence, the word 'I' appears three times, and it is followed by the word 'eat' all three times. Therefore, there is a probability of 3/3 or 1 that any random traversal of the map involving 'I' will be followed by 'eat'. On the other hand, 'fast' appears two times, followed by 'you' and 'I' respectively. Therefore, there is a 1/2 probability that a random traversal from 'fast' results in 'I', and a 1/2 probability it results in 'you'. In this step of the program, we will be applying the same logic from above to map an entire book. In Step 3, we will generate a random sentence by performing a traversal on the resulting Markov Chain representation of the book.</p>
 <p>Let's think about the best data structure for representing a Markov Chain. We want a construct that will be able to store nodes and edges. We also need to preserve relationships between nodes and edges in the format of a one to many association. In this case, a Map / Dictionary would best suite our purposes. Given that each node can have multiple edges, we define the key to be the node, and the value to be a list of edges. We could create Node and Edge classes. However, to reduce the map's complexity, we can define a Node as just the word and the Edge as a list of tuples, where each pair is the subsequent word and the probability it shows up. The above graph would be encoded as such:</p>
-<pre class="inline-block prettyprint lang-js" style="background-color: rgb(236, 243, 249);border: none;border-radius: 10px;padding: 15px;">
+<pre class="prettyprint lang-js background">
 [
     {"I": [{"eat" : 1}]},
     {"eat": [{"fast" : 0.5}, {"slow" : 0.5}]},
@@ -106,7 +106,7 @@ In the original sentence, the word 'I' appears three times, and it is followed b
 <p>You've finished Step 2. Congratulations! You're done with the brunt of the program. At this point, you should be able to generate and store your own representation of a Markov Chain somewhere in your code. In addition, you've identified "start" words in your Markov Chain, words you can being your sentences with. Now, it's time to perform a random walk of your code and generate a sentence!</p>
 <p>I approached this problem in an inductive manner where I identified the starting values, end condition, and iterative step. So where do we start? With a "start" word! This is the list you generated in Step 2 which stores words following terminating punctuation. Randomly choose any word from that list. We have our start point. Now, we need to identify where our sentence should terminate. A sentence terminates with terminating punctuation. Therefore, when we generate our sentence iteratively, let's establish a base case where we stop when the next node we visit is a terminating punctuation mark. So what actually goes inside the loop? The basic inductive principle is that we want to use our current sentence to probabilistically determine which node to append to it next. We begin with the value of a singular node. We identify the node in our Markov Chain. Randomly, we select a subsequent node and append the associated word / phrase to our current sentence. We repeat this node traversal until we visit hit the terminating punctuation condition.</p>
 <p>Exactly how to translate the previous paragraph into code is a bit daunting. To help, I'll explain my own implementation of the above idea, and hopefully it'll clarify some statements while providing some inspiration for what you might do.</p>
-<pre class="inline-block prettyprint lang-py" style="background-color: rgb(236, 243, 249);border: none;border-radius: 10px;padding: 15px;">
+<pre class="prettyprint lang-py background">
 def generateSentence(markov_gram_length):
     curr = random.choice(starts) # Choose starting point
     sent = curr.capitalize() # Sentence to return
@@ -129,7 +129,7 @@ def generateSentence(markov_gram_length):
 <h5>Step 4: Twitter API</h5>
 <p>By this step, your actual bot is complete! You have a fully functioning Python program that first, can generate a text file of a book from a webpage. It then converts the book into a Markov Chain, and your program can perform a random walk of the model that generates a grammatically sound sentence. In these next three sections, we'll be adding the "Twitter" component to your Twitter Bot. In this step, we'll create a Python module that takes a string value and posts it to a Twitter account hosting our bot. Later, we will pass in our original sentences from Step 3 as a parameter into this Python module to post them for the world to see!</p>
 <p>Before we even think about posting, we have to establish a connection between the module and the Twitter account. To do so, we'll be create a OAuth1Session with our Twitter account. OAuth is simply a protocol that authenticates our application with Twitter's API. There are four different kinds of keys required to establish a session. After you create a Twitter Account, you can find / generate all four keys by visiting the <a href="https://apps.twitter.com/">apps</a> link. Once we've created the session, to post tweets, we can make a POST call that takes 2 parameters: 1. A URL denoting the "tweet" operation and 2. A JSON containing the sentence we want to "tweet". The primary code snippets are presented here (visit the <a href="http://bit.ly/2zNYICA">twitter.py</a> file for the full detail):</p>
-<pre class="inline-block prettyprint lang-py" style="background-color: rgb(236, 243, 249);border: none;border-radius: 10px;padding: 15px;">
+<pre class="prettyprint lang-py background">
 # Create Authentication Session w/ 4 Keys.
 # I recommend keeping the values for these keys in a hidden file (refer to last paragraph of this step)
 session = OAuth1Session(consumer_key, client_secret=consumer_secret,
@@ -153,7 +153,7 @@ def tweet(status):
 <p>Congrats! By this point, you have an actual Twitter Bot! Now, people all over the world can see your Twitter Bot tweet! In addition to just viewing the tweets, wouldn't it be cool if people could generate and post tweets to your bot? If we deploy our Twitter Bot's functionality onto a website, we can create an extra platform that people can interact with. In this step, we'll be using Flask, a lightweight Python based backend, to create a web app that allows anyone to generate and post tweets to your Twitter Bot's account.</p>
 <p><a href="http://flask.pocoo.org">Flask</a> is a wonderfully simple microframework for web development. If you're like me and not very well versed in web development, I'd definitely recommend Flask for its simplicity and straightforward customizability. It's very easy to set up and intuitive to use, great for building and understanding web application projects. I've used Flask to build both this Twitter Bot web app and this very website, too! In this particular project, we'll be using Flask to render a HTML file that presents a generated sentence and a "post" button that, when clicked, posts the sentence to the Twitter account. Make sure to use</p>
 <p>Here's the main code we'll be looking at (from <a href="http://bit.ly/2zMEObc">server.py</a>):</p>
-<pre class="inline-block prettyprint lang-py" style="background-color: rgb(236, 243, 249);border: none;border-radius: 10px;padding: 15px;">
+<pre class="prettyprint lang-py background">
 from flask import Flask, render_template, request, redirect
 import make_sentence, os, twitter
 app = Flask(__name__)
@@ -185,7 +185,7 @@ if __name__ == '__main__':
 <p>So what is Heroku? It's a web application deployment model that supports a plethora of languages, including Python. Through Heroku, you can engage in the building, running, and scaling of your app. Heroku has a fantastic <a href="http://bit.ly/1S9ambh">tutorial</a> about deploying Python and Flask apps. If your web app is working locally, following these steps should get your app up and running. I'll take this section to explain the new files that you'll need in addition to some issues I ran into while deploying.</p>
 <p>The <a href="http://bit.ly/2hlbm0A">procfile</a> is a file that specifies how to run the web application. Typically, it's a bash command that starts up the web app. In our case, it's simply the command you'd type in to run your Flask webpage from Step 5, which looks like 'python [name of Step 5 file].py'. The <a href="http://bit.ly/2jkXMig">requirements.txt</a> file is pretty self explanatory. Heroku looks for this file to register the dependencies and libraries needed to run your web application. Make sure to specify both the name of the dependency and the correct version. You can type 'pip list' in terminal to see which dependencies + versions have been installed. Last but not least, you'll also need a <a href="http://bit.ly/2hrMk3v">runtime.txt</a> file. This is a simple, one line text file specifying what version of Python your web app uses to run.</p>
 <p>There are some things to watch out for. Make sure the libraries and, more importantly, their versions that you specified in <a href="http://bit.ly/2jkXMig">requirements.txt</a> are compatible with the Python runtime version you specified in <a href="http://bit.ly/2hrMk3v">runtime.txt</a>. I ran into error where I submitted a runtime file with version 2.7, yet the versions for the python-dotenv library was too high. Also, remember the conditional block in Step 5?</p>
-<pre class="inline-block prettyprint lang-py" style="background-color: rgb(236, 243, 249);border: none;border-radius: 10px;padding: 15px;">
+<pre class="prettyprint lang-py background">
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
     app.run(host='0.0.0.0', port=port)
@@ -197,7 +197,7 @@ if __name__ == '__main__':
 <h5>Step 7: Scripting</h5>
 <p>All right, your bot is decked out. You have something that can be viewed by anyone in the world! But let's be realistic, unless you're planning to integrate this Twitter bot into a business or service platform, chances are, there's not going to be many people who can Google or Twitter search their way to your website and Twitter account. A couple month later, you pull up the bot to show off your friends, and that's when you notice the last time you tweeted was seven weeks ago. An inactive Twitter bot is as good as a dead Twitter bot. In this section, we'll breath some life into our bot by writing a script that we'll automate to run automatically after a certain amount of time. Your Twitter bot will become a self-operational, autonomous tweeter.</p>
 <p>First and foremost, we want to create a Python module that generates and tweets a sentence in one stroke. This is a pretty straightforward task, where we just mix, order, and daisy chain the modules we wrote in previous steps. I designed my previous modules in such a way that I directly feed the output of the 'make_sentence' method into the 'tweet' function. It's a very simple program, but it combines all the gears to pack a powerful punch of execution. For reference, the function is located in the <a href="http://bit.ly/2yQzh3q">tweetjob.py</a> file.</p>
-<pre class="inline-block prettyprint lang-py" style="background-color: rgb(236, 243, 249);border: none;border-radius: 10px;padding: 15px;">
+<pre class="prettyprint lang-py background">
 import make_sentence, twitter, datetime
 
 if __name__ == '__main__':
@@ -207,12 +207,12 @@ if __name__ == '__main__':
 </pre>
 
 <p>We have the functionality, but how do we automate it? We'll use a bit of shell programming magic to make it happen! First, you're going to write a dirt simple shell script. Create a file with the extension '.sh'. Then, put the following segment of code inside. Make sure to include the <em>absolute</em> path to your Python module. Here's <a href="http://bit.ly/2xFEypz">mine</a> as an example. You only need the second line, and you can ignore the &gt;&gt; for now.</p>
-<pre class="inline-block prettyprint lang-bash" style="background-color: rgb(236, 243, 249);border: none;border-radius: 10px;padding: 15px;">
+<pre class="prettyprint lang-bash background">
 python /(Absolute path to your automated tweet file)/tweetjob.py
 </pre>
 
 <p>When you run this shell file (put a './' in front of the filename), it'll execute the automated tweet file, just like it would on terminal. What makes this shell program special is when we register it as a cronjob on our local computer! Cron is a time-based job scheduler that's available in all Unix based computer operating systems. A cronjob is a process or set of commands that we can create and configure to run periodically. All cronjobs are stored within a 'crontab' file. By editing the crontab, we can specify which shell scripts we want to run and often we want to execute them. You can edit the crontab by typing 'crontab -e', and it sends you to a vim editor screen where you'll want to enter the following line:</p>
-<pre class="inline-block prettyprint lang-bash" style="background-color: rgb(236, 243, 249);border: none;border-radius: 10px;padding: 15px;">
+<pre class="prettyprint lang-bash background">
 0 12 * * * bash /(Absolute path to your shell script)/tweetscript.sh
 </pre>
 
@@ -228,8 +228,8 @@ python /(Absolute path to your automated tweet file)/tweetjob.py
 <li><a href="https://fast-headland-20951.herokuapp.com">Tweet Generator Web Page</a> (This page takes a while to load b/c Heroku)</li>
 </ul>
 </div>
-<br>
-<hr class="fade">
+
+<br><hr class="fade"><br>
 
 <div>
     <div id="disqus_thread"></div>
@@ -249,8 +249,7 @@ python /(Absolute path to your automated tweet file)/tweetjob.py
     
 </div>
 
-<br>
-<hr class="fade">
+<br><hr class="fade"><br>
 
 <div class="share">
     <h5 class="light-text">Share this blog!</h5>
@@ -272,17 +271,15 @@ python /(Absolute path to your automated tweet file)/tweetjob.py
 </div>
 
         </main>
-        <br><hr><br>
-        <div style="text-align:center;">
-            <footer>
-                <a href="https://www.linkedin.com/in/jyang20"><i class="fa fa-linkedin fa-lg"></i></a>
-                &emsp; <a href="http://github.com/john-b-yang"><i class="fa fa-github fa-lg"></i></a>
-                &emsp; <a href="https://vsco.co/krucyfixor/gallery"><i class="fa fa-camera-retro fa-lg"></i></a>
-            </footer>
-            <p class="light-text" style="color:gray"> John Yang &copy; 2020 </p>
-        </div>
-        <p><br></p>
     </div>
+    <nav class="navfoot">
+      <div style="text-align:center;">
+        &copy; 2020 |
+        &thinsp; <a href="https://www.linkedin.com/in/jyang20" class="tag-link"><i class="fa fa-linkedin fa-lg"></i></a>
+        &thinsp; <a href="http://github.com/john-b-yang" class="tag-link"><i class="fa fa-github fa-lg tag-link"></i></a>
+        &thinsp; <a href="https://vsco.co/krucyfixor/gallery" class="tag-link"><i class="fa fa-camera-retro fa-lg"></i></a>
+      </div>
+    </nav>
     <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
     <script src="/static/js/button.js"></script>
 </body>
