@@ -37,8 +37,9 @@
           <ul style="list-style:none;display:flex;">
             <a href="/" class="left"><li class="link-list">ABOUT</li></a>
             <a href="/blogs/" class="left"><li class="link-list">BLOG</li></a>
-            <a href="/resources/" class="left"><li class="link-list">RESOURCES</li></a>
+            <a href="/papers/" class="left"><li class="link-list">PAPERS</li></a>
             <a href="/projects/" class="left"><li class="link-list">PROJECTS</li></a>
+            <a href="/resources/" class="left"><li class="link-list">RESOURCES</li></a>
           </ul>
         </div>
       </div>
@@ -89,13 +90,13 @@ k play out with k losses and n - k wins.</p>
 <p>From these observations, this problem can be modeled as a binomial distribution. By definition, the binomial distribution is the discrete probability distribution of the number of successes given n consecutive experiments with a binary set of outcomes. The parameters n and p would respectively be the number of games and the probability of winning.</p>
 <p><strong>Computation</strong><br>
 The formula for calculating the probability of a binomial distribution can be logically arrived upon. To calculate the probability of exactly k successes in n trials, the formula is:</p>
-<p><img src="/static/pictures/2017NBAHack/BinomialFormula.png" alt="Drawing" style="height: 30px;"/></p>
+<p><img src="/static/pictures/2017NBAHack/BinomialFormula.png" alt="Drawing" style="height:60px;"/></p>
 <p>With this formula, assuming that a ”success” is a loss and ”p” would be the probability of losing, we could calculate the probability losing k games given all possible orders of losing those games out of 82. However, in this question, we’re focusing on consecutive games.</p>
 <p>An alternative approach would be to count the number of win-lose sequences that would not lead to two consecutive losses. Given 82 total games and k losses, there would be '83-k choose k' configurations that avoid consecutive losses. The logic starts with the assumption that given k losses, each loss must be followed by a win except the last game. From k - 1 losses, there would be 2k - 2 guaranteed games from above. There is one single game reflecting the final loss, and then 82 - (2k - 2) - 1 = 83 - 2k unassigned wins. Therefore, in total, there are (k - 1) + 1 + (83 - 2k) = 83 - k ”loss containing units” that we can choose losses from. In other words, '83-k choose k' choices.</p>
 <p>Given the number of choices, we can apply the probability formula above as the following:</p>
-<p><img src="/static/pictures/2017NBAHack/BinomialFormula2.png" alt="Drawing" style="height: 30px;"/></p>
+<p><img src="/static/pictures/2017NBAHack/BinomialFormula2.png" alt="Drawing" style="height:60px;"/></p>
 <p>We would need to calculate all probabilities of k losses from 0 to 41 losses (given that more than 41 losses would guarantee consecutive losses). Therefore, we could take the summation of probabilities across these range of losses. The final equation would be the following:</p>
-<p><img src="/static/pictures/2017NBAHack/BinomialFormula3.png" alt="Drawing" style="height: 30px;"/></p>
+<p><img src="/static/pictures/2017NBAHack/BinomialFormula3.png" alt="Drawing" style="height:60px;"/></p>
 <p>As we can see, there is a 5.88% chance that the Warriors do not lose consecutive games. Therefore, I would conclude that it is <em>highly unlikely the Warriors will not lose consecutive games during the regular season</em>.</p>
 <p><br></p>
 <h5>Q2: Playoff Contention Picture</h5>
