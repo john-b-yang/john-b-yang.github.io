@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="John Yang">
+    <meta name="description" content="Programming technicalities and musings">
+
+    <title>John Yang</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="icon" type="image/png" href="/static/pictures/ucb_seal.png">
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/button.css">
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119942589-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-119942589-1');
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+      <div class="container">
+        <a style="color:white;"><b>JOHN</b> YANG</a>
+        <div style="float:right;">
+          <ul style="list-style:none;display:flex;">
+            <a href="/" class="left"><li class="link-list">ABOUT</li></a>
+            <a href="/blogs/" class="left"><li class="link-list">BLOG</li></a>
+            <a href="/papers/" class="left"><li class="link-list">PAPERS</li></a>
+            <a href="/projects/" class="left"><li class="link-list">PROJECTS</li></a>
+            <a href="/resources/" class="left"><li class="link-list">RESOURCES</li></a>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container" style="padding-bottom:100px;">
+        <br>
+        <main id="body-fade">
+            
+<br>
+<div style="text-align:center;">
+  <h4>Ryoan - A Distributed Sandbox for Untrusted Computation on Secret Data</h4>
+  <div class="light-text">
+    <p>WEDNESDAY. JANUARY 13, 2021 &bull;
+      <a href="https://www.usenix.org/system/files/conference/osdi16/osdi16-hunt.pdf" class="link-fa">
+        <i class="fa fa-file fa-sm"></i>
+      </a>
+    </p>
+  </div>
+</div>
+
+<div class="blog">
+  <p>Continuing down the path of securing system privacy via Intel SGX, Ryoan explores a system to facilitate secret data sharing in a distributed scenario with mutually distrusting entities. Today, there has been and continues to be a proliferation of 3rd party data processing services and data manipulation platforms.The myriad of data analysis companies, from web analytics like Google Analytics to machine learning platforms through AWS, provide their services not so much through local applications, but more as SaaS services. This requires users who may want to keep their data secret to service providers that they do not necessarily trust. The goal of Ryoan is to employ SGXs, like Haven, to allow users to use a service without having to trust the application or platform and have reassurance that their data is kept secret.</p>
+<p>Ryoan’s usage is framed as a requested oriented data model, where data is uploaded, processed one time, and returned to the user. No state is persisted by the service provider. From a TCB (Trusted Computing Base) and threat model standpoint, users and service providers are assumed to distrust one another, but all parties trust Ryoan and SGX. The main innovation of this paper is, to prevent modules, the service itself, from reading secrets out of memory, the module is executed inside an enclave. By sandboxing a module’s accessible memory + system calls, enforcing encryption, and having Ryoan control a module’s lifecycle (initialize ⇒ read input ⇒ process ⇒ write output), a module is unable to write out user data, collude with malicious users, or persist state between requests.</p>
+<p>While the threat model is well defined by the authors, I felt that it doesn’t capture certain potential issues. Buggy code that is vulnerable to leaking its own secrets will expose information during execution. While it doesn't compromise privacy, denial of service attacks are also possible. Applications that use repeated computations on similar input data would not be masked by hashing since the output would be deterministic. In addition, applications requiring storage or a lot of memory would not be able to persist due to Ryoan’s primitive that state should not be stored across requests; therefore, any information exceeding Ryoan's storage capacity would logically not be processed. Multi-user computation is not possible due to the designs to prevent module-user collusion. The model also includes hardware in the TCB, leaving it open to hardware security issues such as page faults or timing attacks.</p>
+<p>The most immediate extensions would be to address some of the aforementioned limitations. Ryoan enforces a lot of properties on a module for a variety of reasons ranging across security, performance, and compatibility. When put into practical use, I think it’d be interesting to see whether the whole suite of applications are absolutely necessary. For instance, NaCl ensures only module memory can be addressed, syscalls are not made directly to hardware, and SGX state cannot be modified. It’d be interesting to see whether, given a different TCB, such as running both the module and OS in an enclave, would render some of Ryoan’s properties unnecessary while enjoying a performance gain. The multi user collaboration issues seems to be addressed in the ML context with federated learning, which will be interesting to draw comparisons with.</p>
+</div>
+
+<br><hr class="fade"><br>
+
+<div>
+  <div id="disqus_thread"></div>
+  
+    <script type="text/javascript">
+      (function() {
+        var d = document,
+          s = d.createElement('script');
+        s.src = 'https://blog-byjohnyang.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+      })();
+    </script>
+    <noscript>
+      Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+    </noscript>
+  
+</div>
+
+        </main>
+    </div>
+    <nav class="navfoot">
+      <div style="text-align:center;">
+        &copy; 2020 |
+        &thinsp; <a href="https://www.linkedin.com/in/jyang20" class="link-fa"><i class="fa fa-linkedin fa-lg"></i></a>
+        &thinsp; <a href="http://github.com/john-b-yang" class="link-fa"><i class="fa fa-github fa-lg"></i></a>
+        &thinsp; <a href="https://vsco.co/krucyfixor/gallery" class="link-fa"><i class="fa fa-camera-retro fa-lg"></i></a>
+      </div>
+    </nav>
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+    <script src="/static/js/button.js"></script>
+</body>
+
+</html>
