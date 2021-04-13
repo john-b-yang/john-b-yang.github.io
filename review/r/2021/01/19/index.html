@@ -1,0 +1,125 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="John Yang">
+    <meta name="description" content="Programming technicalities and musings">
+
+    <title>John Yang</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="icon" type="image/png" href="/static/pictures/princeton_seal.ico">
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/button.css">
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="/static/js/webfont.js"></script>
+    <script src="/static/js/snap.svg-min.js"></script>
+    <script src="/static/js/underscore-min.js"></script>
+    <script src="/static/js/sequence-diagram-min.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119942589-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-119942589-1');
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+      <div class="container">
+        <a style="color:white;"><b>JOHN</b> YANG</a>
+        <div style="float:right;">
+          <ul style="list-style:none;display:flex;">
+            <a href="/" class="left"><li class="link-list">ABOUT</li></a>
+            <a href="/blogs/" class="left"><li class="link-list">BLOG</li></a>
+            <a href="/papers/" class="left"><li class="link-list">PAPERS</li></a>
+            <a href="/projects/" class="left"><li class="link-list">PROJECTS</li></a>
+            <a href="/resources/" class="left"><li class="link-list">RESOURCES</li></a>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container" style="padding-bottom:100px;">
+        <br>
+        <main id="body-fade">
+            
+<br>
+<div style="margin:0 auto;width:80%;text-align:center;">
+  <h4>PIR with compressed queries and amortized query processing</h4>
+  <div class="light-text">
+    <p>TUESDAY. JANUARY 19, 2021 &bull;
+      <a href="https://eprint.iacr.org/2017/1142.pdf" class="link-fa">
+        <i class="fa fa-file fa-sm"></i>
+      </a>
+    </p>
+    <p>
+      
+      <div class="block">
+        <b><a href="/papers/Crypto/">Crypto</a></b>
+      </div>
+      
+      <div class="block">
+        <b><a href="/papers/Privacy/">Privacy</a></b>
+      </div>
+      
+      <div class="block">
+        <b><a href="/papers/Security/">Security</a></b>
+      </div>
+      
+    </p>
+  </div>
+</div>
+
+<div class="blog">
+  <p>While PIR techniques serve as key building blocks for privacy preservation, the cost associated with such algorithms can become very expensive. As seen in previous work, these methods are often layered and used in repeated manners, which can easily a buildup in run time. As PIR gains popularity, reducing the communication cost would make its usage in production systems much more feasible. This paper in particular targets two problems. The first is that the query / request could be very large, and the second is that the computation of such a query could be very expensive.</p>
+<p>The paper makes two contributions to resolve the aforementioned problem. They first propose a technique for compressing queries and reducing associated network costs. Next, with the help of encoding, the amount of CPU costs for query processing can be reduced by batching queries together. The general idea is that the server will be able to perform the encryption and decryption of the indices corresponding to certain results without having to know the actual index itself. The authors first bring up fully homomorphic encryption which, while correct, require extremely expensive functions. Multiplication also requires larger security parameters. Now the goal becomes implementing decompression without needing the multiplication operation. Adopting the “lattice cryptosystems support substitution” operation, the authors design a function called Extract which is orders of magnitude cheaper than multiplication of ciphertexts.</p>
+<p>The paper evaluates the system with respect to three questions. First, does the compression reduce network cost? Second, does batching work well in practical scenarios? Third, what is the end-to-end impact? I thought part one was addressed quite well, with both benchmarks and graphics. However, I thought the second two parts were relatively weaker. The system wasn’t really tested on anything in production (unlike the <a href="/review/r/2021/Jan/18/">Popcorn</a> paper) and the end-to-end evaluation did not seem complete.</p>
+<p>The overall server processing time still has a high overall cost that seems tied to the intrinsic PIR scheme. It would be interesting to see if parallelization or some rearchitecting of the query processing manager could lead to faster times with the same PIR building blocks. I think the authors’ original problem, while worthwhile, does not feel fully addressed in this paper. They say that they want to close the gap of a large performance disparity between CPIR systems and widespread adoption. Actually deploying SealPIR to a real system and providing validation numbers beyond sandboxed tests would be really interesting to check whether this system delivers on what it promised.</p>
+</div>
+
+<br><hr class="fade"><br>
+
+<div>
+  <div id="disqus_thread"></div>
+  
+    <script type="text/javascript">
+      (function() {
+        var d = document,
+          s = d.createElement('script');
+        s.src = 'https://blog-byjohnyang.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+      })();
+    </script>
+    <noscript>
+      Please enable JavaScript to view the
+      <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+    </noscript>
+  
+</div>
+
+        </main>
+    </div>
+    <nav class="navfoot">
+      <div style="text-align:center;">
+        &copy; 2021 |
+        &thinsp; <a href="https://www.linkedin.com/in/jyang20" class="link-fa"><i class="fa fa-linkedin fa-lg"></i></a>
+        &thinsp; <a href="http://github.com/john-b-yang" class="link-fa"><i class="fa fa-github fa-lg"></i></a>
+        &thinsp; <a href="https://scholar.google.com/citations?user=71G11ksAAAAJ&hl=en" class="link-fa"><i class="fa fa-graduation-cap fa-lg"></i></a> |
+        &thinsp; <a href="https://vsco.co/krucyfixor/gallery" class="link-fa"><i class="fa fa-camera-retro fa-lg"></i></a>
+        &thinsp; <a href="/subscribe/" class="link-fa"><i class="fa fa-envelope fa-lg"></i></a>
+      </div>
+    </nav>
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+</body>
+
+</html>
