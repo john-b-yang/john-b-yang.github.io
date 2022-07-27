@@ -14,8 +14,8 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <link rel="icon" type="image/png" href="/static/pictures/princeton_seal.ico">
-    <link rel="stylesheet" type="text/css" href="/static/css/fonts.css">
     <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/fonts.css">
     <link rel="stylesheet" type="text/css" href="/static/css/button.css">
 
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
@@ -39,12 +39,11 @@
       <div class="container">
         <a href="/"><b>JOHN</b> Y</a>
         <div style="float:right;">
-          <ul style="list-style:none;display:flex;">
-            <a href="/" class="left"><li class="link-list">ABOUT</li></a>
-            <a href="/blogs/" class="left"><li class="link-list">BLOG</li></a>
-            <!-- <a href="/papers/" class="left"><li class="link-list">PAPERS</li></a> -->
-            <!-- <a href="/projects/" class="left"><li class="link-list">PROJECTS</li></a> -->
-            <a href="/resources/" class="left"><li class="link-list">TEACH</li></a>
+          <ul>
+            <!-- Omitted "papers", "projects" -->
+            <a href="/blogs/" class="left"><li>BLOG</li></a>
+            <a href="/publications/" class="left"><li>PUBS</li></a>
+            <a href="/resources/" class="left"><li>TEACH</li></a>
           </ul>
         </div>
       </div>
@@ -53,7 +52,7 @@
         <br>
         <main id="body-fade">
             
-<h5 class="post-title">
+<h5 class="header">
   <a class="left" href="https://www.cs.princeton.edu/courses/archive/spring21/cos126/">
     COS 126
   </a>: Computer Science - An Interdisciplinary Approach
@@ -64,7 +63,7 @@
 <b>Section P10A</b> | Fridays 1:30 p.m. - 2:50 p.m., Friend Center 007
 <br>
 <b>Attendance Link</b>:
-<a href="https://forms.gle/ZgWDJV7qmKLygx9z8" class="dimLink">
+<a href="https://forms.gle/ZgWDJV7qmKLygx9z8">
   https://forms.gle/ZgWDJV7qmKLygx9z8
 </a>
 
@@ -72,20 +71,20 @@
 <b>Time</b>: Monday 9:30 AM - 11:30 AM
 <br>
 <b>Zoom Link</b>:
-<a href="https://princeton.zoom.us/j/4233501129" class="dimLink">
+<a href="https://princeton.zoom.us/j/4233501129">
   https://princeton.zoom.us/j/4233501129
 </a>
 
 <h5>Precept Notes</h5>
 <p>
   Includes descriptions and transcripts of any extra content from precepts in this
-  <a href="https://docs.google.com/document/d/12N2gGXjM35m9vBZMZqvrU_3eWe_iOuHXu85dNA1ga8A/edit?usp=sharing" class="dimLink">
+  <a href="https://docs.google.com/document/d/12N2gGXjM35m9vBZMZqvrU_3eWe_iOuHXu85dNA1ga8A/edit?usp=sharing">
     google doc
   </a>
 </p>
 
 <h5>Slides</h5>
-<table class="resourceTable">
+<table class="class-table">
   <tr>
     <th>Topic</th>
     <th>Slides</th>
@@ -94,7 +93,7 @@
   <tr>
     <td>9/3: Introduction</td>
     <td>
-      <a href="https://docs.google.com/presentation/d/1abJ0kmQDlkW2TGeWj9XGqbCF_E4p-f1Iu90cWgVG0q4/edit?usp=sharing" class="dimLink">
+      <a href="https://docs.google.com/presentation/d/1abJ0kmQDlkW2TGeWj9XGqbCF_E4p-f1Iu90cWgVG0q4/edit?usp=sharing">
         <i class="fa fa-tv fa-sm"></i>
       </a>
     </td>
@@ -103,7 +102,7 @@
   <tr>
     <td>9/10: Conditionals &amp; Loops</td>
     <td>
-      <a href="https://docs.google.com/presentation/d/1aU7hHYBEahc8ZaW9BOTj3u-tbz11vSjpP25iODpXGXs/edit?usp=sharing" class="dimLink">
+      <a href="https://docs.google.com/presentation/d/1aU7hHYBEahc8ZaW9BOTj3u-tbz11vSjpP25iODpXGXs/edit?usp=sharing">
         <i class="fa fa-tv fa-sm"></i>
       </a>
     </td>
@@ -115,11 +114,14 @@
         </main>
     </div>
     <nav class="navfoot">
-      <div style="text-align:center;">
-        &copy; 2022 &bull;
-        <a href="http://github.com/john-b-yang" class="link-fa"><i class="fa fa-github fa-lg"></i></a> &bull;
-        <a href="https://www.linkedin.com/in/jyang20" class="link-fa"><i class="fa fa-linkedin fa-lg"></i></a>
-        <!-- &thinsp; <a href="/subscribe/" class="link-fa"><i class="fa fa-envelope fa-lg"></i></a> -->
+      <div class="container">
+        <a href="http://github.com/john-b-yang"><i class="fa fa-github fa-lg"></i></a>&ensp;
+        <a href="https://scholar.google.com/citations?user=71G11ksAAAAJ&hl=en"><i class="fa fa-graduation-cap fa-lg"></i></a>&ensp;
+        <a href="https://www.linkedin.com/in/jyang20"><i class="fa fa-linkedin fa-lg"></i></a>
+        <!-- Omitted "subscribe" w/ fa-envelope icon -->
+        <div style="float:right;">
+          &copy; 2022
+        </div>
       </div>
     </nav>
     <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>

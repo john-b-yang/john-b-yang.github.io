@@ -14,8 +14,8 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <link rel="icon" type="image/png" href="/static/pictures/princeton_seal.ico">
-    <link rel="stylesheet" type="text/css" href="/static/css/fonts.css">
     <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/fonts.css">
     <link rel="stylesheet" type="text/css" href="/static/css/button.css">
 
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
@@ -39,12 +39,11 @@
       <div class="container">
         <a href="/"><b>JOHN</b> Y</a>
         <div style="float:right;">
-          <ul style="list-style:none;display:flex;">
-            <a href="/" class="left"><li class="link-list">ABOUT</li></a>
-            <a href="/blogs/" class="left"><li class="link-list">BLOG</li></a>
-            <!-- <a href="/papers/" class="left"><li class="link-list">PAPERS</li></a> -->
-            <!-- <a href="/projects/" class="left"><li class="link-list">PROJECTS</li></a> -->
-            <a href="/resources/" class="left"><li class="link-list">TEACH</li></a>
+          <ul>
+            <!-- Omitted "papers", "projects" -->
+            <a href="/blogs/" class="left"><li>BLOG</li></a>
+            <a href="/publications/" class="left"><li>PUBS</li></a>
+            <a href="/resources/" class="left"><li>TEACH</li></a>
           </ul>
         </div>
       </div>
@@ -53,7 +52,7 @@
         <br>
         <main id="body-fade">
             
-  <h3 class="post-title"><b>Papers</b></h3>
+  <h3 class="header">Papers</h3>
   <p>
     A collection of notes from past paper readings and reviews.
     These reviews are written with an intended audience of those with
@@ -72,13 +71,25 @@
     
     <div class="block">
     
-      <a href="/papers/Networking/">Networking</a>
+      <a href="/papers/Privacy/">Privacy</a>
     </div>
   
     
     <div class="block">
     
       <a href="/papers/ML/">ML</a>
+    </div>
+  
+    
+    <div class="block">
+    
+      <a href="/papers/Security/">Security</a>
+    </div>
+  
+    
+    <div class="block">
+    
+      <a href="/papers/PL/">PL</a>
     </div>
   
     
@@ -102,13 +113,7 @@
     
     <div class="block">
     
-      <a href="/papers/Systems/">Systems</a>
-    </div>
-  
-    
-    <div class="block">
-    
-      <a href="/papers/Privacy/">Privacy</a>
+      <a href="/papers/Networking/">Networking</a>
     </div>
   
     
@@ -120,13 +125,7 @@
     
     <div class="block">
     
-      <a href="/papers/Security/">Security</a>
-    </div>
-  
-    
-    <div class="block">
-    
-      <a href="/papers/PL/">PL</a>
+      <a href="/papers/Systems/">Systems</a>
     </div>
   
 
@@ -221,11 +220,14 @@
         </main>
     </div>
     <nav class="navfoot">
-      <div style="text-align:center;">
-        &copy; 2022 &bull;
-        <a href="http://github.com/john-b-yang" class="link-fa"><i class="fa fa-github fa-lg"></i></a> &bull;
-        <a href="https://www.linkedin.com/in/jyang20" class="link-fa"><i class="fa fa-linkedin fa-lg"></i></a>
-        <!-- &thinsp; <a href="/subscribe/" class="link-fa"><i class="fa fa-envelope fa-lg"></i></a> -->
+      <div class="container">
+        <a href="http://github.com/john-b-yang"><i class="fa fa-github fa-lg"></i></a>&ensp;
+        <a href="https://scholar.google.com/citations?user=71G11ksAAAAJ&hl=en"><i class="fa fa-graduation-cap fa-lg"></i></a>&ensp;
+        <a href="https://www.linkedin.com/in/jyang20"><i class="fa fa-linkedin fa-lg"></i></a>
+        <!-- Omitted "subscribe" w/ fa-envelope icon -->
+        <div style="float:right;">
+          &copy; 2022
+        </div>
       </div>
     </nav>
     <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
