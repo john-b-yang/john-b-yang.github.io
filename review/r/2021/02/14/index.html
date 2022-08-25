@@ -86,6 +86,7 @@
 <h5>2PC Review</h5>
 <p>For context, the authors spend the first half of the paper describing the existing 2PC protocol. To facilitate distributed updates, machines are organized in a setting consisting of a single coordinator and multiple subordinates. You can think of both the coordinator and any subordinate as a process. The coordinator serves as a single point of contact for syncing subordinates' states. The normal 2PC protocol can be visualized as follows:</p>
 <div id="diagram"></div>
+
 <script>
   var d = Diagram.parse(
     "Coordinator->Subordinates: Prepare (Query to Commit)\n" +

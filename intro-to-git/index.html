@@ -115,23 +115,21 @@ git commit -m 'Commit Message Here'
   <tr><td>-m</td><td>Edit commit message, multiple -m's are separated into paragraphs</td></tr>
 </table>
 
-<p><strong>Removing or Postponing Changes</strong><br></p>
+<p><strong>Removing or Postponing Changes</strong><br>
 <pre class="prettyprint lang-bsh background">
 git checkout -- (filename)
 git rm (filename)
 git rm --cached (filename)
 git stash save --keep-index
 git stash drop
-</pre>
-
+</pre></p>
 <p>You've encountered a change that you don't want. Time for cleanup. There are two ways to deal with changes that you want. Either delete those changes, or store these changes to be introduced later. Keep in mind, the process of removing files is different for files that <em>have</em> been committed versus those that <em>have not</em> been committed yet. If your file has <em>not</em> been committed, the 'git checkout -- <filename>' command</p>
 <p>One way to go about deleting a file is 'git rm'. This command removes a file from a working directory. Unlike a regular unix 'rm', 'git rm' not only removes the file, but also stages that deletion. If you only want to delete the file from your .git file, but would like to keep a copy in your local directory, use the '--cached' option. Keep in mind, 'git rm' removes <em>files</em>, not <em>changes</em>. On the other hand, if you're not sure you want to keep the changes you've made, use the 'git stash' command. 'git stash save' allows you to remember the modifications you've made while returning you to the latest commit of your working directory.</p>
-<p><strong>Remote Repository Interaction</strong><br></p>
+<p><strong>Remote Repository Interaction</strong><br>
 <pre class="prettyprint lang-bsh background">
 git remote add origin <remote repo url>
 git remote prune
-</pre>
-
+</pre></p>
 <p>So far, the above commands have been enacting change on a local level. With 'git remote', we are able to manage Github repositories stored in remote servers. Most remote commands will revolve around getting/setting repository URLs or renaming branches. A sizable set of remote commands also deal with branch management, so we will touch on them in this table, but if you're unclear as to what those are, refer to the collaboration section.</p>
 <p><strong>Miscellaneous Commands</strong><br></p>
 <table class="resourceTable">
@@ -175,6 +173,7 @@ git commit -m 'Initial Commit'
 git remote add origin https://github.com/(username)/(repository-name).git
 git push origin master
 </pre>
+
 <p>This pithy segment of code helps you accomplish many things.</p>
 <p>The 'git init' statement creates a new .git file within your current directory. This git file is essentially your local version control file, where local means located on your computer (as opposed to 'the cloud' or some other server such as Google Drive). Keep in mind that the .git file will keep track of modifications to any files and folders within and under the current directory.</p>
 <p>'touch test.py' creates a new python file. This is an example of a change that would be recognized by the git file; however, the change would not be staged. In other words, git recognizes that a change has occurred in the directory, but has not recorded it. To officially record changes to the git folder, you need to explicitly tell it to do so.</p>
@@ -192,11 +191,13 @@ git add -A
 git commit -m 'Initial Commit'
 git push origin master
 </pre>
+
 <p>After you've created a local .git file, this series of commands will dominate your day to day interactions with git. This is essentially the same as the above code segment, except you no longer need to 'git init' because you've already created a .git file, and you don't need to 'git remote add origin' unless the URL of your remote Github repository changed.</p>
 <p><strong>Copy an Existing Remote Repository</strong></p>
 <pre class="prettyprint lang-bsh background">
 git clone https://github.com/(username)/(repository-name).git
 </pre>
+
 <p>Let's say while searching Github, you come across a python game project that you find very interesting. Sigh, if you could only download the code and play with it. Thanks to Github's support for an open source community, you can do exactly that! Go to the repository's webpage, copy the github site link, and paste it into terminal with the command above. 'git clone' does exactly what it says it does, it 'clones' a repository.</p>
 <p>Something to watch out for. When you clone a repository, it will come with its own .git file. However, unless you're added as a contributor for that repository, you will not be able to commit changes to that repo. If you want to clone a repository and then commit it to Github, you may do so to another repository, which means you must modify the destination URL. Alternatively, Github also allows you to create a 'fork' of the repository, which does the exact same thing as above.</p>
 <p><strong>Removing Local/Remote Git Repositories</strong><br>

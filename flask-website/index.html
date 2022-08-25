@@ -254,13 +254,12 @@ def page(path):
 </pre>
 
 <p>The syntax might look a little wonky at first, but it's pretty simple. The <em>pages</em> variable includes references to all the Markdown files within the <em>pages</em> directory. For every page, a hyperlink to it is created. In fact, if you create more markdown files within that directory, they will show up. On the other hand, if the <em>pages</em> directory is empty, the default "No pages so far" message will be shown instead.</p>
-<p>Last but not least, within the <em>server.py</em> file, remember to change the index method to the following.</p>
+<p>Last but not least, within the <em>server.py</em> file, remember to change the index method to the following.
 <pre class="prettyprint lang-py background">
 @app.route('/')
 def index():
     return render_template('index.html', pages=pages)
-</pre>
-
+</pre></p>
 <p><strong>STATIC WEB APP</strong></p>
 <p>Right now, our website is still dynamic, in that the Flask app still serves and renders flat pages from a file system. Our goal is to create a static set of files and assets that removes the Flask middleman service. It only takes a couple steps to make this happen.</p>
 <pre class="prettyprint lang-py background">
