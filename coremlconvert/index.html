@@ -44,6 +44,7 @@
             <a href="/blogs/" class="left"><li>BLOG</li></a>
             <a href="/publications/" class="left"><li>PUBS</li></a>
             <a href="/resources/" class="left"><li>TEACH</li></a>
+            <a href="/readings/" class="left"><li>READING</li></a>
           </ul>
         </div>
       </div>
@@ -54,7 +55,7 @@
             
 <br>
 <div style="text-align:center;">
-  <img src=/static/pictures/CoreMLConvert/CoreMLLogo.png alt="Head Image" height=100px />
+  <img src=/static/pictures/head-images/CoreMLLogo.png alt="Head Image" height=100px />
   <h3>Automated CoreML Conversion V1.0</h3>
   <p>MONDAY. JANUARY 29, 2018 &bull; 9 MINS </p>
 </div>
@@ -189,7 +190,7 @@ def conversion(data_file, split_ratio, user_models, y_data_column):
 <p><br></p>
 <h5>Decorations: An Accessible Platform</h5>
 <p>This script by itself is not entirely accessible. I could've put it on Github with a tutorial, but when an opportunity like this arises, why not slap on a web platform? Again, the goal of this project is to introduce ease of use in the CoreML conversion process. Therefore, it'd make sense to abstract some aspects of the script that might not be intuitive. To be upfront, there's nothing brilliant or original about creating the website. The intention of this section is less about teaching and more about explaining the reasonings behind what aspects of CoreML conversion should be user defined. This is a screenshot of the main page:</p>
-<p><img src="/static/pictures/CoreMLConvert/CoreMLWebsite.png" alt="Drawing" style="height:400px;display: block;margin-left:auto;margin-right:auto"/></p>
+<p><img src="/static/pictures/blogs/CoreMLWebsite.png" alt="Drawing" style="height:400px;display: block;margin-left:auto;margin-right:auto"/></p>
 <p>As you can see, at its current state, it's a very rudimentary layout. I'm working on making the UI more bearable, so the emphasis right now is entirely on the UX aspect. Hopefully, it's intuitive to understand how the website works. The user uploads a file containing the label and vector data. Then, the user can select models to test from a predefined list of choices. The third step involves specifying the test-train split value, aka what percentage of the data set should be allocated for what purposes. Last but not least, the user indicates which column in the data set contains the label data. The Flask backend routing checks whether all these parameters have been filled. If so, the data is translated and fed into the conversion function above. The resulting string output containing the performance of each model is output on a separate <em>results</em> page that appears after clicking <em>generate</em>. Last but not least, on the <em>results</em> page, the user can select a model to be converted into CoreML format with the data set, then download the ML Model. As you can see, it's not all that complicated.</p>
 <p><br></p>
 <h5>What's Next?</h5>

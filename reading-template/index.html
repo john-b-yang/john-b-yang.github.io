@@ -1,0 +1,172 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="John Y">
+    <meta name="description" content="Programming technicalities and musings">
+
+    <title>John Y</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="icon" type="image/png" href="/static/pictures/princeton_seal.ico">
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/fonts.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/button.css">
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="/static/js/webfont.js"></script>
+    <script src="/static/js/snap.svg-min.js"></script>
+    <script src="/static/js/underscore-min.js"></script>
+    <script src="/static/js/sequence-diagram-min.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119942589-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-119942589-1');
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+      <div class="container">
+        <a href="/"><b>JOHN</b> Y</a>
+        <div style="float:right;">
+          <ul>
+            <!-- Omitted "papers", "projects" -->
+            <a href="/blogs/" class="left"><li>BLOG</li></a>
+            <a href="/publications/" class="left"><li>PUBS</li></a>
+            <a href="/resources/" class="left"><li>TEACH</li></a>
+            <a href="/readings/" class="left"><li>READING</li></a>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container" style="padding-bottom:100px;">
+        <br>
+        <main id="body-fade">
+            
+<br>
+<div style="text-align:center;">
+  <img src=/static/pictures/head-images/template.png alt="Head Image" height=100px />
+  <h3>Paper Reading Template</h3>
+  <p>TUESDAY, FEBRUARY 1, 2022 &bull; 5 MINS </p>
+</div>
+<br>
+
+<div class="blog">
+  <p>During the last two years of undergrad and the first year of my M.S.E. program, I've come to value the habit of reading academic papers consistently.
+My prior motivation to read was solely driven by fulfilling the homework requirements for paper-reviewing seminar courses, which are popular at the graduate school level.
+Across these classes, I was exposed to a variety of fill-in-the-section reading templates.
+At the time, I didn't think much of the template layouts.</p>
+<p>My motivation and attitude towards paper reading changed one semester into my Master's program.
+My recent interest in working on novel research ideas with the <a href="https://princeton-nlp.github.io/">Princeton NLP group</a> has ignited a new desire to read papers to close knowledge gaps in areas where I'm under-informed (in hindsight, this is a very obvious motivation, but it didn't mean that much to me until now 😝).
+However, I soon realized, I don't actually know <em>how</em> to read a paper.
+Now that I was reading papers during unstructured free time, without the framework of class-required reading templates, many meta-questions regarding the paper reading process began to surface.</p>
+<p>My first observation was that I needed to read a paper with purpose.
+My main current focus is thinking about how to use web interactions to design language agents capable of completing real world tasks (Edit Aug 2022: resulted in the <a href="https://webshop-pnlp.github.io/">WebShop</a> project).
+Initially, I was handed a variety of suggested related work, and I'd often read deeply and thoroughly.
+This approach seems very diligent at first glance, but in reality made for some very frustrating reading experiences.
+As an inexperienced reader, I didn't know what to look for or pay attention to; the distribution of the importance of any paper's content appeared very flat to me because I had a "reading just to know" attitude.
+When I mentally surfaced and took a step back while reading a paper, these questions came up frequently:</p>
+<ol>
+<li>What's the point of reading this? The motive should be deeper than "this paper is in &lt;general area of interest&gt;".</li>
+<li>I come across a referenced concept that I'm unfamiliar with -&gt; do I read "in" or read "over" (debugging reference just in case it wasn't apparent 😉) the concept?</li>
+<li>Where does this paper fit in (to my mental map)? So I understand the paper - good! But how does their work inform my own thoughts?</li>
+</ol>
+<p>It was clear at this point that my fledgling "know just to know" attitude not only made paper reading tedious, but also limited the depth of engagement I could have with my reading. It also became apparent that to carry out reading a paper with purpose, I needed to track my thoughts in a structured fashion - something that would be difficult for a novice like me to pull off without writing.</p>
+<p>Hence, the template comes in to play! To ingrain the point of reading with purpose, I decided that a good exercise would be to come up with my own questions. I wanted these questions to encourage me to capture 1. why I was spending my time on this paper and 2. what about this paper addresses my goals.</p>
+<p>I came across Prof. Srinivasan Keshav's article titled <a href="http://ccr.sigcomm.org/online/files/p83-keshavA.pdf">How to read a paper</a>, which I highly recommend. For me, this paper not only resonated with many of my struggles, but also proposed a paper reading technique that worked well for me.</p>
+<blockquote>
+<p>The key idea is that you should read the paper in up to three passes, instead of starting at the beginning and plowing your way to the end. Each pass accomplishes specific goals and builds upon the previous pass: The first pass gives you a general idea about the paper. The second pass lets you grasp the paper’s content, but not its details. The third pass helps you understand the paper in depth.</p>
+</blockquote>
+<p>What I very much like about this method is that going through all three passes is not necessary. For instance, he discusses with respect to the first pass that:</p>
+<blockquote>
+<p>Using this information, you may choose not to read further. This could be because the paper doesn’t interest you, or you don’t know enough about the area to understand the paper, or that the authors make invalid assumptions.</p>
+</blockquote>
+<p>There's an implied decision on how purposefully one wants to read the paper. Each subsequent pass is a personally justified and intentional step from an initial, holistic take towards valuable details, assuming the reader decides that such details are worth understanding. There is no need to read for the sake of reading.</p>
+<p>I used Prof. Keshav's paper as a set of stakes for choosing my questions around. I looked at a couple of templates from past courses and online resources and chose questions that:</p>
+<ol>
+<li>Engage my reason(s) for reading this paper with the content.</li>
+<li>Can be extended upon / answered with greater detail if I choose to make multiple passes. If I choose to read this paper again in a month, this question should allow me to recollect and build on thoughts from the previous pass.</li>
+<li>Helps me generate action items (i.e. new papers to read, an experiment to try)</li>
+</ol>
+<p>I found this <a href="https://academia.stackexchange.com/questions/17113/template-for-taking-notes-for-a-paper">StackExchange</a> with a similar question and these templates [<a href="https://github.com/KaleabTessera/Research-Paper-Reading-Template">1</a>, <a href="https://www.owlnet.rice.edu/~cainproj/writingtips/notes2.pdf">2</a>, <a href="https://inst.eecs.berkeley.edu/~cs294-171/fa20/syllabus/">3</a>] quite helpful.</p>
+<p>I think what was important for me was not that these are the universal "best" set of questions (they are not). It's more that they are worthwhile to me and encourage me to invest in and thinking deeply about what the author has to say. The end result is a several of cliche but necessary regurgitation questions (in my own words, restate what the paper says), sprinkled with a couple questions that target what kind of role the paper plays in my own train of thought.</p>
+<p>Here it is:</p>
+<ol>
+<li><b>Why this paper?</b>: Why did I chose to read this paper? The source may be straightforward (i.e. class paper, professor recommendation) or more personally derived (i.e. arXiv surfing, someone's reading list). I'd like myself to add another line describing what I'd like to gain more insight on via this paper.</li>
+<li><b>Context</b>: How did we get to this problem? In practice, this will likely be heavily drawn from paper's related work section, but my own goal is to remind myself how this problem ties into other research. What is/was the state of affairs at the time of the paper's publication, and what gap is this paper zoning in on?</li>
+<li><b>Problem Statement</b>: What is the problem? What's the contribution?</li>
+<li><b>Notes</b>: Methods and results that stood out to me. </li>
+<li><b>Questions</b>: What did I not understand? Will I address these gaps? If so, how? Also, what did I not understand initially, but then resolved? How'd I arrive at the resolution?</li>
+<li><b>Looking Forward</b>: Take aways and free space for any additional thoughts. What are my conclusions, if any? Anything I can look into that might be worth trying?</li>
+</ol>
+<p>I'll do my best to abide by this questions for summarizations of my future readings (that you can find in the <a href="https://john-b-yang.github.io/readings/">Readings</a> tab!).</p>
+<p>Thanks for reading! I'm curious to here from you, what questions or approaches do you keep in mind or exercise when reading?</p>
+</div>
+
+<br><hr class="fade"><br>
+
+<div>
+  <div id="disqus_thread"></div>
+  
+    <script type="text/javascript">
+      (function() {
+        var d = document,
+          s = d.createElement('script');
+        s.src = 'https://blog-byjohnyang.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+      })();
+    </script>
+    <noscript>
+      Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+    </noscript>
+  
+</div>
+
+<br><hr class="fade"><br>
+
+<div style="text-align:center;">
+  <h5>Share this blog!</h5>
+  <a href="http://www.facebook.com/sharer.php?u=https://john-b-yang.github.io" class="icon-button facebook">
+    <i class="icon-facebook"></i><span></span></a>
+
+  &nbsp; <a href="https://twitter.com/share?text=Check%20out%20this%20blog!%20https://john-b-yang.github.io" class="icon-button twitter">
+    <i class="icon-twitter"></i><span></span></a>
+
+  &nbsp; <a href="https://plus.google.com/share?url=https://john-b-yang.github.io" class="icon-button google-plus">
+    <i class="icon-google-plus"></i><span></span></a>
+
+  &nbsp; <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://john-b-yang.github.io" class="icon-button linkedin">
+    <i class="icon-linkedin"></i><span></span></a>
+
+  &nbsp; <a href="mailto:?Subject=John Yang's Blog&amp;Body=Check%20out%20this%20blog:%20https://john-b-yang.github.io" class="icon-button mail-forward">
+    <i class="icon-mail-forward"></i><span></span></a>
+</div>
+
+        </main>
+    </div>
+    <nav class="navfoot">
+      <div class="container">
+        <a href="http://github.com/john-b-yang"><i class="fa fa-github fa-lg"></i></a>&ensp;
+        <a href="https://scholar.google.com/citations?user=71G11ksAAAAJ&hl=en"><i class="fa fa-graduation-cap fa-lg"></i></a>&ensp;
+        <a href="https://www.linkedin.com/in/jyang20"><i class="fa fa-linkedin fa-lg"></i></a>
+        <!-- Omitted "subscribe" w/ fa-envelope icon -->
+        <div style="float:right;">
+          &copy; 2022
+        </div>
+      </div>
+    </nav>
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+</body>
+
+</html>
