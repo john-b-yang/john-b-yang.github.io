@@ -1,0 +1,75 @@
+{
+  "discussion_links": [
+    {
+      "link": "https://goo.gl/5dctJL",
+      "title": "Abstractions + Dictionaries"
+    },
+    {
+      "link": "https://goo.gl/kpa8ua",
+      "title": "Declarative Programming + SQL"
+    },
+    {
+      "link": "https://goo.gl/Rv8KAC",
+      "title": "Exceptions + Inheritance"
+    },
+    {
+      "link": "https://goo.gl/7Sihno",
+      "title": "Higher Order Functions"
+    },
+    {
+      "link": "https://goo.gl/jgXzSM",
+      "title": "Iterators & Generators"
+    },
+    {
+      "link": "https://goo.gl/jxmYw1",
+      "title": "List Comprehension + Iteration"
+    },
+    {
+      "link": "https://goo.gl/dCX1Yx",
+      "title": "List Manipulation + Recursion"
+    },
+    {
+      "link": "https://goo.gl/t31VsP",
+      "title": "Mutation"
+    },
+    {
+      "link": "https://goo.gl/j9UaGw",
+      "title": "Object Oriented Programming"
+    }
+  ],
+  "practice": {
+    "description": "A list of worksheets, solutions, and example code I wrote for various CS 88 topics.",
+    "Exceptions": {
+      "worksheet": "https://github.com/john-b-yang/course-dev/blob/master/cs88/exceptions/cs88_worksheet_exceptions.pdf",
+      "solutions": "https://github.com/john-b-yang/course-dev/blob/master/cs88/exceptions/cs88_worksheet_exceptions_sol.pdf",
+      "python": "https://github.com/john-b-yang/course-dev/blob/master/cs88/exceptions/exceptions.py"
+    },
+    "Iterators": {
+      "worksheet": "https://github.com/john-b-yang/course-dev/blob/master/cs88/iterators/cs88_worksheet_iterators.pdf",
+      "solutions": "https://github.com/john-b-yang/course-dev/blob/master/cs88/iterators/cs88_worksheet_iterators_sol.pdf",
+      "python": "https://github.com/john-b-yang/course-dev/blob/master/cs88/iterators/iterators.py"
+    },
+    "Recursion": {
+      "worksheet": "https://github.com/john-b-yang/course-dev/blob/master/cs88/recursion/cs88_worksheet_recursion.pdf",
+      "solutions": "https://github.com/john-b-yang/course-dev/blob/master/cs88/recursion/cs88_worksheet_recursion_sol.pdf",
+      "python": "https://github.com/john-b-yang/course-dev/blob/master/cs88/recursion/recursion.py"
+    },
+    "SQL": {
+      "worksheet": "https://github.com/john-b-yang/course-dev/blob/master/cs88/sql/cs88_worksheet_sql.pdf",
+      "solutions": "https://github.com/john-b-yang/course-dev/blob/master/cs88/sql/cs88_worksheet_sql_sol.pdf"
+    },
+    "Midterm Review": {
+      "worksheet": "https://github.com/john-b-yang/course-dev/blob/master/cs88/midterm/cs88_midterm_review.pdf",
+      "solutions": "https://github.com/john-b-yang/course-dev/blob/master/cs88/midterm/cs88_midterm_review_sol.pdf"
+    }
+  },
+  "course": {
+    "id": "CS 88",
+    "name": "Computational Structures in Data Science",
+    "link": "https://cs88-website.github.io"
+  },
+  "schedule": {
+    "lab": "Tuesday | 6-8 p.m. | Evans 6",
+    "office_hours": "Friday | 11-12 p.m. | Soda 341B"
+  }
+}

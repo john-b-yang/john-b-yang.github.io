@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block content %}
+<br>
+<div style="margin:0 auto;width:80%;text-align:center;">
+  <h4>{{ review.title }}</h4>
+  <div>
+    {% if review.authors %}
+    <p>{{ review.authors }}</p>
+    {% endif %}
+    <p>{{ review.time }} &bull;
+      <a href="{{ review.link }}">
+        <i class="fa fa-file fa-sm"></i>
+      </a>
+      {% if review.github %}
+      &bull;
+      <a href="{{ review.github }}">
+        <i class="fa fa-github fa-sm"></i>
+      </a>
+      {% endif %}
+    </p>
+    <p>
+      {% for page_tag in review.tags %}
+      <div class="block">
+        <b><a href="{{ url_for("paper_tag", tag=page_tag) }}">{{ page_tag }}</a></b>
+      </div>
+      {% endfor %}
+    </p>
+  </div>
+</div>
+
+<div class="blog">
+  {{review.html|safe}}
+</div>
+
+<br><hr class="fade"><br>
+
+<div>
+  <div id="disqus_thread"></div>
+  {% block javascript %}
+    <script type="text/javascript">
+      (function() {
+        var d = document,
+          s = d.createElement('script');
+        s.src = 'https://blog-byjohnyang.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+      })();
+    </script>
+    <noscript>
+      Please enable JavaScript to view the
+      <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+    </noscript>
+  {% endblock %}
+</div>
+{% endblock content %}

@@ -1,0 +1,44 @@
+{
+  "schedule": [ 
+    {
+      "date": "5/13",
+      "topic": "Course Overview",
+      "slides": "https://docs.google.com/presentation/d/1d7G5j8S8-YUm7bzJOBLfOtbf8gwGbE9li5rCikYqMr4/edit?usp=sharing"
+    },
+    {
+      "date": "5/18",
+      "topic": "Human Computer Interaction",
+      "slides": "https://docs.google.com/presentation/d/1MOSB7bFgRjyR20jKwddXBwnuQiiYigV-hL-tn5hcQyU/edit?usp=sharing"
+    },
+    {
+      "date": "5/20",
+      "topic": "HTML/CSS Deep Dive",
+      "slides": "https://docs.google.com/presentation/d/10WXEA7cqqL7UqGbvE1CT2B5S3i9hB5_leuzQ5Sa6nGM/edit?usp=sharing"
+    },
+    {
+      "date": "5/27",
+      "topic": "JavaScript Deep Dive",
+      "slides": "https://docs.google.com/presentation/d/1IhO8ZxNcKlDnJ7qH2nzRj-armkbzRzWGMPip-tdIHJs/edit?usp=sharing"
+    },
+    {
+      "date": "6/01",
+      "topic": "JavaScript Frameworks",
+      "slides": "https://docs.google.com/presentation/d/1O9vWOcLe8Synaa9UICoJTGq6BhFIgUUIb5nZkCXtB4g/edit?usp=sharing"
+    },
+    {
+      "date": "6/03",
+      "topic": "APIs, REST, DaaS",
+      "slides": "https://docs.google.com/presentation/d/1GYod3bgYBK-m2L_w7eoUu7dCJElvY3EBH-CCDSzVw7s/edit?usp=sharing"
+    },
+    {
+      "date": "6/10",
+      "topic": "Android Deep Dive",
+      "slides": "https://docs.google.com/presentation/d/18oZsdEBAYKd21Y-5wWi5fuFeUfyFyYewsvZ5dMAWaHI/edit?usp=sharing"
+    },
+    {
+      "date": "6/17",
+      "topic": "iOS Deep Dive",
+      "slides": "https://docs.google.com/presentation/d/1tELoxCGtnsvadmwlvxK1iEhoNJ-sgUBfBjsvLfwbSig/edit?usp=sharing"
+    }
+  ]
+}

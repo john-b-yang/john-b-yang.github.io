@@ -1,0 +1,112 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h5 class="header">
+  <a class="left" href="https://cs161.org">CS 161</a>: Computer Security
+</h5>
+<hr />
+
+<h5>Office Hours</h5>
+<p>
+  Wed. 6-8 p.m. PST | <a href="https://oh.cs161.org/">OH Queue</a>
+</p>
+
+<h5>Demonstrations</h5>
+<p>
+  This repository is a collection of hands on demo's I wrote for UC Berkeley's
+  CS 161 Computer Security course. Check out the full collection on
+  <a href="https://github.com/john-b-yang/course-dev/tree/master/cs161">Github</a>.
+</p>
+{% for demo in info.demos %}
+{% if (loop.index % 3 == 1) %}
+<div class="demos-grid">
+{% endif %}
+  <div class="demo-card">
+    <div class="picture">
+      <span style="display:inline-block;vertical-align:middle"></span>
+      <img src="{{ demo.picture }}">
+    </div>
+    <div class="description">
+      <p>
+        <a href="{{ demo.link }}" style="font-weight:bold;">
+          {{ demo.title }}
+        </a><br>{{ demo.description }}
+      </p>
+    </div>
+  </div>
+{% if (loop.index % 3 == 0) or
+  (loop.index == info.demos|length) %}
+</div>
+{% endif %}
+{% endfor %}
+
+<br>
+<h5>Discussions</h5>
+<p>These are the companion slides and notes created for each discussion section. You can find worksheets and solutions on the course website.</p>
+<table class="class-table">
+  <tr>
+    <th>Topic</th>
+    <th>Slides</th>
+    <th>Notes</th>
+  </tr>
+  {% for disc in info.discussions %}
+  <tr>
+    <td>{{ disc.title }}</td>
+    <td>
+      {% if disc.slides != "" %}
+      <a href="{{ disc.slides }}">
+        <i class="fa fa-tv fa-sm"></i>
+      </a>
+      {% endif %}
+    </td>
+    <td>
+      {% if disc.note != "" %}
+      <a href="{{ disc.note }}">
+        <i class="fa fa-paste fa-sm"></i>
+      </a>
+      {% endif %}
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+
+<br>
+<h5>Walkthroughs</h5>
+<p>These are recorded walkthroughs of the first three discussions and midterm + final review sessions on cryptography.</p>
+
+<ul>
+{% for video in info.videos %}
+  <li>
+    <a href="{{ video.link }}">
+      <i class="fa fa-film fa-sm"></i>
+    </a> {{ video.title }}
+  </li>
+{% endfor %}
+</ul>
+
+<h5>Miscellaneous</h5>
+<p>There's a potpourri of fantastic online resources which explain the theoretical, mathematical, and practical topics
+  in this class to much greater depths. This is a compilation of my personal favorites.</p>
+
+<table>
+  <tr>
+    {% for topic, links in info.misc.items() %}
+    <td style="width:25%; border:none; vertical-align: baseline;">
+      <b>{{ topic }}</b>
+      <ul>
+        {% for title, link in links.items() %}
+        <li>
+          <a href="{{ link }}">
+            <i class="fa fa-film fa-sm"></i>
+          </a> {{ title }}
+        </li>
+        {% endfor %}
+      </ul>
+    </td>
+    {% endfor %}
+  </tr>
+</table>
+
+To realize your dreams of being a movie hacker, check <a href="https://hackertyper.net/">this</a> out. 😎
+
+{% endblock content %}

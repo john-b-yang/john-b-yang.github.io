@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h3 class="header">Readings</h3>
+  <p>
+    A collection of notes from past paper readings.
+    Papers were sourced from the <a href="http://www.redbook.io/">Red Book</a>, Prof. Danqi Chen's
+    <a href="https://www.cs.princeton.edu/courses/archive/fall22/cos597G/">Understanding LLMs</a>
+    class, and Prof. Natacha Crooks'
+    <a href="https://inst.eecs.berkeley.edu/~cs294-171/fa20/lectures/">Privacy Preserving Systems</a> class.
+  </p>
+
+  {% if tag == 'all' %}
+  <div class="block-selected">
+  {% else %}
+  <div class="block">
+  {% endif %}
+    <a href="{{ url_for("papers") }}">All</a>
+  </div>
+
+  {% for t in tags %}
+    {% if t == tag %}
+    <div class="block-selected">
+    {% else %}
+    <div class="block">
+    {% endif %}
+      <a href="{{ url_for("paper_tag", tag=t) }}">{{ t }}</a>
+    </div>
+  {% endfor %}
+
+  <ul>
+    {% for page in pages | sort(attribute='date', reverse=True) %}
+      {% if loop.index0 == 0 %}
+        {{ (page.date|string)[:4] }}
+      {% elif (loop.previtem.date|string)[:4] != (page.date|string)[:4] %}
+        <div style="margin-top:10px;">{{ (page.date|string)[:4] }}</div>
+      {% endif %}
+      {% if tag == 'all' or tag in page.tags %}
+        <li>
+          <div style="display:flex">
+            <div style="flex:20%;color:#8c8b8b;max-width:60px;">{{ (page.date|string)[5:] }}</div>
+            <div style="flex:80%">
+              <a class="subtext" href="{{ url_for('review', path=page.path) }}">
+                <b>{{ page.title }}</b>
+              </a>
+            </div>
+          </div>
+          <!-- {{ page.date }}
+          <a style="color:#c8d1d9;" href="{{ url_for("review", path=page.path) }}">
+            <b>{{ page.title }}</b>
+          </a> -->
+        </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+{% endblock content %}

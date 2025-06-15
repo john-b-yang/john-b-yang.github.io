@@ -1,0 +1,274 @@
+{
+    "Preprint": [
+        {
+            "title": "SWE-smith: Scaling Data for Software Engineering Agents",
+            "authors": [
+                {"name": "John Yang"},
+                {"name": "Kilian Lieret", "site": "https://www.lieret.net/"},
+                {"name": "Carlos E. Jimenez", "site": "http://www.carlosejimenez.com/"},
+                {"name": "Alexander Wettig", "site": "https://www.cs.princeton.edu/~awettig/"},
+                {"name": "Kabir Khandpur", "site": "https://kabirk.com/"},
+                {"name": "Yanzhe Zhang", "site": "https://stevenyzzhang.github.io/website/"},
+                {"name": "Binyuan Hui", "site": "https://huybery.github.io/"},
+                {"name": "Ofir Press", "site": "https://ofir.io/"},
+                {"name": "Ludwig Schmidt", "site": "https://people.csail.mit.edu/ludwigs/"},
+                {"name": "Diyi Yang", "site": "https://cs.stanford.edu/~diyiy/index.html"}
+            ],
+            "year": 2025,
+            "paper": "https://arxiv.org/abs/2504.21798",
+            "code": "https://github.com/SWE-bench/SWE-smith",
+            "site": "https://swesmith.com/",
+            "tweet": "https://x.com/jyangballin/status/1920135686071488875",
+            "blog": "/swe-smith/"
+        },
+        {
+            "title": "LongCodeBench: Evaluating Coding LLMs at 1M Context Windows",
+            "authors": [
+                {"name": "Stefano Rando*", "site": "https://www.linkedin.com/in/stefano-rando-94b852183/en"},
+                {"name": "Luca Romani*", "site": "https://phd.uniroma1.it/web/LUCA-ROMANI_nP2005510_EN.aspx"},
+                {"name": "Alessio Sampieri*", "site": "https://scholar.google.com/citations?user=lzFb_ZUAAAAJ"},
+                {"name": "Luca Franco", "site": "https://fraluca.github.io/"},
+                {"name": "John Yang"},
+                {"name": "Yuta Kyuragi", "site": "https://www.linkedin.com/in/yuta-kyuragi-589128294/"},
+                {"name": "Fabio Galasso", "site": "https://fgalasso.bitbucket.io/"},
+                {"name": "Tatsunori Hashimoto", "site": "https://thashim.github.io/"}
+            ],
+            "year": 2025,
+            "paper": "https://arxiv.org/abs/2505.07897"
+        },
+        {
+            "title": "Collaborative Gym: A Framework for Enabling and Evaluating Human-Agent Collaboration",
+            "authors": [
+                {"name": "Yijia Shao", "site": "https://cs.stanford.edu/~shaoyj/"},
+                {"name": "Vinay Samuel", "site": "http://www.vinaysamuel.com/"},
+                {"name": "Yucheng Jiang", "site": "https://yucheng-jiang.github.io/"},
+                {"name": "John Yang"},
+                {"name": "Diyi Yang", "site": "https://cs.stanford.edu/~diyiy/index.html"}
+            ],
+            "year": 2025,
+            "paper": "https://arxiv.org/abs/2412.15701",
+            "code": "https://github.com/SALT-NLP/collaborative-gym",
+            "tweet": "https://x.com/EchoShao8899/status/1880291718496670097"
+        }
+    ],
+    "Peer Reviewed": [
+        {
+            "title": "SWE-bench Multimodal: Do AI Systems Generalize to Visual Software Domains?",
+            "authors": [
+                {"name": "John Yang*"},
+                {"name": "Carlos E. Jimenez*", "site": "http://www.carlosejimenez.com/"},
+                {"name": "Alex L. Zhang", "site": "https://alexzhang13.github.io/"},
+                {"name": "Kilian Lieret", "site": "https://www.lieret.net/"},
+                {"name": "Joyce Yang", "site": "https://www.linkedin.com/in/joyce-b-yang/"},
+                {"name": "Xindi Wu", "site": "https://xindiwu.github.io/"},
+                {"name": "Ori Press", "site": "https://oripress.com/"},
+                {"name": "Niklas Muennighoff", "site": "https://muennighoff.github.io/"},
+                {"name": "Gabriel Synnaeve", "site": "https://syhw.github.io/"},
+                {"name": "Karthik Narasimhan", "site": "https://karthikncode.github.io/"},
+                {"name": "Diyi Yang", "site": "https://cs.stanford.edu/~diyiy/index.html"},
+                {"name": "Sida I. Wang", "site": "https://www.sidaw.xyz/"},
+                {"name": "Ofir Press", "site": "https://ofir.io/"}
+            ],
+            "year": 2025,
+            "venue": "ICLR",
+            "paper": "https://arxiv.org/abs/2410.03859",
+            "code": "https://github.com/princeton-nlp/SWE-bench",
+            "site": "https://swebench.com/multimodal",
+            "tweet": "https://x.com/jyangballin/status/1843285832263979470"
+        },
+        {
+            "title": "Prompting Large Language Models to Tackle the Full Software Development Lifecycle: A Case Study",
+            "authors": [
+                {"name": "Bowen Li*", "site": "https://scholar.google.com/citations?user=RLWXNf8AAAAJ&hl=en"},
+                {"name": "Wenhan Wu*", "site": ""},
+                {"name": "Ziwei Tang*", "site": "https://www.ziwei-tang.com/"},
+                {"name": "Lin Shi*", "site": "https://www.linkedin.com/in/lin-shi-662588266/en"},
+                {"name": "John Yang"},
+                {"name": "Jinyang Li", "site": "https://jinyang-li.me/"},
+                {"name": "Shunyu Yao", "site": "https://ysymyth.github.io/"},
+                {"name": "Chen Qian", "site": "https://qianc62.github.io/"},
+                {"name": "Binyuan Hui", "site": "https://huybery.github.io/"},
+                {"name": "Qicheng Zhang", "site": ""},
+                {"name": "Zhiyin Yu", "site": ""},
+                {"name": "He Du", "site": "https://scholar.google.com/citations?user=urOXt6EAAAAJ"},
+                {"name": "Ping Yang", "site": "https://se-research.bytedance.com/author/ping-yang/"},
+                {"name": "Dahua Lin", "site": "http://dahua.site/"},
+                {"name": "Chao Peng", "site": "https://chao-peng.github.io/"},
+                {"name": "Kai Chen", "site": "https://chenkai.site/"}
+            ],
+            "year": 2025,
+            "venue": "COLING",
+            "award": "Oral",
+            "paper": "https://arxiv.org/abs/2403.08604",
+            "code": "https://github.com/open-compass/DevEval"
+        },
+        {
+            "title": "SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering",
+            "authors": [
+                {"name": "John Yang*"},
+                {"name": "Carlos E. Jimenez*", "site": "http://www.carlosejimenez.com/"},
+                {"name": "Alexander Wettig", "site": "https://www.cs.princeton.edu/~awettig/"},
+                {"name": "Kilian Lieret", "site": "https://www.lieret.net/"},
+                {"name": "Shunyu Yao", "site": "https://ysymyth.github.io/"},
+                {"name": "Karthik Narasimhan", "site": "https://www.cs.princeton.edu/~karthikn/"},
+                {"name": "Ofir Press", "site": "https://ofir.io/"}
+            ],
+            "year": 2024,
+            "venue": "NeurIPS",
+            "paper": "https://arxiv.org/abs/2405.15793",
+            "code": "https://github.com/princeton-nlp/SWE-agent",
+            "site": "https://swe-agent.com/",
+            "tweet": "https://twitter.com/jyangballin/status/1775114444370051582"
+        },
+        {
+            "title": "Referral Augmentation for Zero-Shot Information Retrieval",
+            "authors": [
+                {"name": "Michael William Tang", "site": "https://michaeltang.xyz/"},
+                {"name": "Shunyu Yao", "site": "https://ysymyth.github.io/"},
+                {"name": "John Yang"},
+                {"name": "Karthik Narasimhan", "site": "https://www.cs.princeton.edu/~karthikn/"}
+            ],
+            "year": 2024,
+            "venue": "ACL (Findings)",
+            "paper": "https://arxiv.org/abs/2305.15098",
+            "code": "https://github.com/michaelwilliamtang/referral-augment",
+            "tweet": "https://twitter.com/ShunyuYao12/status/1661340889724100611"
+        },
+        {
+            "title": "SWE-bench: Can Language Models Resolve Real-World Github Issues?",
+            "authors": [
+                {"name": "Carlos E. Jimenez*", "site": "http://www.carlosejimenez.com/"},
+                {"name": "John Yang*"},
+                {"name": "Alexander Wettig", "site": "https://www.cs.princeton.edu/~awettig/"},
+                {"name": "Shunyu Yao", "site": "https://ysymyth.github.io/"},
+                {"name": "Kexin Pei", "site": "https://sites.google.com/site/kexinpeisite/"},
+                {"name": "Ofir Press", "site": "https://ofir.io/"},
+                {"name": "Karthik Narasimhan", "site": "https://www.cs.princeton.edu/~karthikn/"}
+            ],
+            "year": 2024,
+            "venue": "ICLR",
+            "paper": "https://arxiv.org/abs/2310.06770",
+            "code": "https://github.com/princeton-nlp/SWE-bench",
+            "site": "https://swe-bench.github.io",
+            "talk": "https://www.youtube.com/watch?v=DrLdvbkgmeA",
+            "tweet": "https://twitter.com/jyangballin/status/1711822353473437953",
+            "award": "Oral",
+            "poster": "/static/pictures/posters/2024-SWEbench.pdf"
+        },
+        {
+            "title": "InterCode: Standardizing and Benchmarking Interactive Coding with Execution Feedback",
+            "authors": [
+                {"name": "John Yang"},
+                {"name": "Akshara Prabhakar", "site": "https://aksh555.github.io/"},
+                {"name": "Karthik Narasimhan", "site": "https://www.cs.princeton.edu/~karthikn/"},
+                {"name": "Shunyu Yao", "site": "https://ysymyth.github.io/"}
+            ],
+            "year": 2023,
+            "site": "https://intercode-benchmark.github.io/",
+            "venue": "NeurIPS (Datasets & Benchmarks)",
+            "paper": "https://arxiv.org/abs/2306.14898",
+            "code": "https://github.com/princeton-nlp/intercode",
+            "tweet": "https://twitter.com/ShunyuYao12/status/1675903408727896066",
+            "poster": "/static/pictures/posters/2023-InterCode.pdf"
+        },
+        {
+            "title": "WebShop: Towards Scalable Real-World Web Interaction with Grounded Language Agents",
+            "authors": [
+                {"name": "Shunyu Yao*", "site": "https://ysymyth.github.io/"},
+                {"name": "Howard Chen*", "site": "https://howard50b.github.io/"},
+                {"name": "John Yang"},
+                {"name": "Karthik Narasimhan", "site": "https://www.cs.princeton.edu/~karthikn/"}
+            ],
+            "year": 2022,
+            "site": "https://webshop-pnlp.github.io/",
+            "paper": "https://arxiv.org/pdf/2207.01206.pdf",
+            "code": "https://github.com/princeton-nlp/WebShop",
+            "venue": "NeurIPS",
+            "poster": "/static/pictures/posters/2022-WebShop.png",
+            "tweet": "https://twitter.com/ShunyuYao12/status/1546220013186596864"
+        }
+    ],
+    "Workshop": [
+        {
+            "title": "Language Agents as Hackers: Evaluating Cybersecurity Skills with Capture the Flag",
+            "authors": [
+                {"name": "John Yang"},
+                {"name": "Akshara Prabhakar", "site": "https://aksh555.github.io/"},
+                {"name": "Shunyu Yao", "site": "https://ysymyth.github.io/"},
+                {"name": "Kexin Pei", "site": "https://sites.google.com/site/kexinpeisite/"},
+                {"name": "Karthik Narasimhan", "site": "https://www.cs.princeton.edu/~karthikn/"}
+            ],
+            "year": 2023,
+            "workshop": "Multi-Agent Security Workshop",
+            "venue": "NeurIPS 2023",
+            "venue_link": "https://sites.google.com/view/masec",
+            "paper": "/static/misc/preprint_InterCode_CTF.pdf",
+            "code": "https://github.com/princeton-nlp/intercode",
+            "poster": "/static/pictures/posters/2023-MASec.pdf",
+            "award": "Best Paper Award"
+        },
+        {
+            "title": "Towards an Enhanced, Faithful, and Adaptable Web Interaction Environment",
+            "authors": [
+                {"name": "John Yang"},
+                {"name": "Howard Chen", "site": "https://howard50b.github.io/"},
+                {"name": "Karthik Narasimhan", "site": "https://www.cs.princeton.edu/~karthikn/"}
+            ],
+            "year": 2022,
+            "workshop": "Language & Reinforcement Learning Workshop",
+            "venue": "NeurIPS 2022",
+            "venue_link": "https://larel-workshop.github.io/",
+            "paper": "https://openreview.net/pdf?id=y-F1kab2Its",
+            "code": "https://github.com/princeton-nlp/attribute-tagging",
+            "poster": "/static/pictures/posters/2022-LaReL.png"
+        }
+    ],
+    "Miscellaneous": [
+        {
+            "title": "Introducing SWE-bench Verified",
+            "authors": [
+                {"name": "Neil Chowdhury*", "site": "https://nchowdhury.com/"},
+                {"name": "James Aung*", "site": "https://jamesaung.com/"},
+                {"name": "Chan Jun Shern*", "site": "https://junshern.github.io/"},
+                {"name": "Oliver Jaffe*", "site": "https://www.linkedin.com/in/ollie-jaffe-216247135/"},
+                {"name": "Dane Sherburn*", "site": "http://danesherbs.com/"},
+                {"name": "Giulio Starace*", "site": "https://www.giuliostarace.com/"},
+                {"name": "Evan Mays", "site": "https://evanmays.com/"},
+                {"name": "Rachel Dias", "site": "https://www.linkedin.com/in/rachel-dias-5a2173142/"},
+                {"name": "Marwan Aljubeh", "site": "https://www.linkedin.com/in/maljubeh"},
+                {"name": "Mia Glaese", "site": "https://www.linkedin.com/in/amelia-glaese/"},
+                {"name": "Carlos E. Jimenez", "site": "https://www.carlosejimenez.com/"},
+                {"name": "John Yang"},
+                {"name": "Kevin Liu", "site": "https://kliu.io/"},
+                {"name": "Aleksander Madry", "site": "https://madry.mit.edu/"}
+            ],
+            "year": 2024,
+            "paper": "https://openai.com/index/introducing-swe-bench-verified/",
+            "tweet": "https://x.com/OpenAI/status/1823404955933548818",
+            "venue": "OpenAI Technical Blog"
+        },
+        {
+            "title": "Learning Language through Interactions with the Digital World",
+            "authors": [
+                {"name": "John Yang"}
+            ],
+            "year": 2022,
+            "paper": "/static/misc/thesis_learn_digital.pdf",
+            "venue": "M.S.E. Thesis | Princeton University"
+        },
+        {
+            "title": "Quartz: A Framework for Engineering Secure Smart Contracts",
+            "authors": [
+                {"name": "John Kolb", "site": "https://jhkolb.github.io/"},
+                {"name": "John Yang"},
+                {"name": "Randy H Katz", "site": "https://people.eecs.berkeley.edu/~randy/"},
+                {"name": "David E Culler", "site": "https://people.eecs.berkeley.edu/~culler/"}
+            ],
+            "year": 2020,
+            "site": "https://www2.eecs.berkeley.edu/Pubs/TechRpts/2020/EECS-2020-178.html",
+            "paper": "https://www2.eecs.berkeley.edu/Pubs/TechRpts/2020/EECS-2020-178.pdf",
+            "code": "https://github.com/jhkolb/quartz",
+            "venue": "EECS Department, University of California, Berkeley, Tech. Rep. UCB/EECS-2020-178"
+        }
+    ]
+}

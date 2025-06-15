@@ -1,0 +1,151 @@
+{
+  "demos": [
+    {
+      "title": "Buffer Overflow",
+      "picture": "/static/pictures/Courses/demos/overflow.png",
+      "description": "The OB - Original Bug, Wrecking Havoc Since 1972",
+      "link": "https://github.com/john-b-yang/course-dev/tree/master/cs161/buffer-overflow"
+    },
+    {
+      "title": "SQL Injection",
+      "picture": "/static/pictures/Courses/demos/syringe.png",
+      "description": "Wash your queries…and hands! Also, xkcd.com/327/",
+      "link": "https://github.com/john-b-yang/course-dev/tree/master/cs161/sql-injection"
+    },
+    {
+      "title": "Clickjacking",
+      "picture": "/static/pictures/Courses/demos/clickjack.png",
+      "description": "Get Off My Page! - Harrison Ford in Air Force 2: Cyberwar",
+      "link": "https://github.com/john-b-yang/course-dev/tree/master/cs161/clickjack"
+    },
+    {
+      "title": "Stored XSS",
+      "picture": "/static/pictures/Courses/demos/stored-xss.png",
+      "description": "<script>alert('Evil Laughing - Dr. Evil')</script>",
+      "link": "https://github.com/john-b-yang/course-dev/tree/master/cs161/stored-xss"
+    },
+    {
+      "title": "CSRF",
+      "picture": "/static/pictures/Courses/demos/csrf.png",
+      "description": "(In Transformers Theme) CSRF, one click attacks in disguiseee",
+      "link": "https://github.com/john-b-yang/course-dev/tree/master/cs161/csrf"
+    },
+    {
+      "title": "Command Injection",
+      "picture": "/static/pictures/Courses/demos/cmd-inject.png",
+      "description": "Like Prof. Plankton's Mind Control Shampoo, but code!",
+      "link": "https://github.com/john-b-yang/course-dev/tree/master/cs161/cmd-injection"
+    }
+  ],
+  "discussions": [
+    {
+      "title": "x86, GDB, and Security Principles",
+      "slides": "https://docs.google.com/presentation/d/1M_3DsR96y4d_K1MCSLmUJ3lj28T_HfSy1Qz1ePEZdFU/edit?usp=sharing",
+      "note": "https://drive.google.com/file/d/16qrqIn4j9ai1VlaaLK4cFLs9lxJGmwIq/view?usp=sharing"
+    },
+    {
+      "title": "Software Security",
+      "slides": "https://docs.google.com/presentation/d/1tOBvFOlZpaLcKXQ2FnniaVg-H70wlv_snQjl3q4EJ58/edit?usp=sharing",
+      "note": "https://drive.google.com/file/d/1TQe3dHTHVUzharAGtholfTUS7GCxcD0O/view?usp=sharing"
+    },
+    {
+      "title": "Cryptography I",
+      "slides": "https://docs.google.com/presentation/d/1Y4GJPPAL4jnltXa5MLCbapU52kFFhPjGtTAjo_eNCQc/edit?usp=sharing",
+      "note": "https://drive.google.com/file/d/19S_Jfqfp6Jlto9GZl9Jc_MboginhT0GO/view?usp=sharing"
+    },
+    {
+      "title": "Cryptography II",
+      "slides": "https://docs.google.com/presentation/d/1H2RlhLqVjmCTTMUuw8wweXLqmshKfgvDjvrd3sjd-hM/edit?usp=sharing",
+      "note": "https://drive.google.com/file/d/1yBcIzEuBeFu0Bnq0-7x97Vr4O7cx0tOI/view?usp=sharing"
+    },
+    {
+      "title": "Cryptography III",
+      "slides": "https://docs.google.com/presentation/d/1nD9M7YvA_rxZ11XOEghhODAqJbGqZPNmYzf302CR640/edit?usp=sharing",
+      "note": "https://drive.google.com/file/d/1Ln_a73cZyliGQotPIZwZJ-KM9b4ZKkQS/view?usp=sharing"
+    },
+    {
+      "title": "Midterm Review",
+      "slides": "https://docs.google.com/presentation/d/13ppx6H8sqXUn9sPSmtDVsBU9qRX5Djj14I66qaA_r2Q/edit?usp=sharing",
+      "note": "https://drive.google.com/file/d/13giEHtj3jNY53yVs8rRV0u7nFZlSaDhb/view?usp=sharing"
+    },
+    {
+      "title": "Web Security I",
+      "slides": "https://docs.google.com/presentation/d/1FB7fxkpoTLuFsctOaXgxUhT3Le4kUUydp7mVv5MGrEw/edit?usp=sharing",
+      "note": "https://drive.google.com/file/d/1mtkMZAC4_MsOkoe3iJ8F_f22RS6a5l2g/view?usp=sharing"
+    },
+    {
+      "title": "Web Security II",
+      "slides": "https://docs.google.com/presentation/d/1cui7YRq_gSVlXw0WDYLJbEt2m9pHEUNM8MxrYyMsqwI/edit?usp=sharing",
+      "note": "https://drive.google.com/file/d/1SlWPKbTZ-a7K88DIOgpz_20TFoKIfDli/view?usp=sharing"
+    },
+    {
+      "title": "Web Security III",
+      "slides": "https://docs.google.com/presentation/d/1lX9o8IsWqV5e8TFHwWGD6NxV0W9aYpGNMzn3al2wE3s/edit?usp=sharing",
+      "note": "https://drive.google.com/file/d/1VZs3hHmhliJcCjR76loHOCySuKhUihGr/view?usp=sharing"
+    },
+    {
+      "title": "Network Security I",
+      "slides": "https://docs.google.com/presentation/d/17ne4WRo19m06GlXjZgzWUP2s1dfTTiM5aKQjpBZXBJ8/edit?usp=sharing",
+      "note": "https://drive.google.com/file/d/1eNHAdsg4B6fIbL_zg0j4bZozfTKvEpwa/view?usp=sharing"
+    },
+    {
+      "title": "Network Security II",
+      "slides": "https://docs.google.com/presentation/d/12rZEaKkQg9IIHiQF8PrCbNarRq4tWMQ5bbtvaMJhfJ4/edit?usp=sharing",
+      "note": "https://drive.google.com/file/d/1dsw344yEIhznVtuJX7HJdtbx1AAqWakV/view?usp=sharing"
+    },
+    {
+      "title": "Network Security III",
+      "slides": "https://docs.google.com/presentation/d/1jBTo3ddXjtPf9ZnqUeOe2CPqSKLfmG1awMrVouO81lY/edit?usp=sharing",
+      "note": "https://drive.google.com/file/d/1WsDrfQyFRwqhSaGNmaPC3NmCZuzQOGIM/view?usp=sharing"
+    }
+  ],
+  "videos": [
+    {
+      "title": "x86, GDB, Principles",
+      "link": "https://cs161.org/lecture?kaltura_video_id=0_4qlvl85u"
+    },
+    {
+      "title": "Software Security",
+      "link": "https://cs161.org/lecture?kaltura_video_id=0_q9emwb13"
+    },
+    {
+      "title": "Crypto I",
+      "link": "https://cs161.org/lecture?kaltura_video_id=0_p0c6et2o"
+    },
+    {
+      "title": "Crypto (MT)",
+      "link": "https://drive.google.com/file/d/1SDRyOrLuqp704yRZyWaQ3-OWmHis_h-M/view?usp=sharing"
+    },
+    {
+      "title": "Crypto (Final)",
+      "link": "https://drive.google.com/file/d/1-4jHTZ53wGFwDSmnNojJKSMlUohLzqWF/view?usp=sharing"
+    }
+  ],
+  "misc": {
+    "Cryptography": {
+      "Diffie-Hellman Key Exchange": "https://www.youtube.com/watch?v=NmM9HA2MQGI",
+      "MITM Attacks": "https://www.youtube.com/watch?v=vsXMMT2CqqE",
+      "Password Cracking": "https://www.youtube.com/watch?v=7U-RbOKanYs",
+      "SHA (Secure Hashing Algorithm)": "https://www.youtube.com/watch?v=DMtFhACPnTY",
+      "Secure Stream Ciphers (HMAC)": "https://www.youtube.com/watch?v=wlSG3pEiQdc"
+    },
+    "Web Security": {
+      "Clickjacking": "https://www.hacksplaining.com/exercises/click-jacking",
+      "Cross Site Request Forgery": "https://www.hacksplaining.com/exercises/csrf",
+      "Reflected XSS": "https://www.hacksplaining.com/exercises/xss-reflected",
+      "SQL Injection": "https://www.hacksplaining.com/exercises/sql-injection",
+      "Stored XSS": "https://www.hacksplaining.com/exercises/xss-stored"
+    },
+    "Software Security": {
+      "Buffer Overflow Exploits": "https://www.youtube.com/watch?v=1S0aBV-Waeo",
+      "Linux Stack Smashing": "https://blog.techorganic.com/2015/04/10/64-bit-linux-stack-smashing-tutorial-part-1/",
+      "Super Mario 3 Stack Underflow": "https://www.youtube.com/watch?v=WWbZFj-cLvk"
+    },
+    "Network Security": {
+      "DNS Cache Poisoning": "https://www.youtube.com/watch?v=7MT1F0O3_Yw",
+      "Morris Worm": "https://www.youtube.com/watch?v=o2dj2gnxjtU",
+      "Mr. Robot": "https://www.youtube.com/watch?v=r1z5y8mMi6M",
+      "Slow Loris Attack": "https://www.youtube.com/watch?v=XiFkyR35v2Y"
+    }
+  }
+}

@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h5 class="header">
+  Computing & Society
+</h5>
+Taught on behalf of Cardiff Metropolitan University at 西安科技大学高新学院.
+<hr />
+
+<h5>Class</h5>
+<p>
+  Weekly, Wed. 13:50 - 15:25 Beijing Time (GMT+8)<br>
+  每周，星期三，1:50-3:25p.m。
+  <br><br>
+  Begins <i>April 21, 2021</i><br>
+  四月二十一号开课
+  <br><br>
+  Ends <i>June 8, 2021</i><br>
+  六月八号课借宿
+</p>
+
+<h5>Objectives</h5>
+<p>
+  The goals of this course are to identity a range of legal, social and
+  professional issues from the realms of computer science, software
+  engineering and information systems. As a student, you will
+  develop an awareness and understanding of the positive and negative
+  impact that IT has had on various areas within society.
+</p>
+
+<h5>Schedule</h5>
+<table class="class-table">
+  <tr>
+    <th>Date 月期</th>
+    <th>Topic(s) 话题</th>
+    <th>Slides 幻灯片放映</th>
+    <th>Reading 阅读做</th>
+  </tr>
+  {% for week in info.schedule %}
+  <tr>
+    <td style="width:10%;">{{ week.date }}</td>
+    <td style="width:35%;">
+      {% for topic in week.topics %}
+      {{ topic }}{% if not loop.last %}, {% endif %}
+      {% endfor %}
+    </td>
+    <td style="width:15%;">
+      {% if week.slides != "" %}
+      <a href="{{ week.slides }}">Link</a>
+      {% endif %}
+    </td>
+    <td>
+      {% for reading in week.read_list %}
+      - {{ reading[0] }}, 
+      <a href="{{ reading[2] }}">{{ reading[1] }}</a>
+      <br>
+      {% endfor %}
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+
+<h5>Feedback</h5>
+If you have feedback on the course, please feel free to leave a comment
+or critique through this Google
+<a href="https://forms.gle/LEh6tTA3FnJA3px2A">Form</a>!
+
+{% endblock content %}

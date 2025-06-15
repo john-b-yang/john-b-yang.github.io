@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h5 class="header">
+  <a class="left" href="{{ info.course.link }}">{{ info.course.id }}</a>: {{ info.course.name }}
+</h5>
+<hr />
+
+<h5>Schedule</h5>
+<ul>
+  <li>{% if info.schedule.discussion %} Discussion: {{ info.schedule.discussion }}{% endif %}</li>
+  <li>{% if info.schedule.lab %}Lab: {{ info.schedule.lab }}{% endif %}</li>
+  <li>Office Hours: {{ info.schedule.office_hours }}</li>
+</ul>
+
+{% if info.logistics %}
+<h5>Logistics</h5>
+<ul>
+  {% for entry in info.logistics %}
+  <li><a href="{{ info.logistics[entry] }}">{{ entry }}</a></li>
+  {% endfor %}
+</ul>
+{% endif %}
+
+{% if info.discussion_links %}
+<h5>Discussion Slides</h5>
+<table class="class-table">
+  <tr>
+    <th>Title</th>
+    <th>Slides</th>
+  </tr>
+  {% for discussion in info.discussion_links %}
+  <tr>
+    <td>{{ discussion.title }}</td>
+    <td>
+      <a href="{{ discussion.link }}">
+        <i class="fa fa-tv fa-sm"></i>
+      </a>
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+{% endif %}
+
+{% block class %}
+<p>Default Content</p>
+{% endblock class %}
+
+{% if info.misc %}
+<p><h5>Miscellaneous</h5></p>
+<ul>
+  {% for entry in info.misc %}
+  <li><a href="{{ info.misc[entry] }}">{{ entry }}</a></li>
+  {% endfor %}
+</ul>
+{% endif %}
+
+{% endblock content %}

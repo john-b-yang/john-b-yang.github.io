@@ -1,0 +1,40 @@
+{% extends "classes/class.html" %}
+
+{% block class %}
+<h5>Worksheets</h5>
+<p>{{ info.practice.description }}</p>
+
+<table class="class-table">
+  <tr>
+    <th>Topic</th>
+    <th>Worksheet</th>
+    <th>Solutions</th>
+    <th>Python Code</th>
+  </tr>
+  {% for exercise in info.practice %}
+  <tr>
+    {% if exercise != "description" %}
+    <td>{{ exercise }}</td>
+    <td>
+      <a href="{{ info.practice[exercise].worksheet }}" class=""dimLink"">
+        <i class="fa fa-paste fa-sm"></i>
+      </a>
+    </td>
+    <td>
+      <a href="{{ info.practice[exercise].solutions }}" class=""dimLink"">
+        <i class="fa fa-check-square fa-sm"></i>
+      </a>
+    </td>
+    <td>
+      {% if info.practice[exercise].python %}
+      <a href="{{ info.practice[exercise].python }}" class=""dimLink"">
+        <i class="fa fa-code fa-sm"></i>
+      </a>
+      {% endif %}
+    </td>
+    {% endif %}
+  </tr>
+  {% endfor %}
+</table>
+
+{% endblock class %}

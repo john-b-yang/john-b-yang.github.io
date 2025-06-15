@@ -1,0 +1,82 @@
+{
+  "schedule": [
+    {
+      "date": "4/21",
+      "topics": [
+        "Professional ethics",
+        "Ethics in Computer Software"
+      ],
+      "slides": "https://docs.google.com/presentation/d/1yZCRhfpsFQtoMqMICx2Py7tKRzW281yqzbQmaxnd07o/edit?usp=sharing",
+      "read_list": [
+        ["ACM", "Professional Code of Conduct", "https://www.acm.org/code-of-ethics"],
+        ["Fabio, Adam", "Killed by a Machine: The Therac-25", "https://hackaday.com/2015/10/26/killed-by-a-machine-the-therac-25/"],
+        ["Marshall, Aarian", "What Boeing's 737 MAX Has to Do With Cars", "https://www.wired.com/story/boeings-737-max-cars-software/"]
+      ]
+    },
+    {
+      "date": "4/28",
+      "topics": [
+        "Copyright",
+        "Intellectual Property"
+      ],
+      "slides": "https://docs.google.com/presentation/d/1N1xWiUfRImkgP3tAqDSnonB7r-RqhBTB0wrMycI_rbg/edit?usp=sharing",
+      "read_list": [
+        ["de Cardenas, Antonio", "Patent vs. Copyright Protection for Software", "https://www.linkedin.com/pulse/patent-vs-copyright-protection-computer-software-de-cardenas-jd-mba/"],
+        ["Stallman, Richard", "Misinterpreting Copyright - A Series of Errors", "https://www.gnu.org/philosophy/misinterpreting-copyright.html"],
+        ["Reynolds, Matt", "What is Article 13?", "https://www.wired.co.uk/article/what-is-article-13-article-11-european-directive-on-copyright-explained-meme-ban"]
+      ]
+    },
+    {
+      "date": "5/12",
+      "topics": [
+        "Security Principles",
+        "Security Vulnerabilities & Viruses"
+      ],
+      "slides": "https://docs.google.com/presentation/d/1UelJYgSedK2rvZpcv9KDTJ8YP7OHTa97tOMdjPk5fTE/edit?usp=sharing",
+      "read_list": [
+        ["Chai, Wesley", "CIA Triad", "https://whatis.techtarget.com/definition/Confidentiality-integrity-and-availability-CIA"],
+        ["Wikipedia", "Saltzer and Shroeder's design principles", "https://en.wikipedia.org/wiki/Saltzer_and_Schroeder%27s_design_principles"],
+        ["Hacksplaning", "Security Training for Developers", "https://www.hacksplaining.com/"]
+      ]
+    },
+    {
+      "date": "5/19",
+      "topics": [
+        "Software Risks",
+        "Algorithmic Bias"
+      ],
+      "slides": "https://docs.google.com/presentation/d/1iU8PEcFrSHvi1xqRmp1TNUKC4Ylybw0S6Zm8FbUiNSs/edit?usp=sharing",
+      "read_list": [
+        ["Hardt, Moritz", "Attacking discrimination with smarter ML", "https://research.google.com/bigpicture/attacking-discrimination-in-ml/"],
+        ["Dastin, Jeffrey", "Amazon scraps secret AI recruiting tool" , "https://www.reuters.com/article/us-amazon-com-jobs-automation-insight/amazon-scraps-secret-ai-recruiting-tool-that-showed-bias-against-women-idUSKCN1MK08G"],
+        ["Larson, Jeff", "How We Analyzed COMPAS", "https://www.propublica.org/article/how-we-analyzed-the-compas-recidivism-algorithm"]
+      ]
+    },
+    {
+      "date": "5/26",
+      "topics": [
+        "Technology for Political Agendas",
+        "Political Tech's Effects"
+      ],
+      "slides": "https://docs.google.com/presentation/d/1Fp4iWjxhaOHLhSu9PanVKAYk1e9MMseOBIyhPFpqIZw/edit?usp=sharing",
+      "read_list": [
+        ["Keegan, Jon", "Blue Feed, Red Feed", "https://graphics.wsj.com/blue-feed-red-feed/"],
+        ["Maniam, Shiva", "Tension between privacy, security concerns", "https://www.pewresearch.org/fact-tank/2016/02/19/americans-feel-the-tensions-between-privacy-and-security-concerns/"],
+        ["Bertoni, Steven", "How Jared Kushner Won Trump the White House", "https://www.forbes.com/sites/stevenbertoni/2016/11/22/exclusive-interview-how-jared-kushner-won-trump-the-white-house/?sh=3e66feb93af6"]
+      ]
+    },
+    {
+      "date": "6/2",
+      "topics": [
+        "War",
+        "Corporate Regulation"
+      ],
+      "slides": "https://docs.google.com/presentation/d/1jIazw9xvvn6co8fi1aNWixjLyaddTE36XHil0oCWIts/edit?usp=sharing",
+      "read_list": [
+        ["Greenberg, Any", "The Untold Story of NotPetya", "https://www.wired.com/story/notpetya-cyberattack-ukraine-russia-code-crashed-the-world/"],
+        ["Haselton, Todd", "Army's use of Microsoft's HoloLens goggles", "https://www.cnbc.com/2019/04/06/microsoft-hololens-2-army-plans-to-customize-as-ivas.html"],
+        ["Google AI", "Responsible AI Practices", "https://ai.google/responsibilities/responsible-ai-practices/"]
+      ]
+    }
+  ]
+}

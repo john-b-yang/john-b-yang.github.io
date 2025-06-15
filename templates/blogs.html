@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h3 class="header">Posts</h3>
+
+  {% for page in pages | sort(attribute='date', reverse=True) %}
+    <div style="padding-bottom:1.5em;">
+      <a href="{{ url_for("page", path=page.path) }}">
+        <b>{{ page.title }}</b>
+      </a><br>
+      <span class="subtext">
+        {{ page.date }} &bull; {{ page.description }}
+      </span>
+    </div>
+  {% else %}
+    No posts yet!
+  {% endfor %}
+
+{% endblock content %}
