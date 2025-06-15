@@ -1,0 +1,157 @@
+<!doctype html>
+<html data-theme="light">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="John Y">
+    <meta name="description" content="Programming technicalities and musings">
+
+    <title>John Y</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="icon" type="image/png" href="/static/pictures/stanford.ico">
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/fonts.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/button.css">
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="/static/js/webfont.js"></script>
+    <script src="/static/js/snap.svg-min.js"></script>
+    <script src="/static/js/underscore-min.js"></script>
+    <script src="/static/js/sequence-diagram-min.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119942589-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-119942589-1');
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+      <div class="container">
+        <a href="/"><b>JOHN</b> Y</a>
+        <div style="float:right;">
+          <ul>
+            <!-- Omitted "papers", "projects" -->
+            <a href="/publications/" class="left"><li>PUBS</li></a>
+            <a href="/blogs/" class="left"><li>BLOG</li></a>
+            <a href="/resources/" class="left"><li>TEACH</li></a>
+            <a href="/readings/" class="left"><li>READING</li></a>
+            <button id="theme-toggle" aria-label="Toggle theme" class="theme-toggle">
+              <i class="fa fa-sun-o"></i>
+            </button>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container" style="padding-bottom:100px;">
+        <br>
+        <main id="body-fade">
+            
+<br>
+<div style="margin:0 auto;width:80%;text-align:center;">
+  <h4>Obladi - Oblivious Serializable Transactions in the Cloud</h4>
+  <div>
+    
+    <p>SUNDAY. JANUARY 17, 2021 &bull;
+      <a href="https://www.usenix.org/system/files/osdi18-crooks.pdf">
+        <i class="fa fa-file fa-sm"></i>
+      </a>
+      
+    </p>
+    <p>
+      
+      <div class="block">
+        <b><a href="/papers/DBMS/">DBMS</a></b>
+      </div>
+      
+      <div class="block">
+        <b><a href="/papers/Privacy/">Privacy</a></b>
+      </div>
+      
+      <div class="block">
+        <b><a href="/papers/Security/">Security</a></b>
+      </div>
+      
+    </p>
+  </div>
+</div>
+
+<div class="blog">
+  <p>The success of cloud computing and the pay-as-you-go model has led to a lot of big data that requires the use of outsourced data storage, which provides accessibility from many devices and great reliability at a lower cost. However, outsourcing data to public clouds naturally raises security concerns. The workarounds to this include using encryption, a “trusted” public cloud service, or private cloud infrastructure. None of these, however, directly address the problem of hiding data accesses when using public cloud infrastructure. That is, until ORAM, which ensures servers don’t see data or operations. The contribution that this paper makes is that there is currently no way to run ACID transactions obliviously. The goal of this paper is to obliviously and efficiently implement serializable ACID transactions on top of untrusted cloud storage.</p>
+<p>The challenges of this paper are centered around the goal of preserving workload independence while guaranteeing the ACID properties (Atomicity, Isolation, Consistency, and Durability) with good performance. In general, the lack of concurrency control is used to guarantee isolation and atomicity. Write back ordering for security rather than for durability helps with the C and D properties. Limit concurrency improves performance. The threat model offered by Obladi includes the clients and a trusted proxy in the TCB, but the cloud storage and communication with it are untrusted. To partition transactions into fixed sized epochs, Obladi uses delayed visibility, and each delay will commit notifications until the epoch ends. Within each epoch, the transactions are executed on the trusted proxy, and writes are buffered until the epoch ends. Delayed visibility also improves performance by reducing the number of requests processed by ORAM while also implementing multi-versioned concurrency control on top of single version ORAM. On the performance side, batches of requests are sent to ORAM, but construction is mostly sequential. Obladi makes the contribution of parallelizing ORAM while guaranteeing linearizability by ensuring operations with data dependencies are not executed in parallel.</p>
+<p>The evaluation has both positives and negatives. On the bright side, Obladi’s overhead is not extremely slow. The three cases studies showed between 5x and 12x lower throughput. However, the batching design significantly increases latency, by up to 70x on TPC-C. However, applications with smaller write batches work better. The performance is also extremely sensitive to the epoch size. A small epoch size leads to transactions not finishing, while a large epoch size leads to idle time. As a result, the epoch size should be tuned to types of applications. The design of Obladi also relies on a centralized proxy, and applications may be identified. There’s also a question of if there are too many operations in a single transaction, potentially exceeding the batch size.</p>
+<p>Some of the potential extensions could be based on the design of Obladi. First and foremost, while batching helps cut down on expensive security benefits, it’s clear that the latency is significant. There are many knobs that can be turned when configuring Obladi for a specific application. It could be interesting to investigate whether hyperparameter tuning of batch size, epoch size, and limit on the number of operations in a single transaction per application leads to better performance. A set of guidelines or third-party applications that can perform this tuning may improve evaluation, dodging suboptimal, avoidable configurations.</p>
+</div>
+
+<br><hr class="fade"><br>
+
+<div>
+  <div id="disqus_thread"></div>
+  
+    <script type="text/javascript">
+      (function() {
+        var d = document,
+          s = d.createElement('script');
+        s.src = 'https://blog-byjohnyang.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+      })();
+    </script>
+    <noscript>
+      Please enable JavaScript to view the
+      <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+    </noscript>
+  
+</div>
+
+        </main>
+    </div>
+    <nav class="navfoot">
+      <div class="container">
+        <a href="http://github.com/john-b-yang"><i class="fa fa-github fa-lg"></i></a>&ensp;
+        <a href="https://scholar.google.com/citations?user=71G11ksAAAAJ&hl=en"><i class="fa fa-graduation-cap fa-lg"></i></a>&ensp;
+        <a href="https://www.linkedin.com/in/jyang20"><i class="fa fa-linkedin fa-lg"></i></a>&ensp;
+        <a href="https://twitter.com/jyangballin"><i class="fa fa-twitter fa-lg"></i></a>
+        <!-- Omitted "subscribe" w/ fa-envelope icon -->
+        <div class="subtext" style="float:right;">
+          &copy; 2025
+        </div>
+      </div>
+    </nav>
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+    <script>
+      // Theme switching functionality
+      const themeToggle = document.getElementById('theme-toggle');
+      const html = document.documentElement;
+      
+      // Check for saved theme preference
+      const savedTheme = localStorage.getItem('theme') || 'light';
+      html.setAttribute('data-theme', savedTheme);
+      updateThemeIcon(savedTheme);
+      
+      themeToggle.addEventListener('click', () => {
+        const currentTheme = html.getAttribute('data-theme');
+        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+        
+        html.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        updateThemeIcon(newTheme);
+      });
+      
+      function updateThemeIcon(theme) {
+        const icon = themeToggle.querySelector('i');
+        icon.className = theme === 'dark' ? 'fa fa-sun-o' : 'fa fa-moon-o';
+      }
+    </script>
+</body>
+
+</html>
