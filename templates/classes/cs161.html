@@ -24,7 +24,7 @@
   <div class="demo-card">
     <div class="picture">
       <span style="display:inline-block;vertical-align:middle"></span>
-      <img src="{{ demo.picture }}">
+      <img src="{{ '/' ~ demo.picture.lstrip('/') }}">
     </div>
     <div class="description">
       <p>

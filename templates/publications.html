@@ -39,7 +39,7 @@
     <i>Paper details coming soon</i>
     {% endif %}
     {% if pub.blog %}
-    <a href="{{ pub.blog }}">
+    <a href="{{ '/' ~ pub.blog.lstrip('/') }}">
       <button>Blog</button>
     </a>
     {% endif %}
@@ -54,7 +54,7 @@
     </a>
     {% endif %}
     {% if pub.poster %}
-    <a href="{{ pub.poster }}">
+    <a href="{{ '/' ~ pub.poster.lstrip('/') }}">
       <button>Poster</button>
     </a>
     {% endif %}

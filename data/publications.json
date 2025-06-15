@@ -19,7 +19,7 @@
             "code": "https://github.com/SWE-bench/SWE-smith",
             "site": "https://swesmith.com/",
             "tweet": "https://x.com/jyangballin/status/1920135686071488875",
-            "blog": "/swe-smith/"
+            "blog": "swe-smith/"
         },
         {
             "title": "LongCodeBench: Evaluating Coding LLMs at 1M Context Windows",

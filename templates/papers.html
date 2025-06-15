@@ -15,7 +15,7 @@
   {% else %}
   <div class="block">
   {% endif %}
-    <a href="{{ url_for("papers") }}">All</a>
+    <a href="{{ url_for('papers') }}">All</a>
   </div>
 
   {% for t in tags %}
@@ -24,7 +24,7 @@
     {% else %}
     <div class="block">
     {% endif %}
-      <a href="{{ url_for("paper_tag", tag=t) }}">{{ t }}</a>
+      <a href="{{ url_for('paper_tag', tag=t) }}">{{ t }}</a>
     </div>
   {% endfor %}
 
