@@ -202,7 +202,7 @@
             "workshop": "Multi-Agent Security Workshop",
             "venue": "NeurIPS 2023",
             "venue_link": "https://sites.google.com/view/masec",
-            "paper": "static/misc/preprint_InterCode_CTF.pdf",
+            "paper": "https://openreview.net/forum?id=KOZwk7BFc3&noteId=OIANITRY6R",
             "code": "https://github.com/princeton-nlp/intercode",
             "poster": "static/pictures/posters/2023-MASec.pdf",
             "award": "Best Paper Award"
