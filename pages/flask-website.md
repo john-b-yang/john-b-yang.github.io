@@ -157,9 +157,9 @@ Jinja2 works very similarly to Django's templates. I very much like Jinja2's "te
     &lt;h1&gt;&lt;a href="{{ url_for("index") }}"&gt;Appleseed's Blog&lt;/a&gt;&lt;/h1&gt;
 
     &lt;div&gt;
-        {% block content %}
+        {% raw %}{% block content %}{% endraw %}
         &lt;p&gt;Default Content&lt;/p&gt;
-        {% endblock content %}
+        {% raw %}{% endblock content %}{% endraw %}
     &lt;/div&gt;
 &lt;/body&gt;
 &lt;/html&gt;
@@ -172,11 +172,11 @@ Now, this looks like regular HTML, but there are a couple nice features to note.
 Next, let's hash out *page.html*, which in the template inheritance relationship, can be thought of as the "child" of *base.html*. Again, we're not doing anything too fancy here.
 
 <pre class="prettyprint lang-py background">
-{% extends "base.html" %}
-{% block content %}
+{% raw %}{% extends "base.html" %}{% endraw %}
+{% raw %}{% block content %}{% endraw %}
     &lt;h2&gt;{{ page.title }}&lt;/h2&gt;
     {{ page.html|safe }}
-{% endblock content %}
+{% raw %}{% endblock content %}{% endraw %}
 </pre>
 
 Let's review some of the new Jinja2 syntax we've introduced. <br>
@@ -209,20 +209,20 @@ Right now, our home page (the '/' route) only displays a single line of "Hello W
 Within terminal, in your *flask_blog* directory, create a file called *index.html*. The following code only contains the functionality for creating the list.
 
 <pre class="prettyprint lang-html background">
-{% extends "base.html" %}
+{% raw %}{% extends "base.html" %}{% endraw %}
 
-{% block content %}
+{% raw %}{% block content %}{% endraw %}
     &lt;h2&gt;Posts&lt;/h2&gt;
     &lt;ul&gt;
-    {% for page in pages %}
+    {% raw %}{% for page in pages %}{% endraw %}
         &lt;li&gt;
-            &lt;a href="{{ url_for("page", path=page.path) }}"&gt;{{ page.title }}&lt;/a&gt;
+            &lt;a href="{% raw %}{{ url_for("page", path=page.path) }}{% endraw %}"&gt;{% raw %}{{ page.title }}{% endraw %}&lt;/a&gt;
         &lt;/li&gt;
-    {% else %}
+    {% raw %}{% else %}{% endraw %}
         &lt;li&gt;No pages so far&lt;/li&gt;
-    {% endfor %}
+    {% raw %}{% endfor %}{% endraw %}
     &lt;/ul&gt;
-{% endblock content %}
+{% raw %}{% endblock content %}{% endraw %}
 </pre>
 
 The syntax might look a little wonky at first, but it's pretty simple. The *pages* variable includes references to all the Markdown files within the *pages* directory. For every page, a hyperlink to it is created. In fact, if you create more markdown files within that directory, they will show up. On the other hand, if the *pages* directory is empty, the default "No pages so far" message will be shown instead.
