@@ -5,6 +5,9 @@ on:
     branches:
       - main  # or master, depending on your default branch name
 
+permissions:
+  contents: write  # Required for deploying to gh-pages branch
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -25,11 +28,11 @@ jobs:
       - name: Build site
         run: python sitebuilder.py build
 
-      - name: Rename build to docs
-        run: mv build docs
-
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./docs 
+          publish_dir: ./build
+          publish_branch: gh-pages
+          commit_message: "Deploy website to GitHub Pages"
+          force_orphan: true  # This ensures a clean history with only the built files 
