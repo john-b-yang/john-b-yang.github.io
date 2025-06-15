@@ -2,7 +2,7 @@
 
 {% block content %}
   <div style="display:flex; flex-wrap:wrap; align-items: flex-start;">
-    <img src="/static/profpic.jpg" style="border-radius: 10%;height: 7em;width: auto;margin: 1em 2em 0 0" />
+    <img src="{{ url_for('static', filename='profpic.jpg') }}" style="border-radius: 10%;height: 7em;width: auto;margin: 1em 2em 0 0" />
     <div style="flex: 1; align-self: center;">
       <h4>👋 I'm John.</h4>
       2nd year Computer Science PhD student @ <span style="color:#E04F39">Stanford University</span> 🌲.

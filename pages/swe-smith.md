@@ -1,7 +1,7 @@
 title: Introducing SWE-smith
 date: 2025-04-30
 description: A rethinking of how to create software tasks for training AI.
-image: /static/pictures/head-images/swesmith_logo.png
+image: static/pictures/head-images/swesmith_logo.png
 readtime: 10 MINS
 time: WEDNESDAY, APRIL 30, 2025
 
@@ -15,7 +15,7 @@ Progress in AI for software engineering over the past year has been incredibly e
 The rapid development of agentic SWEs has been tracked faithfully by the [SWE-bench](https://swe-bench.github.io/) benchmark and the [Verified](https://openai.com/index/introducing-swe-bench-verified/) subset in particular.
 For well over a year, I've been the core maintainer of SWE-bench's [leaderboard](https://github.com/swe-bench/experiments), giving me a front row seat to the show.
 
-<img src="/static/pictures/blogs/swesmith/leaderboard.png" alt="SWE-bench leaderboard" style="width:100%;"/>
+<img src="static/pictures/blogs/swesmith/leaderboard.png" alt="SWE-bench leaderboard" style="width:100%;"/>
 
 Early improvements were driven by creating better inference frameworks for interacting with code, such as [SWE-agent](https://swe-agent.com/latest/), [OpenHands](https://www.all-hands.dev/), and [Agentless](https://github.com/OpenAutoCoder/Agentless).
 
@@ -40,7 +40,7 @@ However, the foundation to all this progress - collecting training data for AI s
 
 As a reminder, here's how we built SWE-bench.
 
-<img src="/static/pictures/blogs/swesmith/collection.png" alt="SWE-bench overview" style="width:100%;"/>
+<img src="static/pictures/blogs/swesmith/collection.png" alt="SWE-bench overview" style="width:100%;"/>
 
 You scrape a bunch of PRs and convert them to candidate task instances. Then, you create an execution environment per candidate and run the tests, checking for at least 1 "Fail to Pass" test (the test failed before the PR, and passed after).
 

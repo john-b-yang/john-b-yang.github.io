@@ -1,7 +1,7 @@
 title: MNIST Handwriting Detection
 date: 2018-05-13
 description: Exploring different machine learning models through the "Hello World" of data sets
-image: /static/pictures/head-images/MNIST.png
+image: static/pictures/head-images/MNIST.png
 readtime: 6 MINS
 tags: [ML, Python, Tutorial]
 time: SUNDAY, MAY 13, 2018
@@ -209,5 +209,5 @@ accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
 print(session.run(accuracy, feed_dict={x: mnist.test.images, y_prime: mnist.test.labels}))
 </pre>
 
-View the complete ipython notebook for this tutorial by following this [link](https://github.com/john-b-yang/blog-website/blob/master/static/misc/mnist-detection.ipynb)!
+View the complete ipython notebook for this tutorial by following this [link](https://github.com/john-b-yang/blog-website/blob/masterstatic/misc/mnist-detection.ipynb)!
 View this [link](http://rodrigob.github.io/are_we_there_yet/build/classification_datasets_results.html) to check out different classification models have stacked up against one another in terms of performance.

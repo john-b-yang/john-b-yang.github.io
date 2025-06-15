@@ -1,7 +1,7 @@
 title: Paper Reading Template
 date: 2022-02-01
 description: A self-designed guide that helps me consistently read papers and remember what I read
-image: /static/pictures/head-images/template.png
+image: static/pictures/head-images/template.png
 readtime: 5 MINS
 time: TUESDAY, FEBRUARY 1, 2022
 

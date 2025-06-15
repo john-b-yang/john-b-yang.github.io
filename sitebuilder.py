@@ -2,7 +2,7 @@ import sys, os
 import json
 
 # Imports
-from flask import Flask, render_template
+from flask import Flask, render_template, url_for
 from flask_flatpages import FlatPages
 from flask_frozen import Freezer
 from flaskext.markdown import Markdown
@@ -11,6 +11,11 @@ from flaskext.markdown import Markdown
 DEBUG = True
 FLATPAGES_AUTO_RELOAD = DEBUG
 FLATPAGES_EXTENSION = '.md'
+FREEZER_RELATIVE_URLS = True
+FREEZER_DESTINATION = 'build'
+FREEZER_STATIC_IGNORE = ['*.git*']
+FREEZER_BASE_URL = None
+FREEZER_IGNORE_MIMETYPE_WARNINGS = True
 
 app = Flask(__name__)
 app.config.from_object(__name__)
@@ -118,6 +123,26 @@ def publications():
 def page_not_found(path):
     # note that we set the 404 status explicitly
     return render_template('404.html'), 404
+
+@freezer.register_generator
+def page():
+    for page in pages:
+        yield {'path': page.path}
+
+@freezer.register_generator
+def review():
+    for page in pages:
+        if page.path.startswith('r/'):
+            yield {'path': page.path}
+
+@freezer.register_generator
+def static():
+    # This will yield all static files for freezing
+    for dirpath, dirnames, filenames in os.walk('static'):
+        for filename in filenames:
+            rel_dir = os.path.relpath(dirpath, 'static')
+            rel_file = os.path.join(rel_dir, filename) if rel_dir != '.' else filename
+            yield {'filename': rel_file}
 
 if __name__ == '__main__':
     if len(sys.argv) > 1 and sys.argv[1] == "build":

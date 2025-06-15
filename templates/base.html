@@ -13,16 +13,16 @@
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <link rel="icon" type="image/png" href="/static/pictures/stanford.ico">
-    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
-    <link rel="stylesheet" type="text/css" href="/static/css/fonts.css">
-    <link rel="stylesheet" type="text/css" href="/static/css/button.css">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='pictures/stanford.ico') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/fonts.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/button.css') }}">
 
-    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
-    <script src="/static/js/webfont.js"></script>
-    <script src="/static/js/snap.svg-min.js"></script>
-    <script src="/static/js/underscore-min.js"></script>
-    <script src="/static/js/sequence-diagram-min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-latest.js"></script>
+    <script src="{{ url_for('static', filename='js/webfont.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/snap.svg-min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/underscore-min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/sequence-diagram-min.js') }}"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119942589-1"></script>
@@ -37,14 +37,14 @@
 <body>
     <nav class="navbar">
       <div class="container">
-        <a href="{{ url_for("index") }}"><b>JOHN</b> Y</a>
+        <a href="{{ url_for('index') }}"><b>JOHN</b> Y</a>
         <div style="float:right;">
           <ul>
             <!-- Omitted "papers", "projects" -->
-            <a href="{{ url_for("publications") }}" class="left"><li>PUBS</li></a>
-            <a href="{{ url_for("blogs") }}" class="left"><li>BLOG</li></a>
-            <a href="{{ url_for("resources") }}" class="left"><li>TEACH</li></a>
-            <a href="{{ url_for("papers") }}" class="left"><li>READING</li></a>
+            <a href="{{ url_for('publications') }}" class="left"><li>PUBS</li></a>
+            <a href="{{ url_for('blogs') }}" class="left"><li>BLOG</li></a>
+            <a href="{{ url_for('resources') }}" class="left"><li>TEACH</li></a>
+            <a href="{{ url_for('papers') }}" class="left"><li>READING</li></a>
             <button id="theme-toggle" aria-label="Toggle theme" class="theme-toggle">
               <i class="fa fa-sun-o"></i>
             </button>
@@ -62,7 +62,7 @@
     </div>
     <nav class="navfoot">
       <div class="container">
-        <a href="http://github.com/john-b-yang"><i class="fa fa-github fa-lg"></i></a>&ensp;
+        <a href="https://github.com/john-b-yang"><i class="fa fa-github fa-lg"></i></a>&ensp;
         <a href="https://scholar.google.com/citations?user=71G11ksAAAAJ&hl=en"><i class="fa fa-graduation-cap fa-lg"></i></a>&ensp;
         <a href="https://www.linkedin.com/in/jyang20"><i class="fa fa-linkedin fa-lg"></i></a>&ensp;
         <a href="https://twitter.com/jyangballin"><i class="fa fa-twitter fa-lg"></i></a>
