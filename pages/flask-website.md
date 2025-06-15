@@ -154,7 +154,7 @@ Jinja2 works very similarly to Django's templates. I very much like Jinja2's "te
 &lt;/head&gt;
 
 &lt;body&gt;
-    &lt;h1&gt;&lt;a href="{{ url_for("index") }}"&gt;Appleseed's Blog&lt;/a&gt;&lt;/h1&gt;
+    &lt;h1&gt;&lt;a href="{% raw %}{{ url_for("index") }}{% endraw %}"&gt;Appleseed's Blog&lt;/a&gt;&lt;/h1&gt;
 
     &lt;div&gt;
         {% raw %}{% block content %}{% endraw %}
@@ -167,20 +167,20 @@ Jinja2 works very similarly to Django's templates. I very much like Jinja2's "te
 
 Now, this looks like regular HTML, but there are a couple nice features to note. <br>
 &bull; The **url_for()** generates a URL for the "index" endpoint, helpful for linking website parts w/o using the entire URL. [Documentation](http://flask.pocoo.org/docs/1.0/api/#flask.url_for). <br>
-&bull; The **{% block content %}** and **{% endblock content %}** specify where nested HTML content should be placed (template inheritance!) <br>
+&bull; The **{% raw %}{% block content %}{% endraw %}** and **{% raw %}{% endblock content %}{% endraw %}** specify where nested HTML content should be placed (template inheritance!) <br>
 
 Next, let's hash out *page.html*, which in the template inheritance relationship, can be thought of as the "child" of *base.html*. Again, we're not doing anything too fancy here.
 
 <pre class="prettyprint lang-py background">
 {% raw %}{% extends "base.html" %}{% endraw %}
 {% raw %}{% block content %}{% endraw %}
-    &lt;h2&gt;{{ page.title }}&lt;/h2&gt;
-    {{ page.html|safe }}
+    &lt;h2&gt;{% raw %}{{ page.title }}{% endraw %}&lt;/h2&gt;
+    {% raw %}{{ page.html|safe }}{% endraw %}
 {% raw %}{% endblock content %}{% endraw %}
 </pre>
 
 Let's review some of the new Jinja2 syntax we've introduced. <br>
-&bull; The **extends** keyword specifies the parent HTML template. Here, the *page.html*'s contents will go within **{% end/block content %}** of *base.html*. <br>
+&bull; The **extends** keyword specifies the parent HTML template. Here, the *page.html*'s contents will go within **{% raw %}{% end/block content %}{% endraw %}** of *base.html*. <br>
 &bull; When you see page.**title** or page.**html**, we're accessing the metadata of the page. In this case, we'd be grabbing the title and contents of this page, but not the date (refer to *example-text.md*).
 
 Of course, there's a lot more to Jinja2 than what's presented here, but for setup purposes, I believe this covers a few of the basic functions and syntax that you can expect to use repetitively as you build your web app out more thoroughly.
