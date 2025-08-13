@@ -18,6 +18,7 @@
             "paper": "https://arxiv.org/abs/2504.21798",
             "code": "https://github.com/SWE-bench/SWE-smith",
             "site": "https://swesmith.com/",
+            "talk": "https://www.youtube.com/watch?v=Wdkm_mJdFWU&ab_channel=OpenAGISummit",
             "tweet": "https://x.com/jyangballin/status/1920135686071488875",
             "blog": "swe-smith/"
         },
@@ -75,7 +76,8 @@
             "paper": "https://arxiv.org/abs/2410.03859",
             "code": "https://github.com/princeton-nlp/SWE-bench",
             "site": "https://swebench.com/multimodal",
-            "tweet": "https://x.com/jyangballin/status/1843285832263979470"
+            "tweet": "https://x.com/jyangballin/status/1843285832263979470",
+            "poster": "static/pictures/posters/2025-SWEbenchM.pdf"
         },
         {
             "title": "Prompting Large Language Models to Tackle the Full Software Development Lifecycle: A Case Study",
@@ -119,7 +121,9 @@
             "paper": "https://arxiv.org/abs/2405.15793",
             "code": "https://github.com/princeton-nlp/SWE-agent",
             "site": "https://swe-agent.com/",
-            "tweet": "https://twitter.com/jyangballin/status/1775114444370051582"
+            "talk": "https://www.youtube.com/watch?v=CeMtJ4XObAM&pp=ygUJc3dlLWFnZW500gcJCa0JAYcqIYzv",
+            "tweet": "https://twitter.com/jyangballin/status/1775114444370051582",
+            "poster": "static/pictures/posters/2024-SWEagent.pdf"
         },
         {
             "title": "Referral Augmentation for Zero-Shot Information Retrieval",
