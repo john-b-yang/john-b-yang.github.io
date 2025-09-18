@@ -1,6 +1,22 @@
 {
     "Preprint": [
         {
+            "title": "Collaborative Gym: A Framework for Enabling and Evaluating Human-Agent Collaboration",
+            "authors": [
+                {"name": "Yijia Shao", "site": "https://cs.stanford.edu/~shaoyj/"},
+                {"name": "Vinay Samuel", "site": "http://www.vinaysamuel.com/"},
+                {"name": "Yucheng Jiang", "site": "https://yucheng-jiang.github.io/"},
+                {"name": "John Yang"},
+                {"name": "Diyi Yang", "site": "https://cs.stanford.edu/~diyiy/index.html"}
+            ],
+            "year": 2025,
+            "paper": "https://arxiv.org/abs/2412.15701",
+            "code": "https://github.com/SALT-NLP/collaborative-gym",
+            "tweet": "https://x.com/EchoShao8899/status/1880291718496670097"
+        }
+    ],
+    "Peer Reviewed": [
+        {
             "title": "SWE-smith: Scaling Data for Software Engineering Agents",
             "authors": [
                 {"name": "John Yang"},
@@ -20,24 +36,10 @@
             "site": "https://swesmith.com/",
             "talk": "https://www.youtube.com/watch?v=Wdkm_mJdFWU&ab_channel=OpenAGISummit",
             "tweet": "https://x.com/jyangballin/status/1920135686071488875",
-            "blog": "swe-smith/"
+            "blog": "swe-smith/",
+            "award": "Spotlight",
+            "venue": "NeurIPS"
         },
-        {
-            "title": "Collaborative Gym: A Framework for Enabling and Evaluating Human-Agent Collaboration",
-            "authors": [
-                {"name": "Yijia Shao", "site": "https://cs.stanford.edu/~shaoyj/"},
-                {"name": "Vinay Samuel", "site": "http://www.vinaysamuel.com/"},
-                {"name": "Yucheng Jiang", "site": "https://yucheng-jiang.github.io/"},
-                {"name": "John Yang"},
-                {"name": "Diyi Yang", "site": "https://cs.stanford.edu/~diyiy/index.html"}
-            ],
-            "year": 2025,
-            "paper": "https://arxiv.org/abs/2412.15701",
-            "code": "https://github.com/SALT-NLP/collaborative-gym",
-            "tweet": "https://x.com/EchoShao8899/status/1880291718496670097"
-        }
-    ],
-    "Peer Reviewed": [
         {
             "title": "LongCodeBench: Evaluating Coding LLMs at 1M Context Windows",
             "authors": [
