@@ -38,7 +38,7 @@
             "tweet": "https://x.com/jyangballin/status/1920135686071488875",
             "blog": "swe-smith/",
             "award": "Spotlight",
-            "venue": "NeurIPS"
+            "venue": "NeurIPS (Datasets & Benchmarks)"
         },
         {
             "title": "LongCodeBench: Evaluating Coding LLMs at 1M Context Windows",
