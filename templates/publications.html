@@ -34,18 +34,18 @@
     {% endif %}
   </span>
   <br />
-  <span>
+  <span style="display: flex; align-items: center; gap: 0.25em;">
     {% if not pub.paper and not pub.code and not pub.site and not pub.video %}
     <i>Paper details coming soon</i>
+    {% endif %}
+    {% if pub.code %}
+    <a style="margin-top: 0.5em" href="http://github.com/{{ pub.code }}">
+      <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/{{ pub.code }}?label=" />
+    </a>
     {% endif %}
     {% if pub.blog %}
     <a href="{{ '/' ~ pub.blog.lstrip('/') }}">
       <button>Blog</button>
-    </a>
-    {% endif %}
-    {% if pub.code %}
-    <a href="{{ pub.code }}">
-      <button>Code</button>
     </a>
     {% endif %}
     {% if pub.paper %}

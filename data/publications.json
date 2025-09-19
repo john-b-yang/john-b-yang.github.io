@@ -11,7 +11,7 @@
             ],
             "year": 2025,
             "paper": "https://arxiv.org/abs/2412.15701",
-            "code": "https://github.com/SALT-NLP/collaborative-gym",
+            "code": "SALT-NLP/collaborative-gym",
             "tweet": "https://x.com/EchoShao8899/status/1880291718496670097"
         }
     ],
@@ -32,7 +32,7 @@
             ],
             "year": 2025,
             "paper": "https://arxiv.org/abs/2504.21798",
-            "code": "https://github.com/SWE-bench/SWE-smith",
+            "code": "SWE-bench/SWE-smith",
             "site": "https://swesmith.com/",
             "talk": "https://www.youtube.com/watch?v=Wdkm_mJdFWU&ab_channel=OpenAGISummit",
             "tweet": "https://x.com/jyangballin/status/1920135686071488875",
@@ -76,7 +76,7 @@
             "year": 2025,
             "venue": "ICLR",
             "paper": "https://arxiv.org/abs/2410.03859",
-            "code": "https://github.com/princeton-nlp/SWE-bench",
+            "code": "princeton-nlp/SWE-bench",
             "site": "https://swebench.com/multimodal",
             "tweet": "https://x.com/jyangballin/status/1843285832263979470",
             "poster": "static/pictures/posters/2025-SWEbenchM.pdf"
@@ -105,7 +105,7 @@
             "venue": "COLING",
             "award": "Oral",
             "paper": "https://arxiv.org/abs/2403.08604",
-            "code": "https://github.com/open-compass/DevEval"
+            "code": "open-compass/DevEval"
         },
         {
             "title": "SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering",
@@ -121,7 +121,7 @@
             "year": 2024,
             "venue": "NeurIPS",
             "paper": "https://arxiv.org/abs/2405.15793",
-            "code": "https://github.com/princeton-nlp/SWE-agent",
+            "code": "princeton-nlp/SWE-agent",
             "site": "https://swe-agent.com/",
             "talk": "https://www.youtube.com/watch?v=CeMtJ4XObAM&pp=ygUJc3dlLWFnZW500gcJCa0JAYcqIYzv",
             "tweet": "https://twitter.com/jyangballin/status/1775114444370051582",
@@ -138,7 +138,7 @@
             "year": 2024,
             "venue": "ACL (Findings)",
             "paper": "https://arxiv.org/abs/2305.15098",
-            "code": "https://github.com/michaelwilliamtang/referral-augment",
+            "code": "michaelwilliamtang/referral-augment",
             "tweet": "https://twitter.com/ShunyuYao12/status/1661340889724100611"
         },
         {
@@ -155,7 +155,7 @@
             "year": 2024,
             "venue": "ICLR",
             "paper": "https://arxiv.org/abs/2310.06770",
-            "code": "https://github.com/princeton-nlp/SWE-bench",
+            "code": "princeton-nlp/SWE-bench",
             "site": "https://swe-bench.github.io",
             "talk": "https://www.youtube.com/watch?v=DrLdvbkgmeA",
             "tweet": "https://twitter.com/jyangballin/status/1711822353473437953",
@@ -174,7 +174,7 @@
             "site": "https://intercode-benchmark.github.io/",
             "venue": "NeurIPS (Datasets & Benchmarks)",
             "paper": "https://arxiv.org/abs/2306.14898",
-            "code": "https://github.com/princeton-nlp/intercode",
+            "code": "princeton-nlp/intercode",
             "tweet": "https://twitter.com/ShunyuYao12/status/1675903408727896066",
             "poster": "static/pictures/posters/2023-InterCode.pdf"
         },
@@ -189,7 +189,7 @@
             "year": 2022,
             "site": "https://webshop-pnlp.github.io/",
             "paper": "https://arxiv.org/pdf/2207.01206.pdf",
-            "code": "https://github.com/princeton-nlp/WebShop",
+            "code": "princeton-nlp/WebShop",
             "venue": "NeurIPS",
             "poster": "static/pictures/posters/2022-WebShop.png",
             "tweet": "https://twitter.com/ShunyuYao12/status/1546220013186596864"
@@ -210,7 +210,7 @@
             "venue": "NeurIPS 2023",
             "venue_link": "https://sites.google.com/view/masec",
             "paper": "https://openreview.net/forum?id=KOZwk7BFc3&noteId=OIANITRY6R",
-            "code": "https://github.com/princeton-nlp/intercode",
+            "code": "princeton-nlp/intercode",
             "poster": "static/pictures/posters/2023-MASec.pdf",
             "award": "Best Paper Award"
         },
@@ -226,7 +226,7 @@
             "venue": "NeurIPS 2022",
             "venue_link": "https://larel-workshop.github.io/",
             "paper": "https://openreview.net/pdf?id=y-F1kab2Its",
-            "code": "https://github.com/princeton-nlp/attribute-tagging",
+            "code": "princeton-nlp/attribute-tagging",
             "poster": "static/pictures/posters/2022-LaReL.png"
         }
     ],
@@ -274,7 +274,7 @@
             "year": 2020,
             "site": "https://www2.eecs.berkeley.edu/Pubs/TechRpts/2020/EECS-2020-178.html",
             "paper": "https://www2.eecs.berkeley.edu/Pubs/TechRpts/2020/EECS-2020-178.pdf",
-            "code": "https://github.com/jhkolb/quartz",
+            "code": "jhkolb/quartz",
             "venue": "EECS Department, University of California, Berkeley, Tech. Rep. UCB/EECS-2020-178"
         }
     ]

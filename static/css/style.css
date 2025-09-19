@@ -199,10 +199,9 @@ hr.fade {
 
 .publication button {
   background-color: transparent;
-  border: 2px solid var(--text);
-  border-radius: 5px;
+  border: 1px solid var(--text);
   color: var(--text);
-  margin: 2px 5px 0px 0px;
+  font-size: 0.8rem;
 }
 
 /*** Navigation Styling ***/
