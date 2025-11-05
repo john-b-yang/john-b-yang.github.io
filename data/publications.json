@@ -14,7 +14,8 @@
             "year": 2025,
             "paper": "https://arxiv.org/abs/2511.00839",
             "code": "https://github.com/CodeClash-ai/CodeClash",
-            "site": "https://codeclash.ai/"
+            "site": "https://codeclash.ai/",
+            "tweet": "https://x.com/jyangballin/status/1986093902122942700"
         },
         {
             "title": "Collaborative Gym: A Framework for Enabling and Evaluating Human-Agent Collaboration",
