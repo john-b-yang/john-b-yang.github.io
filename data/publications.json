@@ -1,6 +1,22 @@
 {
     "Preprint": [
         {
+            "title": "CodeClash: Benchmarking Goal-Oriented Software Engineering",
+            "authors": [
+                {"name": "John Yang"},
+                {"name": "Kilian Lieret", "site": "https://www.lieret.net/"},
+                {"name": "Joyce Yang", "site": "https://joycebyang.github.io/"},
+                {"name": "Carlos E. Jimenez", "site": "http://www.carlosejimenez.com/"},
+                {"name": "Ofir Press", "site": "https://ofir.io/"},
+                {"name": "Ludwig Schmidt", "site": "https://people.csail.mit.edu/ludwigs/"},
+                {"name": "Diyi Yang", "site": "https://cs.stanford.edu/~diyiy/index.html"}
+            ],
+            "year": 2025,
+            "paper": "https://arxiv.org/abs/2511.00839",
+            "code": "https://github.com/CodeClash-ai/CodeClash",
+            "site": "https://codeclash.ai/"
+        },
+        {
             "title": "Collaborative Gym: A Framework for Enabling and Evaluating Human-Agent Collaboration",
             "authors": [
                 {"name": "Yijia Shao", "site": "https://cs.stanford.edu/~shaoyj/"},
@@ -63,7 +79,7 @@
                 {"name": "Carlos E. Jimenez*", "site": "http://www.carlosejimenez.com/"},
                 {"name": "Alex L. Zhang", "site": "https://alexzhang13.github.io/"},
                 {"name": "Kilian Lieret", "site": "https://www.lieret.net/"},
-                {"name": "Joyce Yang", "site": "https://www.linkedin.com/in/joyce-b-yang/"},
+                {"name": "Joyce Yang", "site": "https://joycebyang.github.io/"},
                 {"name": "Xindi Wu", "site": "https://xindiwu.github.io/"},
                 {"name": "Ori Press", "site": "https://oripress.com/"},
                 {"name": "Niklas Muennighoff", "site": "https://muennighoff.github.io/"},
