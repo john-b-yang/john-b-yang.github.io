@@ -15,7 +15,8 @@
             "paper": "https://arxiv.org/abs/2511.00839",
             "code": "CodeClash-ai/CodeClash",
             "site": "https://codeclash.ai/",
-            "tweet": "https://x.com/jyangballin/status/1986093902122942700"
+            "tweet": "https://x.com/jyangballin/status/1986093902122942700",
+            "poster": "static/pictures/posters/2026-CodeClash.png"
         },
         {
             "title": "Collaborative Gym: A Framework for Enabling and Evaluating Human-Agent Collaboration",
@@ -55,7 +56,8 @@
             "tweet": "https://x.com/jyangballin/status/1920135686071488875",
             "blog": "swe-smith/",
             "award": "Spotlight",
-            "venue": "NeurIPS (Datasets & Benchmarks)"
+            "venue": "NeurIPS (Datasets & Benchmarks)",
+            "poster": "static/pictures/posters/2025-SWEsmith.png"
         },
         {
             "title": "LongCodeBench: Evaluating Coding LLMs at 1M Context Windows",
@@ -96,7 +98,7 @@
             "code": "princeton-nlp/SWE-bench",
             "site": "https://swebench.com/multimodal",
             "tweet": "https://x.com/jyangballin/status/1843285832263979470",
-            "poster": "static/pictures/posters/2025-SWEbenchM.pdf"
+            "poster": "static/pictures/posters/2025-SWEbenchM.png"
         },
         {
             "title": "Prompting Large Language Models to Tackle the Full Software Development Lifecycle: A Case Study",
@@ -142,7 +144,7 @@
             "site": "https://swe-agent.com/",
             "talk": "https://www.youtube.com/watch?v=CeMtJ4XObAM&pp=ygUJc3dlLWFnZW500gcJCa0JAYcqIYzv",
             "tweet": "https://twitter.com/jyangballin/status/1775114444370051582",
-            "poster": "static/pictures/posters/2024-SWEagent.pdf"
+            "poster": "static/pictures/posters/2024-SWEagent.png"
         },
         {
             "title": "Referral Augmentation for Zero-Shot Information Retrieval",
@@ -177,7 +179,7 @@
             "talk": "https://www.youtube.com/watch?v=DrLdvbkgmeA",
             "tweet": "https://twitter.com/jyangballin/status/1711822353473437953",
             "award": "Oral",
-            "poster": "static/pictures/posters/2024-SWEbench.pdf"
+            "poster": "static/pictures/posters/2024-SWEbench.png"
         },
         {
             "title": "InterCode: Standardizing and Benchmarking Interactive Coding with Execution Feedback",
@@ -193,7 +195,7 @@
             "paper": "https://arxiv.org/abs/2306.14898",
             "code": "princeton-nlp/intercode",
             "tweet": "https://twitter.com/ShunyuYao12/status/1675903408727896066",
-            "poster": "static/pictures/posters/2023-InterCode.pdf"
+            "poster": "static/pictures/posters/2023-InterCode.png"
         },
         {
             "title": "WebShop: Towards Scalable Real-World Web Interaction with Grounded Language Agents",
@@ -205,7 +207,7 @@
             ],
             "year": 2022,
             "site": "https://webshop-pnlp.github.io/",
-            "paper": "https://arxiv.org/pdf/2207.01206.pdf",
+            "paper": "https://arxiv.org/abs/2207.01206",
             "code": "princeton-nlp/WebShop",
             "venue": "NeurIPS",
             "poster": "static/pictures/posters/2022-WebShop.png",
@@ -228,7 +230,7 @@
             "venue_link": "https://sites.google.com/view/masec",
             "paper": "https://openreview.net/forum?id=KOZwk7BFc3&noteId=OIANITRY6R",
             "code": "princeton-nlp/intercode",
-            "poster": "static/pictures/posters/2023-MASec.pdf",
+            "poster": "static/pictures/posters/2023-MASec.png",
             "award": "Best Paper Award"
         },
         {
