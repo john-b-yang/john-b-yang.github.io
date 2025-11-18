@@ -217,6 +217,7 @@ hr.fade {
 
 .navbar a {
   color: var(--text);
+  padding: 0 0.6em;
 }
 
 .navbar ul {

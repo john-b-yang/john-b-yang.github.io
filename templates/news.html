@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h3 class="header">News</h3>
+
+  {% for group in news %}
+  <b style="color:#a9a9a9">{{ group }}</b>
+  <hr style="border: 1px solid gray" />
+  {% for article in news[group] | sort(attribute='date', reverse=True) %}
+    <div style="padding-bottom:0.4em;">
+      <a href="{{ article.link }}">
+        <b>{{ article.title }}</b>
+      </a><br>
+      <span class="subtext">
+        {{ article.date }} &bull; {{ article.publisher }}
+      </span>
+    </div>
+  {% endfor %}
+  <br>
+  {% endfor %}
+
+{% endblock content %}

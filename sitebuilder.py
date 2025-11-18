@@ -119,6 +119,11 @@ def publications():
     with open('data/publications.json') as pubs_json:
         return render_template('publications.html', pubs=json.load(pubs_json))
 
+@app.route('/news/')
+def news():
+    with open('data/news.json') as news_json:
+        return render_template('news.html', news=json.load(news_json))
+
 @app.errorhandler(404)
 def page_not_found(path):
     # note that we set the 404 status explicitly

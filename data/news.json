@@ -1,0 +1,168 @@
+{
+"Talks": [
+    {
+        "title": "Ep. 45: John Yang, SWE-Bench Lead Author and Stanford CS PhD Student",
+        "publisher": "Delta Institute | Ankit Gupta",
+        "link": "https://www.youtube.com/watch?v=i7wk47Wn-oc",
+        "date": "2025-11-17"
+    },
+    {
+        "title": "AI Evals w: John Yang: Evaluating and training software engineering agents",
+        "publisher": "alphaXiv x Vals AI",
+        "link": "https://www.youtube.com/watch?v=yHR69jccaMQ",
+        "date": "2025-10-17"
+    },
+    {
+        "title": "SWE-smith: Scaling Data for Software Engineering Agents | John Yang | Stanford University",
+        "publisher": "Open AGI Summit",
+        "link": "https://www.youtube.com/watch?v=Wdkm_mJdFWU",
+        "date": "2025-08-12"
+    },
+    {
+        "title": "Forward Future Live August 8th, 2025",
+        "publisher": "Forward Future | Matthew Berman",
+        "link": "https://www.youtube.com/live/8BsgX-2TZnM?t=4876s",
+        "date": "2025-08-08"
+    },
+    {
+        "title": "Few Shot Code Generation to Autonomous Software Engineering Agents // John Yang",
+        "publisher": "MLOps.community",
+        "link": "https://www.youtube.com/watch?v=f6D5eHNr_VI",
+        "date": "2024-12-02"
+    },
+    {
+        "title": "SWE-bench with John Yang and Carlos E. Jimenez - Weaviate Podcast #107!",
+        "publisher": "Weaviate Podcast | Connor Shorten",
+        "link": "https://www.youtube.com/watch?v=8rwHAR4fsFg",
+        "date": "2024-10-30"
+    },
+    {
+        "title": "John Yang - SWE-bench: Can Language Models Resolve Real-World GitHub Issues?",
+        "publisher": "University of Toronto | Rohan Alexander",
+        "link": "https://www.youtube.com/watch?v=DrLdvbkgmeA",
+        "date": "2023-11-03"
+    }
+],
+"Press": [
+    {
+        "title": "Introducing GPT-5.1 for Developers",
+        "publisher": "OpenAI",
+        "link": "https://openai.com/index/gpt-5-1-for-developers/",
+        "date": "2025-11-13"
+    },
+    {
+        "title": "Laude Institute Announces First Batch of Slingshots AI Grants",
+        "publisher": "TechCrunch | Russell Brandom",
+        "link": "https://techcrunch.com/2025/11/06/laude-institute-announces-first-batch-of-slingshots-ai-grants/",
+        "date": "2025-11-06"
+    },
+    {
+        "title": "Stanford and Alibaba Build Bug-Fixing Dataset and Pipeline to Train AI",
+        "publisher": "DeepLearning.AI | Andrew Ng",
+        "link": "https://www.deeplearning.ai/the-batch/stanford-and-alibaba-build-bug-fixing-dataset-and-pipeline-to-train-ai/",
+        "date": "2025-08-13"
+    },
+    {
+        "title": "Warp scores 71% on SWE-bench Verified",
+        "publisher": "Warp",
+        "link": "https://www.warp.dev/blog/swe-bench-verified",
+        "date": "2025-06-23"
+    },
+    {
+        "title": "How to Build a Better AI Benchmark",
+        "publisher": "MIT Technology Review | Russell Brandom",
+        "link": "https://www.technologyreview.com/2025/05/08/1116192/how-to-build-a-better-ai-benchmark/",
+        "date": "2025-05-08"
+    },
+    {
+        "title": "Raising the bar on SWE-bench Verified with Claude 3.5 Sonnet",
+        "publisher": "Anthropic",
+        "link": "https://www.anthropic.com/engineering/swe-bench-sonnet",
+        "date": "2025-01-06"
+    },
+    {
+        "title": "Introducing SWE-bench Verified",
+        "publisher": "OpenAI",
+        "link": "https://openai.com/index/introducing-swe-bench-verified/",
+        "date": "2024-08-13"
+    },
+    {
+        "title": "The AI-Powered Future of Coding Is Near",
+        "publisher": "Wired | Will Knight",
+        "link": "https://www.wired.com/ai-powered-coding/",
+        "date": "2024-07-18"
+    },
+    {
+        "title": "AI Agent Automatically Codes WITH TOOLS - SWE-Agent Tutorial (\"Devin Clone\")",
+        "publisher": "Matthew Berman",
+        "link": "https://www.youtube.com/watch?v=9-JBHGlYEBI",
+        "date": "2024-04-05"
+    },
+    {
+        "title": "SWE-bench Technical Report",
+        "publisher": "Cognition",
+        "link": "https://cognition.ai/blog/swe-bench-technical-report",
+        "date": "2024-03-15"
+    },
+    {
+        "title": "Meta's newest world model research project",
+        "publisher": "DeepLearning.AI | Andrew Ng",
+        "link": "https://www.deeplearning.ai/the-batch/metas-newest-world-model-research-project/",
+        "date": "2025-09-26"
+    },
+    {
+        "title": "Coding Agents Proliferate",
+        "publisher": "DeepLearning.AI | Andrew Ng",
+        "link": "https://www.deeplearning.ai/the-batch/next-generation-coding-tools-empower-developers-with-agent-style-interactions/",
+        "date": "2024-04-10"
+    },
+    {
+        "title": "Coding Agents Are Evolving From Novelties to Widely Useful Tools",
+        "publisher": "DeepLearning.AI | Andrew Ng",
+        "link": "https://www.deeplearning.ai/the-batch/coding-agents-are-evolving-from-novelties-to-widely-useful-tools/",
+        "date": "2024-06-19"
+    },
+    {
+        "title": "AI Models Still Struggle to Debug Software, Microsoft Study Shows",
+        "publisher": "TechCrunch | Kyle Wiggers",
+        "link": "https://techcrunch.com/2025/04/10/ai-models-still-struggle-to-debug-software-microsoft-study-shows/",
+        "date": "2025-04-10"
+    },
+    {
+        "title": "A new AI coding challenge just published its first results — and they aren't pretty",
+        "publisher": "TechCrunch | Russell Brandom",
+        "link": "https://techcrunch.com/2025/07/23/a-new-ai-coding-challenge-just-published-its-first-results-and-they-arent-pretty/",
+        "date": "2025-07-23"
+    },
+    {
+        "title": "Introducing Claude 4",
+        "publisher": "Anthropic",
+        "link": "https://www.anthropic.com/news/claude-4",
+        "date": "2025-05-22"
+    },
+    {
+        "title": "Introducing Claude Sonnet 4.5",
+        "publisher": "Anthropic",
+        "link": "https://www.anthropic.com/news/claude-sonnet-4-5",
+        "date": "2025-09-29"
+    },
+    {
+        "title": "#1 open-source agent on SWE-Bench Verified by combining Claude 3.7 and O1",
+        "publisher": "Augment Code",
+        "link": "https://www.augmentcode.com/blog/1-open-source-agent-on-swe-bench-verified-by-combining-claude-3-7-and-o1",
+        "date": "2025-03-31"
+    },
+    {
+        "title": "Claude Opus 4.1",
+        "publisher": "Anthropic",
+        "link": "https://www.anthropic.com/claude/opus",
+        "date": "2025-08-05"
+    },
+    {
+        "title": "Building Effective Agents",
+        "publisher": "Anthropic",
+        "link": "https://www.anthropic.com/engineering/building-effective-agents",
+        "date": "2024-12-09"
+    }
+]
+}
