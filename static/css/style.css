@@ -180,6 +180,61 @@ hr.fade {
   padding: 10px;
 }
 
+.blog summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 0.5rem 0.75rem;
+  padding-left: 2.2rem;
+  margin: 0.5rem 0;
+  background: var(--black-2);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text);
+  display: block;
+  position: relative;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+/* hide the browser default disclosure triangle */
+.blog summary::-webkit-details-marker,
+.blog summary::marker {
+  display: none;
+}
+
+/* custom arrow */
+.blog summary::before {
+  content: "▶";
+  position: absolute;
+  left: 0.6rem;
+  top: 50%;
+  transform: translateY(-50%) rotate(0deg);
+  transition: transform 0.15s ease, color 0.15s ease;
+  color: var(--text);
+  font-size: 0.95rem;
+  line-height: 1;
+  pointer-events: none;
+}
+
+/* when the details is open, rotate the arrow downward */
+.blog details[open] > summary::before {
+  transform: translateY(-50%) rotate(90deg);
+}
+
+/* hover / focus affordances to make it feel clickable */
+.blog summary:hover {
+  background: rgba(0, 0, 0, 0.04);
+  border-color: var(--blue);
+}
+
+.blog summary:focus {
+  outline: 2px solid var(--blue);
+  outline-offset: 2px;
+}
+
+.blog code {
+  font-size: 0.9rem;
+}
+
 .blog pre {
   line-height: 1.5;
 }

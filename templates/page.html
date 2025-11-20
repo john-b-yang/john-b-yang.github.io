@@ -3,7 +3,9 @@
 {% block content %}
 <br>
 <div style="text-align:center;">
+  {% if page.image %}
   <img src="{{ page.image }}" alt="Head Image" height=100px />
+  {% endif %}
   <h3>{{ page.title }}</h3>
   <p>{{ page.time }} &bull; {{ page.readtime }} </p>
 </div>
