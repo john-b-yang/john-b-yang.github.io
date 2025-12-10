@@ -1,12 +1,29 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h3 class="header">Teaching</h3>
+<h3 class="header">Resources</h3>
+
+<b style="color:#a9a9a9">Open Source</b>
+<hr style="border: 1px solid gray" />
+All the GitHub repositories I've built and (partially) maintain.
+<ul>
+{% for repo in repos %}
+<li>
+  <a href="http://github.com/{{ repo.name }}">
+    {{ repo.name }}
+    <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/{{ repo.name }}?label=" style="vertical-align: middle;margin-bottom:0.25em" />
+  </a>
+</li>
+{% endfor %}
+</ul>
+
+<b style="color:#a9a9a9">Teaching</b>
+<hr style="border: 1px solid gray" />
 A curated list of links to resources that I've created during my past teaching and instructor tenures.
 <br><br>
-<div class="teaching">
+<div>
   <b><span style="color:#f58025;">Princeton University</span></b>
-  <ul style="list-style:square;">
+  <ul>
     <li>
       COS 324:
       <span>Introduction to Machine Learning</span>

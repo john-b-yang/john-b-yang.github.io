@@ -110,16 +110,6 @@ hr.fade {
   }
 }
 
-/*** Teaching Page Styling ***/
-
-.teaching li {
-  color: var(--gray);
-}
-
-.teaching span {
-  color: var(--white);
-}
-
 /* Resources Table */
 .class-table .nonSection {
   width: 12%;

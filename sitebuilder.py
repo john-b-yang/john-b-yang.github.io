@@ -100,7 +100,10 @@ def cs2():
 
 @app.route('/resources/')
 def resources():
-    return render_template('resources.html')
+    with open('data/repos.json') as repos_json:
+        repos = json.load(repos_json)
+        repos = sorted(repos, key=lambda x: x['name'].lower())
+        return render_template('resources.html', repos=repos)
 
 @app.route('/subscribe/')
 def subscribe():

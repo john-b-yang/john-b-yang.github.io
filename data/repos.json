@@ -1,0 +1,26 @@
+[
+    {
+        "name": "CodeClash-ai/CodeClash"
+    },
+    {
+        "name": "SWE-agent/SWE-agent"
+    },
+    {
+        "name": "SWE-bench/SWE-bench"
+    },
+    {
+        "name": "SWE-bench/SWE-smith"
+    },
+    {
+        "name": "princeton-nlp/WebShop"
+    },
+    {
+        "name": "princeton-nlp/intercode"
+    },
+    {
+        "name": "SWE-bench/experiments"
+    },
+    {
+        "name": "SWE-agent/mini-swe-agent"
+    }
+]
