@@ -10,8 +10,7 @@ All the GitHub repositories I've built and (partially) maintain.
 {% for repo in repos %}
 <li>
   <a href="http://github.com/{{ repo.name }}">
-    {{ repo.name }}
-    <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/{{ repo.name }}?label=" style="vertical-align: middle;margin-bottom:0.25em" />
+    <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/{{ repo.name }}?label={{repo.name}}" style="vertical-align: middle;margin-bottom:0.25em" />
   </a>
 </li>
 {% endfor %}
