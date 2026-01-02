@@ -1,6 +1,12 @@
 {
 "Talks": [
     {
+        "title": "[State of Code Evals] After SWE-bench, Code Clash & SOTA Coding Benchmarks recap — John Yang",
+        "publisher": "Latent Space Podcast",
+        "link": "https://www.youtube.com/watch?v=MxB-xRGXxkk",
+        "date": "2025-12-31"
+    },
+    {
         "title": "Ep. 45: John Yang, SWE-Bench Lead Author and Stanford CS PhD Student",
         "publisher": "Delta Institute | Ankit Gupta",
         "link": "https://www.youtube.com/watch?v=i7wk47Wn-oc",
