@@ -17,7 +17,9 @@
             "site": "https://codeclash.ai/",
             "tweet": "https://x.com/jyangballin/status/1986093902122942700",
             "poster": "static/pictures/posters/2026-CodeClash.png"
-        },
+        }
+    ],
+    "Peer Reviewed": [
         {
             "title": "Collaborative Gym: A Framework for Enabling and Evaluating Human-Agent Collaboration",
             "authors": [
@@ -27,13 +29,12 @@
                 {"name": "John Yang"},
                 {"name": "Diyi Yang", "site": "https://cs.stanford.edu/~diyiy/index.html"}
             ],
-            "year": 2025,
+            "year": 2026,
             "paper": "https://arxiv.org/abs/2412.15701",
             "code": "SALT-NLP/collaborative-gym",
-            "tweet": "https://x.com/EchoShao8899/status/1880291718496670097"
-        }
-    ],
-    "Peer Reviewed": [
+            "tweet": "https://x.com/EchoShao8899/status/1880291718496670097",
+            "venue": "ICLR"
+        },
         {
             "title": "SWE-smith: Scaling Data for Software Engineering Agents",
             "authors": [
