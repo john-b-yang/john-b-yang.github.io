@@ -1,10 +1,31 @@
 {
     "Preprint": [
         {
+            "title": "Position: Humans are Missing from AI Coding Agent Research",
+            "authors": [
+                {"name": "John Yang*"},
+                {"name": "Zora Z. Wang*", "site": "https://zorazrw.github.io/"},
+                {"name": "Kilian Lieret*", "site": "https://www.lieret.net/"},
+                {"name": "Alexa Tartaglini", "site": "https://www.alexatartaglini.com/"},
+                {"name": "Valerie Chen", "site": "https://valeriechen.github.io/"},
+                {"name": "Yuxiang Wei", "site": "https://yuxiang.cs.illinois.edu/"},
+                {"name": "Zijian Wang", "site": "https://zijianwang.me/"},
+                {"name": "Lingming Zhang", "site": "https://lingming.cs.illinois.edu/"},
+                {"name": "Karthik Narasimhan", "site": "https://karthikncode.github.io/"},
+                {"name": "Ludwig Schmidt", "site": "https://people.csail.mit.edu/ludwigs/"},
+                {"name": "Graham Neubig", "site": "https://www.phontron.com/"},
+                {"name": "Daniel Fried", "site": "https://dpfried.github.io/"},
+                {"name": "Diyi Yang", "site": "https://cs.stanford.edu/~diyiy/index.html"}
+            ],
+            "year": 2026,
+            "paper": "https://zorazrw.github.io/files/position-haicode.pdf",
+            "tweet": "https://x.com/ZhiruoW/status/2021603778982473813"
+        },
+        {
             "title": "CodeClash: Benchmarking Goal-Oriented Software Engineering",
             "authors": [
-                {"name": "John Yang"},
-                {"name": "Kilian Lieret", "site": "https://www.lieret.net/"},
+                {"name": "John Yang*"},
+                {"name": "Kilian Lieret*", "site": "https://www.lieret.net/"},
                 {"name": "Joyce Yang", "site": "https://joycebyang.github.io/"},
                 {"name": "Carlos E. Jimenez", "site": "http://www.carlosejimenez.com/"},
                 {"name": "Ofir Press", "site": "https://ofir.io/"},
