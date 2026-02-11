@@ -1,0 +1,166 @@
+<!doctype html>
+<html data-theme="light">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="John Y">
+    <meta name="description" content="Programming technicalities and musings">
+
+    <title>John Y</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="icon" type="image/png" href="../../../../static/pictures/stanford.ico">
+    <link rel="stylesheet" type="text/css" href="../../../../static/css/style.css">
+    <link rel="stylesheet" type="text/css" href="../../../../static/css/fonts.css">
+    <link rel="stylesheet" type="text/css" href="../../../../static/css/button.css">
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-latest.js"></script>
+    <script src="../../../../static/js/webfont.js"></script>
+    <script src="../../../../static/js/snap.svg-min.js"></script>
+    <script src="../../../../static/js/underscore-min.js"></script>
+    <script src="../../../../static/js/sequence-diagram-min.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119942589-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-119942589-1');
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+      <div class="container">
+        <a href="../../../../index.html"><b>JOHN</b> Y</a>
+        <div style="float:right;">
+          <ul>
+            <!-- Omitted "papers", "projects" -->
+            <a href="../../../../publications/index.html" class="left"><li>PUBS</li></a>
+            <a href="../../../../blogs/index.html" class="left"><li>BLOG</li></a>
+            <a href="../../../../news/index.html" class="left"><li>NEWS</li></a>
+            <a href="../../../../resources/index.html" class="left"><li>ASSETS</li></a>
+            <a href="../../../../readings/index.html" class="left"><li>READING</li></a>
+            <button id="theme-toggle" aria-label="Toggle theme" class="theme-toggle">
+              <i class="fa fa-sun-o"></i>
+            </button>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container" style="padding-bottom:100px;">
+        <br>
+        <main id="body-fade">
+            
+<br>
+<div style="text-align:center;">
+  
+  <h3>SMCQL - Secure Querying for Federated Databases</h3>
+  <p>WEDNESDAY, FEBRUARY 03, 2021 &bull;  </p>
+</div>
+<br>
+
+<div class="blog">
+  <p>Today's paper visits one of the more recently tackled problems in the realm of privacy preserving systems - facilitating data processing for multiple distrustful parties. There have been numerous papers with similar motivations such as <a href="/review/r/2021/Jan/13/">Ryoan</a> and <a href="/review/r/2021/Feb/04/">Conclave</a>. While the case studies and impetus for such systems is the same, the papers differ in the threat model, security guarantees, and technical solutions they present.</p>
+<p>Secure multi-party computation (MPC) is a popular cryptographic protocol that is useful for facilitating joint computation of a function over inputs while keeping the input private. The paper presents an intuitive scenario that I'll summarize here - imagine Alice, Bob, and Carl are 3 healthcare providers, each with their own collection of confidential patient records. Alice wants to know how many patients a certain ailment across all three datasets has (i.e. <code>SELECT COUNT(*) FROM data WHERE disease = "flu";</code>. However, because of patient confidentiality, Alice should not be able to reverse engineer the results or execution of the query such that she might discern Bob and Carl's private data.</p>
+<p>When nobody trusts each other, the simple but straightforward solution is then, to designate a new, third party entity that everyone trusts! Introducing, the <em>honest broker</em>. Alice, Bob, and Carl will all submit their data and queries to the honest broker. The honest broker carries out aggregating the data and responding to the requested queries from each party.</p>
+<p>The problem with this schema is the honest broker. First, there's the problem of determining an honest broker; in some cases, there might not be one. For example, sensitive intelligence from government agencies might have stringent permissions that prevent it from being shared with a third-party source. Second, for adversaries, the broker represents a single point of failure - if the broker is compromised, everyone's data and queries are no longer confidential. Trusting the broker unconditionally is a major issue. In addition, side channels in the form of network traffic between brokers and data providers are a source of information leakage that curious observers can inspect even without compromising any of the participants or the broker itself. And there-in lies the motivation for this paper.</p>
+<blockquote>
+<p>We introduce a framework for executing PDN [Private Data Networks] queries named SMCQL. This system translates SQL statements into SMC [Secure Multiparty Computation] primitives to compute query results over the union of its source databases without revealing sensitive information about individual tuples to peer data providers or the honest broker.</p>
+</blockquote>
+<p>To put it simply, the goal is to simulate a completely trustworthy third party to query private datastores.</p>
+<p>SMCQL's authors frame the threat model as several passive, "honest-but-curious" data providers, who may attempt to listen in on side channels (i.e., memory access patterns, program counters) generated during a secure query execution.</p>
+<p>At a high level, sensitive query evaluation is carried out <em>in-situ</em> among the data providers using secure multi-party computation. In other words, the query execution is guaranteed to be <em>oblivious</em>, which means it reveals nothing about the data to any parties other than the results of the query itself. Figure 2 of the paper presents a nice graphic summarizing the system workflow. The main contribution that SMCQL makes is the query planner. After the SQL statement is converted into a directed acyclic graph, via modifications to traditional query optimization techniques, SMCQL generates a secure execution plan. In addition to the customary heuristics for minimizing execution cycles, SMCQL introduces an additional heuristic for minimizing the amount of query processing that needs to be run in an MPC setting as much as possible. To do this, SMCQL generates <em>hybrid query execution plans</em>, where operators are carried out either by SMC or in plaintext.</p>
+<p>There's a couple cryptographic building blocks that SMCQL is founded on, namely garbled circuits, <a href="/review/r/2021/Jan/16/">oblivious RAM</a>, and ObliVM. Garbled circuits are a cryptographic protocol that protects a query's program traces from snooping. Oblivious RAM, as discussed in a previous write-up, shuffles data on all read and write operations to add noise to memory traces of secure computations. The authors apply these techniques to solve the leakage problem that arises with broker to participant communication. ObliVM is the bridge that converts imperative code into garbled circuits and ORAM. The authors convert database operators into SMC commands via ObliVM.</p>
+<p>Another innovation introduced by the paper is attribute-level security. The authors recognize that access privileges need to be more granular than at the table level. Different columns within the table may have different degrees of desired visibility, warranting a new access control policy. Three tiers of visibility (<em>public</em>, <em>protected</em>, <em>private</em>) influence the query planning step with taint analysis, by tracing the flow of sensitive attributes through the operator tree. Lastly, the paper also discusses some new query optimization techniques (sliced evaluation, semi-joins) that complement the new query planning and execution mechanisms.</p>
+<p>I think this paper was overall, an interesting read that is a book opener for future work in this domain. It was also a wonderfully practical demonstration of MPC's capabilities. With that said, I think there's also plenty of room for improvement.</p>
+<p>The most evident improvement area is performance. MPC is an expensive algorithm, and it really shows in this paper. Relative to a purely MPC system, SMCQL performs well. However, compared to non-secure systems that operate in plaintext, SMCQL runs a couple orders slower than the baseline. Later papers, particularly Conclave, build on SMCQL's work while improving performance either via redefining some of the security guarantees or using different techniques to minimize what is run with MPC and not plaintext.</p>
+<p>A second point (full disclosure - more borne out of my opinion), is that for tracing sensitive data via taint analysis (<em>public</em>, <em>protected</em>, <em>private</em>), a better alternative could be second path analysis. The paper was published long ago (Hinke 1988), but it discusses this idea of utilizing sensitivity inference rules in relational tables. The paper mentions:</p>
+<blockquote>
+<p>If an attribute of a table is private, the entire table is private and all tables reachable via primary-foreign key relationships.</p>
+</blockquote>
+<p>Attribute level security is a bit weak because in practice, information is not completely independent of one another. A practical example - let's say in a table of patient records, there's two columns - Diagnosis (private) and Treatment Plan (protected). Acting as one of the data providers, if we know the treatments for certain diagnoses from our own data, we may be able to infer diagnoses for another data provider's dataset, thus affecting the confidentiality of the Diagnosis column. Hinke's paper describes a way to secure columns based on sensitivity inference rules, which may have been a better strategy for tagging columns with the appropriate access control permissions.</p>
+</div>
+
+<br><hr class="fade"><br>
+
+<div>
+  <div id="disqus_thread"></div>
+  
+    <script type="text/javascript">
+      (function() {
+        var d = document,
+          s = d.createElement('script');
+        s.src = 'https://blog-byjohnyang.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+      })();
+    </script>
+    <noscript>
+      Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+    </noscript>
+  
+</div>
+
+<br><hr class="fade"><br>
+
+<div style="text-align:center;">
+  <h5>Share this blog!</h5>
+
+  &nbsp; <a href="https://twitter.com/share?text=Check%20out%20this%20blog!%20https://john-b-yang.github.io" class="icon-button twitter">
+    <i class="icon-twitter"></i><span></span></a>
+
+  &nbsp; <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://john-b-yang.github.io" class="icon-button linkedin">
+    <i class="icon-linkedin"></i><span></span></a>
+
+  &nbsp; <a href="mailto:?Subject=John Yang's Blog&amp;Body=Check%20out%20this%20blog:%20https://john-b-yang.github.io" class="icon-button mail-forward">
+    <i class="icon-mail-forward"></i><span></span></a>
+</div>
+
+        </main>
+    </div>
+    <nav class="navfoot">
+      <div class="container">
+        <a href="https://github.com/john-b-yang"><i class="fa fa-github fa-lg"></i></a>&ensp;
+        <a href="https://scholar.google.com/citations?user=71G11ksAAAAJ&hl=en"><i class="fa fa-graduation-cap fa-lg"></i></a>&ensp;
+        <a href="https://www.linkedin.com/in/jyang20"><i class="fa fa-linkedin fa-lg"></i></a>&ensp;
+        <a href="https://twitter.com/jyangballin"><i class="fa fa-twitter fa-lg"></i></a>
+        <!-- Omitted "subscribe" w/ fa-envelope icon -->
+        <div class="subtext" style="float:right;">
+          &copy; 2025
+        </div>
+      </div>
+    </nav>
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+    <script>
+      // Theme switching functionality
+      const themeToggle = document.getElementById('theme-toggle');
+      const html = document.documentElement;
+      
+      // Check for saved theme preference
+      const savedTheme = localStorage.getItem('theme') || 'light';
+      html.setAttribute('data-theme', savedTheme);
+      updateThemeIcon(savedTheme);
+      
+      themeToggle.addEventListener('click', () => {
+        const currentTheme = html.getAttribute('data-theme');
+        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+        
+        html.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        updateThemeIcon(newTheme);
+      });
+      
+      function updateThemeIcon(theme) {
+        const icon = themeToggle.querySelector('i');
+        icon.className = theme === 'dark' ? 'fa fa-sun-o' : 'fa fa-moon-o';
+      }
+    </script>
+</body>
+
+</html>

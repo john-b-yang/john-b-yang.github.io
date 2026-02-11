@@ -1,0 +1,179 @@
+<!doctype html>
+<html data-theme="light">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="John Y">
+    <meta name="description" content="Programming technicalities and musings">
+
+    <title>John Y</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="icon" type="image/png" href="../../../../static/pictures/stanford.ico">
+    <link rel="stylesheet" type="text/css" href="../../../../static/css/style.css">
+    <link rel="stylesheet" type="text/css" href="../../../../static/css/fonts.css">
+    <link rel="stylesheet" type="text/css" href="../../../../static/css/button.css">
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-latest.js"></script>
+    <script src="../../../../static/js/webfont.js"></script>
+    <script src="../../../../static/js/snap.svg-min.js"></script>
+    <script src="../../../../static/js/underscore-min.js"></script>
+    <script src="../../../../static/js/sequence-diagram-min.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119942589-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-119942589-1');
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+      <div class="container">
+        <a href="../../../../index.html"><b>JOHN</b> Y</a>
+        <div style="float:right;">
+          <ul>
+            <!-- Omitted "papers", "projects" -->
+            <a href="../../../../publications/index.html" class="left"><li>PUBS</li></a>
+            <a href="../../../../blogs/index.html" class="left"><li>BLOG</li></a>
+            <a href="../../../../news/index.html" class="left"><li>NEWS</li></a>
+            <a href="../../../../resources/index.html" class="left"><li>ASSETS</li></a>
+            <a href="../../../../readings/index.html" class="left"><li>READING</li></a>
+            <button id="theme-toggle" aria-label="Toggle theme" class="theme-toggle">
+              <i class="fa fa-sun-o"></i>
+            </button>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container" style="padding-bottom:100px;">
+        <br>
+        <main id="body-fade">
+            
+<br>
+<div style="text-align:center;">
+  
+  <h3>World of Bits: An Open-Domain Platform for Web-Based Agents</h3>
+  <p>MONDAY, JULY 11, 2022 &bull;  </p>
+</div>
+<br>
+
+<div class="blog">
+  <p>Number of Passes: ✅</p>
+<h5>Why this paper?</h5>
+<p>Now that v1 of the <a href="https://webshop-pnlp.github.io/">WebShop</a> project has been published, I thought I'd take some time to look back at some of the core inspiration for WebShop. WebShop was borne of the motivation to design an environment for interactive language grounding and decision making that is scalable and faithful to a real world task scenario. We believe that designing such an environment with scalability at the forefront is significant to not only the language grounding and language agent communities within NLP, but puts us a step closer to language agents operating in the real world, either on behalf or in cooperation with humans.</p>
+<p>When thinking about a setting that checks the boxes for the aforementioned goal, we cam around to the idea that the web is an incredible environment, chock full of data and transitions, that when simulated purposefully, can capture a variety of interesting challenges for language agents, allowing trained models to not only be evaluated at scale, but also directly transferrable to a real setting.</p>
+<p>We were not the first ones to make this observation. This review discuss the World of Bits (WoB) benchmark, which was, according to my research, the most outstanding work out of the initial attempts at introducing web tasks as an interesting setting for training grounded language agents.</p>
+<h5>Context</h5>
+<p>At the time, a significant number of reinforcement learning benchmarks are founded on synthetic data, particularly game environments (i.e. Atari). While such rich and complex environments showcase the immense potential of RL agents, rich semantic information grounded in reality is noticeably missing from an artificial setting that is significantly different from real world scenarios.</p>
+<blockquote>
+<p>[A]gents in such [simulated] environments <u>never experience the sheer breadth of experience of the real world</u>, and thus they miss out on important semantic knowledge crucial for developing intelligence.</p>
+</blockquote>
+<p>Furthermore, for areas with RL applications like robotics, collecting data is financially costly and time consuming.</p>
+<p>Tasks found on the web have the potential to close the reality and scalability gap. The authors identify three attributes - open-domain, open-source, and easy data collection - that in conjunction, make scalability across domains and data sources achievable via engineering and low cost collection of human examples.</p>
+<h5>Contribution</h5>
+<p><b>World of Bits Environment</b></p>
+<p>The general WoB environment is a model of the web with the following definitions:<br>
+&bull; Observation: &lt;Raw Screen Pixels, Text DOM, Scalar Reward Signal&gt;<br>
+&bull; State Space: Color image and query (NL for MiniWoB, &lt;template, slots&gt; for FormWoB and QAWoB)<br>
+&bull; Action Space: <code>KeyEvent</code> (press a button) or <code>PointerEvent</code> (move mouse to pixel while pressing left mouse button)<br>
+&bull; Agent Response: A list of actions<br>
+&bull; Reward: The list of actions is processed in order, and a reward is determined per the task specific reward function</p>
+<p>These tasks are entirely executed within the context of a single web page.</p>
+<p>The authors develop three different techniques for creating web tasks: MiniWoB, FormWoB, and QAWoB<br>
+&bull; MiniWoB: 100 environments written in HTML/CSS/Javascript. Each corresponds to a web task with a manually specified reward function. Across all 100, there are a variety of inputs (i.e. buttons, text fields, sliders, date pickers, etc.). Rewards [-1 (failure), 1 (success)] are based on time to completion.<br>
+&bull; FormWoB: Convert websites into web tasks by recreating an offline approximation from HTTP requests + responses. The authors applied this approach to four real flight booking websites.<br>
+&bull; QAWoB: Develop a web task, in the form of a query template, via crowdsourcing. This is done in a two step process, where the first individual proposes a website and query template (NL query with slots), then the second performs the task via an interface that records the selected DOM element as the answer.<br></p>
+<p><b>Modeling</b></p>
+<p>The authors put forth a model that works off of a joint representation of the image (procssed by a CNN) and textual features (text feature map based on matching between query and DOM). The authors then apply behavior cloning and reinforcement learning with promising results, but with a significant gap compared to human performance.</p>
+<blockquote>
+<p>In particular, for flight booking, the model achieves 20%–30% of human level performance on training queries, and 16% on test queries.</p>
+</blockquote>
+<h5>Looking Forward</h5>
+<p>I realize I did not go over the modeling methodologies presented in this paper particularly thoroughly. This is not due to a lack of interest, but more because I'm interested in reading later papers that discuss the authors' original approaches, then propose new modeling techniques built on the MiniWoB benchmark. I'm hoping these papers will provide inspiration for closing the gap between the similar disparity between human and model performance observed in WebShop.</p>
+</div>
+
+<br><hr class="fade"><br>
+
+<div>
+  <div id="disqus_thread"></div>
+  
+    <script type="text/javascript">
+      (function() {
+        var d = document,
+          s = d.createElement('script');
+        s.src = 'https://blog-byjohnyang.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+      })();
+    </script>
+    <noscript>
+      Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+    </noscript>
+  
+</div>
+
+<br><hr class="fade"><br>
+
+<div style="text-align:center;">
+  <h5>Share this blog!</h5>
+
+  &nbsp; <a href="https://twitter.com/share?text=Check%20out%20this%20blog!%20https://john-b-yang.github.io" class="icon-button twitter">
+    <i class="icon-twitter"></i><span></span></a>
+
+  &nbsp; <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://john-b-yang.github.io" class="icon-button linkedin">
+    <i class="icon-linkedin"></i><span></span></a>
+
+  &nbsp; <a href="mailto:?Subject=John Yang's Blog&amp;Body=Check%20out%20this%20blog:%20https://john-b-yang.github.io" class="icon-button mail-forward">
+    <i class="icon-mail-forward"></i><span></span></a>
+</div>
+
+        </main>
+    </div>
+    <nav class="navfoot">
+      <div class="container">
+        <a href="https://github.com/john-b-yang"><i class="fa fa-github fa-lg"></i></a>&ensp;
+        <a href="https://scholar.google.com/citations?user=71G11ksAAAAJ&hl=en"><i class="fa fa-graduation-cap fa-lg"></i></a>&ensp;
+        <a href="https://www.linkedin.com/in/jyang20"><i class="fa fa-linkedin fa-lg"></i></a>&ensp;
+        <a href="https://twitter.com/jyangballin"><i class="fa fa-twitter fa-lg"></i></a>
+        <!-- Omitted "subscribe" w/ fa-envelope icon -->
+        <div class="subtext" style="float:right;">
+          &copy; 2025
+        </div>
+      </div>
+    </nav>
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+    <script>
+      // Theme switching functionality
+      const themeToggle = document.getElementById('theme-toggle');
+      const html = document.documentElement;
+      
+      // Check for saved theme preference
+      const savedTheme = localStorage.getItem('theme') || 'light';
+      html.setAttribute('data-theme', savedTheme);
+      updateThemeIcon(savedTheme);
+      
+      themeToggle.addEventListener('click', () => {
+        const currentTheme = html.getAttribute('data-theme');
+        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+        
+        html.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        updateThemeIcon(newTheme);
+      });
+      
+      function updateThemeIcon(theme) {
+        const icon = themeToggle.querySelector('i');
+        icon.className = theme === 'dark' ? 'fa fa-sun-o' : 'fa fa-moon-o';
+      }
+    </script>
+</body>
+
+</html>

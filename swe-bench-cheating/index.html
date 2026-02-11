@@ -1,0 +1,231 @@
+<!doctype html>
+<html data-theme="light">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="John Y">
+    <meta name="description" content="Programming technicalities and musings">
+
+    <title>John Y</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="icon" type="image/png" href="../static/pictures/stanford.ico">
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/fonts.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/button.css">
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-latest.js"></script>
+    <script src="../static/js/webfont.js"></script>
+    <script src="../static/js/snap.svg-min.js"></script>
+    <script src="../static/js/underscore-min.js"></script>
+    <script src="../static/js/sequence-diagram-min.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119942589-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-119942589-1');
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+      <div class="container">
+        <a href="../index.html"><b>JOHN</b> Y</a>
+        <div style="float:right;">
+          <ul>
+            <!-- Omitted "papers", "projects" -->
+            <a href="../publications/index.html" class="left"><li>PUBS</li></a>
+            <a href="../blogs/index.html" class="left"><li>BLOG</li></a>
+            <a href="../news/index.html" class="left"><li>NEWS</li></a>
+            <a href="../resources/index.html" class="left"><li>ASSETS</li></a>
+            <a href="../readings/index.html" class="left"><li>READING</li></a>
+            <button id="theme-toggle" aria-label="Toggle theme" class="theme-toggle">
+              <i class="fa fa-sun-o"></i>
+            </button>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container" style="padding-bottom:100px;">
+        <br>
+        <main id="body-fade">
+            
+<br>
+<div style="text-align:center;">
+  
+  <h3>Detecting cheating in SWE-bench submissions</h3>
+  <p>WEDNESDAY, NOVEMBER 19, 2025 &bull; 5 MINS </p>
+</div>
+<br>
+
+<div class="blog">
+  <hr />
+<p>I spent yesterday writing a script for determining how similar model solutions are to the ground truth for the SWE-bench benchmark.
+I wanted to know:</p>
+<ol>
+<li>Generally, how similar are models' submissions to the ground truth? Are models just regurgitating PRs? Or are their solutions novel?</li>
+<li>Are there any suspicious submissions in SWE-bench?</li>
+</ol>
+<p>Generally, I thought about "suspicious" as a SWE-bench submission where a high percentage of the predictions exactly match the reference solution / gold patch.</p>
+<p>By "exactly match", I'm referring to a scenario where the gold patch is found <em>verbatim</em> in the gold patch.
+Of course, simply doing <code>gold patch == prediction patch</code> of the patch strings doesn't work because of patch metadata, so I do the following minor transformations:</p>
+<ol>
+<li>I remove all comments from the gold + prediction patches, so we're focused just on code.</li>
+<li>I ignore all files in the prediction patch <em>not</em> edited by the gold patch.</li>
+<li>I cast the gold/prediction patch strings into a <code>unidiff.PatchSet</code> object, then check if each "hunk" from the gold patch is found verbatim in the prediction patch.</li>
+</ol>
+<p><details>
+<summary>
+Click here to see the relevant code (from the <a href="https://github.com/SWE-bench/experiments/blob/main/analysis/detect_similarity.py"><code>detect_similarity.py</code></a> file).
+</summary>
+<pre class="prettyprint lang-py background">
+def normalize_hunk(hunk):
+    # Remove all comments from a hunk
+    lines = []
+    for line in hunk:
+        if line.line_type == '+' and line.value.strip().startswith('#'):
+            continue
+        if line.line_type in ('+', '-', ' '):
+            lines.append((line.line_type, line.value))
+    return lines</p>
+<p>def normalize_file(patched_file):
+    return [normalize_hunk(hunk) for hunk in patched_file]</p>
+<p>def patch_contained_in(orig, pred):
+    """Returns True if <code>orig</code> found exactly in <code>pred</code>"""
+    # Remove all comments from patches first
+    try:
+        orig_files = {f.target_file: normalize_file(f) for f in unidiff.PatchSet(orig)}
+    except:
+        # SHOULD NEVER HAPPEN
+        raise OrigParseError("Failed to parse original patch")
+    try:
+        pred_files = {f.target_file: normalize_file(f) for f in unidiff.PatchSet(pred)}
+    except:
+        raise PredParseError("Failed to parse predicted patch")</p>
+<pre><code># If prediction patch doesn't edit all the files the gold patch edits, assume False
+if not set(orig_files.keys()).issubset(set(pred_files.keys())):
+    return False
+
+for filename, orig_hunks in orig_files.items():
+    for orig_hunk in orig_hunks:
+        if orig_hunk not in pred_files[filename]:
+            # If hunk not found exactly in corresponding prediction file, return False
+            return False
+return True
+</code></pre>
+<p></pre>
+</details></p>
+<p>I then ran our detection script on all SWE-bench Lite and SWE-bench Verified submissions (<a href="http://swebench.com/">Leaderboard</a>, <a href="https://github.com/swe-bench/experiments">Submission Repository</a>).</p>
+<p>Findings:</p>
+<ol>
+<li>The average exact match rate for SWE-bench Verified submissions (excluding one outlier) is 6.7% (~34 out of 500), with a min/max of 0/13%.</li>
+<li>For SWE-bench Lite, it's 4% (12/300) with a min/max of 0/11.2%</li>
+<li>For SWE-bench, it's 2.45% (~56/2294) with a min/max of 0/4.05%</li>
+<li>One submission (<code>20240820_honeycomb</code>) was suspicious, with exact match rates of 78.7/87.2% on Verified/Lite.</li>
+</ol>
+<p>Below, I graph the % resolved rate and % exact match rate for the submissions in SWE-bench Verified (top), Lite (middle), and Test (bottom) with the highest % exact match rates.</p>
+<p><img src="/static/pictures/blogs/cheating/detect_verified.png" alt="[SWE-bench Verified] Percentage of predictions matching ground truth exactly" style="width:100%;"/></p>
+<p><img src="/static/pictures/blogs/cheating/detect_lite.png" alt="[SWE-bench Lite] Percentage of predictions matching ground truth exactly" style="width:100%;"/></p>
+<p><img src="/static/pictures/blogs/cheating/detect_test.png" alt="[SWE-bench] Percentage of predictions matching ground truth exactly" style="width:100%;"/></p>
+<p>Going forwards, we plan to run this script for all submissions and ask for clarification on submissions with abnormal (&gt;20%) exact match rates.</p>
+<h5>Investigating Honeycomb</h5>
+<p>The Honeycomb submission stood out because its exact match rate was very high, and more strangely, far higher than its resolution rate, which prompted a closer look.</p>
+<p>I found that <code>evaluation/verified/20240820_honeycomb/all_preds.jsonl</code> contained 2236 predictions, far more than the 500 instances in SWE-bench Verified.
+This is probably human error: a file intended for the full split was mistakenly uploaded as a Verified submission.</p>
+<p>When I re-ran the analysis on only the 500 Verified instances, the exact match rate dropped to a normal level: 16 / 500 (~3.2%).</p>
+<p>In short:</p>
+<ol>
+<li>Honeycomb uploaded predictions covering the full test set (2236 instances).</li>
+<li>Our pipeline correctly evaluated only the relevant 500 Verified instances.</li>
+<li>Within those 500, there was no suspicious behavior.</li>
+</ol>
+<p>What is strange is that the remaining 1,736 instances had an extremely high exact match rate. The most plausible explanation is that these were not true model predictions, but accidentally included gold solutions (or near-identical copies). Since the properly-evaluated subset looks normal, this points to a formatting mistake rather than intentional cheating.</p>
+<p>I also checked the Honeycomb test split submission separately; its exact match rate was 1.7%, which is completely normal.</p>
+<p>Overall, this appears to be a submission error — though it served as a useful stress test for the detection mechanism.</p>
+<p>(Note: the submission was removed a while ago for an unrelated reason. We reached out for a technical report but received no response.)</p>
+</div>
+
+<br><hr class="fade"><br>
+
+<div>
+  <div id="disqus_thread"></div>
+  
+    <script type="text/javascript">
+      (function() {
+        var d = document,
+          s = d.createElement('script');
+        s.src = 'https://blog-byjohnyang.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+      })();
+    </script>
+    <noscript>
+      Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+    </noscript>
+  
+</div>
+
+<br><hr class="fade"><br>
+
+<div style="text-align:center;">
+  <h5>Share this blog!</h5>
+
+  &nbsp; <a href="https://twitter.com/share?text=Check%20out%20this%20blog!%20https://john-b-yang.github.io" class="icon-button twitter">
+    <i class="icon-twitter"></i><span></span></a>
+
+  &nbsp; <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://john-b-yang.github.io" class="icon-button linkedin">
+    <i class="icon-linkedin"></i><span></span></a>
+
+  &nbsp; <a href="mailto:?Subject=John Yang's Blog&amp;Body=Check%20out%20this%20blog:%20https://john-b-yang.github.io" class="icon-button mail-forward">
+    <i class="icon-mail-forward"></i><span></span></a>
+</div>
+
+        </main>
+    </div>
+    <nav class="navfoot">
+      <div class="container">
+        <a href="https://github.com/john-b-yang"><i class="fa fa-github fa-lg"></i></a>&ensp;
+        <a href="https://scholar.google.com/citations?user=71G11ksAAAAJ&hl=en"><i class="fa fa-graduation-cap fa-lg"></i></a>&ensp;
+        <a href="https://www.linkedin.com/in/jyang20"><i class="fa fa-linkedin fa-lg"></i></a>&ensp;
+        <a href="https://twitter.com/jyangballin"><i class="fa fa-twitter fa-lg"></i></a>
+        <!-- Omitted "subscribe" w/ fa-envelope icon -->
+        <div class="subtext" style="float:right;">
+          &copy; 2025
+        </div>
+      </div>
+    </nav>
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+    <script>
+      // Theme switching functionality
+      const themeToggle = document.getElementById('theme-toggle');
+      const html = document.documentElement;
+      
+      // Check for saved theme preference
+      const savedTheme = localStorage.getItem('theme') || 'light';
+      html.setAttribute('data-theme', savedTheme);
+      updateThemeIcon(savedTheme);
+      
+      themeToggle.addEventListener('click', () => {
+        const currentTheme = html.getAttribute('data-theme');
+        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+        
+        html.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        updateThemeIcon(newTheme);
+      });
+      
+      function updateThemeIcon(theme) {
+        const icon = themeToggle.querySelector('i');
+        icon.className = theme === 'dark' ? 'fa fa-sun-o' : 'fa fa-moon-o';
+      }
+    </script>
+</body>
+
+</html>
