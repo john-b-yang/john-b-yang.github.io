@@ -7,11 +7,9 @@ time: wednesday, april 30, 2025
 
 <i>Cross-posted at [swesmith.com](https://swesmith.com/blog.html)</i>
 
----
-
 ##### Motivations
 
-Progress in AI for software engineering over the past year has been incredibly exciting.  
+Progress in AI for software engineering over the past year has been incredibly exciting.
 The rapid development of agentic SWEs has been tracked faithfully by the [SWE-bench](https://swe-bench.github.io/) benchmark and the [Verified](https://openai.com/index/introducing-swe-bench-verified/) subset in particular.
 For well over a year, I've been the core maintainer of SWE-bench's [leaderboard](https://github.com/swe-bench/experiments), giving me a front row seat to the show.
 
@@ -29,7 +27,7 @@ In early 2025, we've seen signals of success for training open source SWE-agents
 
 - SWE-gym trains on 491 agent trajectories
 - R2E-gym on 3200
-- SWE-RL, which is non-agentic, trains on 11M PRs synthesized into reasoning traces  
+- SWE-RL, which is non-agentic, trains on 11M PRs synthesized into reasoning traces
 → Their single run % resolve rates are 20.6%, 34.4%, and 41% respectively.
 
 However, the foundation to all this progress - collecting training data for AI software engineers - remains a significant pain point.
@@ -83,7 +81,7 @@ So, to create a SWE-bench style task instance, instead of reverting the codebase
 This was the start of SWE-smith, a rethinking of how to create software tasks for training AI.
 
 > SWE-bench identifies task instances first, then attempts to build an environment for it.
-> 
+>
 > Instead, define the execution environment *first*, then synthesize task instances within the environment.
 
 So what does this mean in practice?
@@ -94,13 +92,13 @@ Then, given *just* this commit/version of the codebase, use automatic methods to
 
 The implications of this are meaningful. This means...
 
-<b>✅ Significantly reduced human labor:</b>  
+<b>✅ Significantly reduced human labor:</b>
    No more figuring out to install a repo correctly for every month of the past 5 years.
 
-<b>✅ Significantly reduced storage:</b>  
+<b>✅ Significantly reduced storage:</b>
    One docker image per repository, not per task instance. For 1000 tasks, 1GB of storage, not 1TB.
 
-<b>✅ New ways to create bugs:</b>  
+<b>✅ New ways to create bugs:</b>
    To break existing tests, we can revert PRs. Or you could ask an LM to write bugs into the code! Or maybe, remove a function entirely. Or if you have two bugs, merge them into a single, harder bug? The possibilities are suddenly endless.
 
 Concretely, the workflow is as follows:
@@ -115,4 +113,4 @@ Concretely, the workflow is as follows:
 
 Using SWE-smith, we create 50k task instances across 128 Python repositories (and counting...). Both numbers are an order of magnitude greater than any existing dataset.
 
-We train [Qwen 2.5 32B Coder Instruct](https://huggingface.co/Qwen/Qwen2.5-Coder-32B-Instruct) on 5000 expert trajectories generated from running SWE-agent + Claude 3.7 Sonnet on a subset of SWE-smith. Our model, [SWE-agent-LM-32B](https://huggingface.co/SWE-bench/SWE-agent-LM-32B), achieves a 40% single run resolve rate on SWE-bench Verified, #1 for open source agentic coding models. 
+We train [Qwen 2.5 32B Coder Instruct](https://huggingface.co/Qwen/Qwen2.5-Coder-32B-Instruct) on 5000 expert trajectories generated from running SWE-agent + Claude 3.7 Sonnet on a subset of SWE-smith. Our model, [SWE-agent-LM-32B](https://huggingface.co/SWE-bench/SWE-agent-LM-32B), achieves a 40% single run resolve rate on SWE-bench Verified, #1 for open source agentic coding models.
