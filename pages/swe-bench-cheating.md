@@ -1,7 +1,7 @@
 title: Detecting cheating in SWE-bench submissions
 date: 2025-11-19
 description: How similar are agent solutions to the ground truth?
-readtime: 5 MINS
+readtime: 5 mins
 time: wednesday, november 19, 2025
 
 ---

@@ -2,7 +2,7 @@ title: An Opinionated Introduction to Git
 date: 2019-04-19
 description: The Git tutorial I'd like to think I wish I had
 image: /static/pictures/head-images/octocat.png
-readtime: 11 MINS
+readtime: 11 mins
 time: friday, april 19, 2019
 
 Berkeley's CS 61B Data Structures Course is the first time that many students and developers are introduced to version control in the form of Git! In somewhat normalized Berkeley fashion, version control is introduced in a single one hour discussion and not covered too in depth, yet students are expected to have a working understanding of the commitment workflow without necessarily understanding what Git is capable of beyond just a Google Drive for code. A couple months ago, I gave a shot at writing the kind of Git tutorial that I wish I had back then. At the time, version control felt like a very foreign concept relative to my existing domain knowledge in computer science, so I thought that analogies and comparisons to more real life contexts might make some of the ideas more palpable. Feel free to give it a read, and if you have any feedback please let me know in the comments below!!

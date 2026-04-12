@@ -2,7 +2,7 @@ title: A Technical Dissection of the Libra Blockchain
 date: 2019-06-20
 description: In a certain sense, the Libra "Blockchain" isn't a blockchain at all...
 image: /static/pictures/head-images/Libra.png
-readtime: 17 MINS
+readtime: 17 mins
 time: thursday, june 20, 2019
 
 My thanks to my mentor and friend [Jack Kolb](https://people.eecs.berkeley.edu/~jkolb/) for proofreading this article!

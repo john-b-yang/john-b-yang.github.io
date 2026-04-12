@@ -2,7 +2,7 @@ title: Introducing SWE-smith
 date: 2025-04-30
 description: A rethinking of how to create software tasks for training AI.
 image: /static/pictures/head-images/swesmith_logo.png
-readtime: 10 MINS
+readtime: 10 mins
 time: wednesday, april 30, 2025
 
 <i>Cross-posted at [swesmith.com](https://swesmith.com/blog.html)</i>

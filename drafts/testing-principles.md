@@ -2,7 +2,7 @@ title: Principles of Testing | Unit Tests
 date: 2018-06-04
 description: A unit test a day keeps the null pointer exceptions away.
 image: static/pictures/head-images/UnitTestLogo.jpeg
-readtime: 6 MINS
+readtime: 6 mins
 tags: [Testing]
 time: WEDNESDAY, JUNE 20, 2018
 

@@ -2,7 +2,7 @@ title: Paper Reading Template
 date: 2022-02-01
 description: A self-designed guide that helps me consistently read papers and remember what I read
 image: /static/pictures/head-images/template.png
-readtime: 5 MINS
+readtime: 5 mins
 time: tuesday, february 1, 2022
 
 During the last two years of undergrad and the first year of my M.S.E. program, I've come to value the habit of reading academic papers consistently.
@@ -55,7 +55,7 @@ Here it is:
 1. <b>Why this paper?</b>: Why did I chose to read this paper? The source may be straightforward (i.e. class paper, professor recommendation) or more personally derived (i.e. arXiv surfing, someone's reading list). I'd like myself to add another line describing what I'd like to gain more insight on via this paper.
 2. <b>Context</b>: How did we get to this problem? In practice, this will likely be heavily drawn from paper's related work section, but my own goal is to remind myself how this problem ties into other research. What is/was the state of affairs at the time of the paper's publication, and what gap is this paper zoning in on?
 3. <b>Problem Statement</b>: What is the problem? What's the contribution?
-4. <b>Notes</b>: Methods and results that stood out to me. 
+4. <b>Notes</b>: Methods and results that stood out to me.
 5. <b>Questions</b>: What did I not understand? Will I address these gaps? If so, how? Also, what did I not understand initially, but then resolved? How'd I arrive at the resolution?
 6. <b>Looking Forward</b>: Take aways and free space for any additional thoughts. What are my conclusions, if any? Anything I can look into that might be worth trying?
 
