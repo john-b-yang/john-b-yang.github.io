@@ -5,7 +5,8 @@ import json
 from flask import Flask, render_template, url_for
 from flask_flatpages import FlatPages
 from flask_frozen import Freezer
-from flaskext.markdown import Markdown
+import markdown as md_lib
+from markupsafe import Markup
 
 # Configuration
 DEBUG = True
@@ -21,19 +22,25 @@ app = Flask(__name__)
 app.config.from_object(__name__)
 pages = FlatPages(app)
 freezer = Freezer(app)
-markdown_manager = Markdown(app, extensions=['fenced_code'], output_format='html5',)
+_md = md_lib.Markdown(extensions=['fenced_code'], output_format='html5')
 
-posts = [page for page in list(pages) if not page.path.startswith('r/')]
-reviews = [page for page in list(pages) if page.path.startswith('r/')]
+@app.template_filter('markdown')
+def markdown_filter(text):
+    _md.reset()
+    return Markup(_md.convert(text))
 
-# Sort review tags by most popular
-review_tags = {}
-for page in list(reviews):
-    for tag in page.meta['tags']:
-        if tag not in review_tags:
-            review_tags[tag] = 0
-        review_tags[tag] += 1
-review_tags = dict(sorted(review_tags.items(), key=lambda item: -1 * item[1])[:10])
+with app.app_context():
+    posts = [page for page in list(pages) if not page.path.startswith('r/')]
+    reviews = [page for page in list(pages) if page.path.startswith('r/')]
+
+    # Sort review tags by most popular
+    review_tags = {}
+    for page in list(reviews):
+        for tag in page.meta['tags']:
+            if tag not in review_tags:
+                review_tags[tag] = 0
+            review_tags[tag] += 1
+    review_tags = dict(sorted(review_tags.items(), key=lambda item: -1 * item[1])[:10])
 
 # Functionalities
 # @app.context_processor

@@ -108,25 +108,14 @@
     color: white;
 }
 
-/* Underline Animation */
+/* Nav Tab Styling */
 a.left {
   color: var(--white);
-  position: relative;
+  opacity: 0.5;
+  transition: opacity 0.2s ease-in-out;
 }
 
-a.left:before {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  visibility: hidden;
-  transition: all 0.2s ease-in-out;
-  background-color: var(--white);
-}
-
-a.left:hover:before {
-  visibility: visible;
-  width: 100%;
+a.left:hover,
+a.left.active {
+  opacity: 1;
 }

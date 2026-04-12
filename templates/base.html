@@ -37,15 +37,15 @@
 <body>
     <nav class="navbar">
       <div class="container">
-        <a href="{{ url_for('index') }}"><b>JOHN</b> Y</a>
+        <a href="{{ url_for('index') }}"><b>John</b> Y</a>
         <div style="float:right;">
           <ul>
             <!-- Omitted "papers", "projects" -->
-            <a href="{{ url_for('publications') }}" class="left"><li>PUBS</li></a>
-            <a href="{{ url_for('blogs') }}" class="left"><li>BLOG</li></a>
-            <a href="{{ url_for('news') }}" class="left"><li>NEWS</li></a>
-            <a href="{{ url_for('resources') }}" class="left"><li>ASSETS</li></a>
-            <a href="{{ url_for('papers') }}" class="left"><li>READING</li></a>
+            <a href="{{ url_for('publications') }}" class="left{% if request.endpoint == 'publications' %} active{% endif %}"><li>Pubs</li></a>
+            <a href="{{ url_for('blogs') }}" class="left{% if request.endpoint in ('blogs', 'page') %} active{% endif %}"><li>Blog</li></a>
+            <a href="{{ url_for('news') }}" class="left{% if request.endpoint == 'news' %} active{% endif %}"><li>News</li></a>
+            <a href="{{ url_for('resources') }}" class="left{% if request.endpoint == 'resources' %} active{% endif %}"><li>Assets</li></a>
+            <a href="{{ url_for('papers') }}" class="left{% if request.endpoint in ('papers', 'paper_tag', 'review') %} active{% endif %}"><li>Reading</li></a>
             <button id="theme-toggle" aria-label="Toggle theme" class="theme-toggle">
               <i class="fa fa-sun-o"></i>
             </button>
@@ -53,6 +53,9 @@
         </div>
       </div>
     </nav>
+    <div class="container">
+      <hr class="navbar-separator">
+    </div>
     <div class="container" style="padding-bottom:100px;">
         <br>
         <main id="body-fade">
@@ -63,13 +66,12 @@
     </div>
     <nav class="navfoot">
       <div class="container">
-        <a href="https://github.com/john-b-yang"><i class="fa fa-github fa-lg"></i></a>&ensp;
-        <a href="https://scholar.google.com/citations?user=71G11ksAAAAJ&hl=en"><i class="fa fa-graduation-cap fa-lg"></i></a>&ensp;
-        <a href="https://www.linkedin.com/in/jyang20"><i class="fa fa-linkedin fa-lg"></i></a>&ensp;
-        <a href="https://twitter.com/jyangballin"><i class="fa fa-twitter fa-lg"></i></a>
-        <!-- Omitted "subscribe" w/ fa-envelope icon -->
-        <div class="subtext" style="float:right;">
-          &copy; 2025
+        <span class="subtext">&copy; 2025</span>
+        <div style="float:right;">
+          <a href="https://github.com/john-b-yang"><i class="fa fa-github"></i></a>&thinsp;
+          <a href="https://scholar.google.com/citations?user=71G11ksAAAAJ&hl=en"><i class="fa fa-graduation-cap"></i></a>&thinsp;
+          <a href="https://www.linkedin.com/in/jyang20"><i class="fa fa-linkedin"></i></a>&thinsp;
+          <a href="https://twitter.com/jyangballin"><i class="fa fa-twitter"></i></a>
         </div>
       </div>
     </nav>

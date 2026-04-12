@@ -3,7 +3,7 @@ date: 2022-02-01
 description: A self-designed guide that helps me consistently read papers and remember what I read
 image: /static/pictures/head-images/template.png
 readtime: 5 MINS
-time: TUESDAY, FEBRUARY 1, 2022
+time: tuesday, february 1, 2022
 
 During the last two years of undergrad and the first year of my M.S.E. program, I've come to value the habit of reading academic papers consistently.
 My prior motivation to read was solely driven by fulfilling the homework requirements for paper-reviewing seminar courses, which are popular at the graduate school level.

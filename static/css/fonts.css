@@ -1,3 +1,18 @@
+/* et-bembo */
+@font-face {
+  font-family: 'et-bembo';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/et-bembo-roman-old-style.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'et-bembo';
+  font-style: italic;
+  font-weight: 400;
+  src: url('../fonts/et-bembo-italic.woff') format('woff');
+}
+
 /* fira-sans-regular - latin */
 @font-face {
   font-family: 'Fira Sans';

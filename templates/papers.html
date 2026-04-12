@@ -1,8 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <h3 class="header">Readings</h3>
-  <p>
+  <p style="margin-top:0;">
     A collection of notes from past paper readings.
     Papers were sourced from the <a href="http://www.redbook.io/">Red Book</a>, Prof. Danqi Chen's
     <a href="https://www.cs.princeton.edu/courses/archive/fall22/cos597G/">Understanding LLMs</a>
@@ -10,47 +9,70 @@
     <a href="https://inst.eecs.berkeley.edu/~cs294-171/fa20/lectures/">Privacy Preserving Systems</a> class.
   </p>
 
-  {% if tag == 'all' %}
-  <div class="block-selected">
-  {% else %}
-  <div class="block">
-  {% endif %}
-    <a href="{{ url_for('papers') }}">All</a>
+  <div class="tag-filters">
+    <span class="tag-filter selected" data-tag="all">
+      <a href="#">All</a>
+    </span>
+    {% for t in tags %}
+      <span class="separator">&middot;</span>
+      <span class="tag-filter" data-tag="{{ t }}">
+        <a href="#">{{ t }}</a>
+      </span>
+      {% if loop.index == 5 %}<br>{% endif %}
+    {% endfor %}
   </div>
 
-  {% for t in tags %}
-    {% if t == tag %}
-    <div class="block-selected">
-    {% else %}
-    <div class="block">
-    {% endif %}
-      <a href="{{ url_for('paper_tag', tag=t) }}">{{ t }}</a>
-    </div>
-  {% endfor %}
-
-  <ul>
+  <ul id="readings-list">
     {% for page in pages | sort(attribute='date', reverse=True) %}
       {% if loop.index0 == 0 %}
-        {{ (page.date|string)[:4] }}
+        <div class="year-header" data-year="{{ (page.date|string)[:4] }}">{{ (page.date|string)[:4] }}</div>
       {% elif (loop.previtem.date|string)[:4] != (page.date|string)[:4] %}
-        <div style="margin-top:10px;">{{ (page.date|string)[:4] }}</div>
+        <div class="year-header" data-year="{{ (page.date|string)[:4] }}" style="margin-top:10px;">{{ (page.date|string)[:4] }}</div>
       {% endif %}
-      {% if tag == 'all' or tag in page.tags %}
-        <li>
-          <div style="display:flex">
-            <div style="flex:20%;color:#8c8b8b;max-width:60px;">{{ (page.date|string)[5:] }}</div>
-            <div style="flex:80%">
-              <a class="subtext" href="{{ url_for('review', path=page.path) }}">
-                <b>{{ page.title }}</b>
-              </a>
-            </div>
+      <li data-tags="{{ page.tags|join(',') }}" data-year="{{ (page.date|string)[:4] }}">
+        <div style="display:flex">
+          <div style="flex:20%;color:#8c8b8b;max-width:60px;">{{ (page.date|string)[5:] }}</div>
+          <div style="flex:80%">
+            <a class="subtext" href="{{ url_for('review', path=page.path) }}">
+              <b>{{ page.title }}</b>
+            </a>
           </div>
-          <!-- {{ page.date }}
-          <a style="color:#c8d1d9;" href="{{ url_for("review", path=page.path) }}">
-            <b>{{ page.title }}</b>
-          </a> -->
-        </li>
-      {% endif %}
+        </div>
+      </li>
     {% endfor %}
   </ul>
+
+  <script>
+    document.querySelectorAll('.tag-filter').forEach(function(el) {
+      el.addEventListener('click', function(e) {
+        e.preventDefault();
+        var tag = this.dataset.tag;
+
+        // Update selected state
+        document.querySelectorAll('.tag-filter').forEach(function(f) {
+          f.classList.remove('selected');
+        });
+        this.classList.add('selected');
+
+        // Filter items
+        document.querySelectorAll('#readings-list li').forEach(function(li) {
+          if (tag === 'all' || li.dataset.tags.split(',').indexOf(tag) !== -1) {
+            li.style.display = '';
+          } else {
+            li.style.display = 'none';
+          }
+        });
+
+        // Show/hide year headers based on whether they have visible items
+        document.querySelectorAll('#readings-list .year-header').forEach(function(yh) {
+          var year = yh.dataset.year;
+          var hasVisible = false;
+          document.querySelectorAll('#readings-list li[data-year="' + year + '"]').forEach(function(li) {
+            if (li.style.display !== 'none') hasVisible = true;
+          });
+          yh.style.display = hasVisible ? '' : 'none';
+        });
+      });
+    });
+  </script>
 {% endblock content %}

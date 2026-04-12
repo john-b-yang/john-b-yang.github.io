@@ -2,7 +2,7 @@ title: Detecting cheating in SWE-bench submissions
 date: 2025-11-19
 description: How similar are agent solutions to the ground truth?
 readtime: 5 MINS
-time: WEDNESDAY, NOVEMBER 19, 2025
+time: wednesday, november 19, 2025
 
 ---
 
@@ -23,7 +23,7 @@ Of course, simply doing `gold patch == prediction patch` of the patch strings do
 
 <details>
 <summary>
-Click here to see the relevant code (from the [`detect_similarity.py`](https://github.com/SWE-bench/experiments/blob/main/analysis/detect_similarity.py) file).
+Click here to see the relevant code (from the <a href="https://github.com/SWE-bench/experiments/blob/main/analysis/detect_similarity.py"><code>detect_similarity.py</code></a> file).
 </summary>
 <pre class="prettyprint lang-py background">
 def normalize_hunk(hunk):

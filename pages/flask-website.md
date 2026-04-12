@@ -3,7 +3,7 @@ date: 2018-12-16
 description: Get your own website up and running with just a couple lines of Python + Flask!
 image: /static/pictures/head-images/FlaskBlog.png
 readtime: 11 MINS
-time: SUNDAY, DECEMBER 16, 2018
+time: sunday, december 16, 2018
 
 <div style="border-width:1px; border-color:#58a6ff; border-style:solid; padding-left:10px; padding-right:10px;">
   <p>

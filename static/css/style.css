@@ -1,6 +1,6 @@
 :root {
-  --black: #fcfcfa;
-  --black-2: #faf9f5;
+  --black: #fefff8;
+  --black-2: #fcfcf3;
   --blue: #0366d6;
   --gray: #586069;
   --green: #2ea043;
@@ -27,7 +27,8 @@
 }
 
 body {
-  font-family: basic-sans, 'Helvetica Neue', 'Arial', sans-serif;
+  font-family: 'et-bembo', Palatino, 'Palatino Linotype', 'Book Antiqua', Georgia, serif;
+  font-size: 1.05em;
   background-color: var(--background);
   color: var(--text);
   transition: background-color 0.3s ease, color 0.3s ease;
@@ -253,16 +254,19 @@ hr.fade {
 
 /* Navigation Bar */
 .navbar {
-  background: var(--nav-bg);
+  background: var(--background);
   top: 0;
   right: 0;
   left: 0;
   color: var(--text);
+  box-shadow: none;
+  border-bottom: none;
 }
 
 .navbar a {
   color: var(--text);
   padding: 0 0.6em;
+  background: none !important;
 }
 
 .navbar ul {
@@ -270,13 +274,35 @@ hr.fade {
   display: flex;
 }
 
+.navbar li:hover {
+  background: none;
+}
+
+.navbar-separator {
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, transparent 0%, var(--border) 15%, var(--border) 85%, transparent 100%);
+}
+
+hr.section {
+  border: none !important;
+  height: 1px !important;
+  margin: 0.25em 0 !important;
+  padding: 0 !important;
+  background: linear-gradient(to right, var(--gray), transparent 80%);
+  opacity: 0.3;
+}
+
+
 /* Navigation Footer */
 .navfoot {
-  background: var(--nav-bg);
+  background: var(--background);
   bottom: 0;
   right: 0;
   left: 0;
   position: fixed;
+  box-shadow: none;
+  border-top: none;
 }
 
 .navfoot a {
@@ -284,11 +310,11 @@ hr.fade {
 }
 
 .navfoot i {
-  color: var(--text);
+  color: var(--gray);
 }
 
 .navfoot i:hover {
-  opacity: 0.7;
+  color: var(--text);
 }
 
 /*** MARK: Below styling *not* actively used ***/
@@ -381,34 +407,38 @@ hr.fade {
 }
 
 /*** Tag Blocks ***/
-.block {
-  width: auto;
-  padding: 1px 10px 1px 10px;
-  margin: auto;
-  background: #2e507c;
-  display: inline-block;
-  border-radius: 10px;
+.tag-filters {
+  margin: 0.75em 0;
+  text-align: center;
+  line-height: 2;
 }
 
-.block a {
-  color: #58a6ff;
+.tag-filters .separator {
+  color: var(--gray);
+  opacity: 0.4;
+  margin: 0 0.1em;
 }
 
-.block:hover {
-  background: #4176b7;
+.tag-filter {
+  display: inline;
+  cursor: pointer;
 }
 
-.block-selected {
-  width: auto;
-  padding: 1px 10px 1px 10px;
-  margin: auto;
-  background: #4176b7;
-  display: inline-block;
-  border-radius: 10px;
+.tag-filter a {
+  color: var(--blue);
+  text-decoration: none;
+  opacity: 0.7;
 }
 
-.block-selected a {
-  color: white;
+.tag-filter a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+.tag-filter.selected a {
+  color: var(--text);
+  font-weight: bold;
+  opacity: 1;
 }
 
 /* Miscellaneous */

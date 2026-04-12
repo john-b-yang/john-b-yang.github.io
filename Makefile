@@ -3,7 +3,7 @@ build_dir = repo
 
 # usage: make preview
 preview:
-	python $(server)
+	uv run python $(server)
 
 # usage: make push m="commit message"
 push:
@@ -13,7 +13,7 @@ push:
 
 # usage: make deploy m="commit message"
 deploy:
-	python $(server) build && \
+	uv run python $(server) build && \
 	cd ../deploy && \
 	git pull origin master && \
 	cp -r ../$(build_dir)/build/* . && \

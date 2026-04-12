@@ -51,6 +51,12 @@
 ],
 "Press": [
     {
+        "title": "Project Glasswing: Securing critical software for the AI era",
+        "publisher": "Anthropic",
+        "link": "https://www.anthropic.com/glasswing",
+        "date": "2026-04-10"
+    },
+    {
         "title": "Introducing GPT-5.1 for Developers",
         "publisher": "OpenAI",
         "link": "https://openai.com/index/gpt-5-1-for-developers/",
