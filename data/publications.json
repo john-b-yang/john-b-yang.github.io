@@ -1,6 +1,22 @@
 {
     "Preprint": [
         {
+            "title": "SWE-chat: Coding Agent Interactions From Real Users in the Wild",
+            "authors": [
+                {"name": "Joachim Baumann", "site": "https://joe-baumann.com/"},
+                {"name": "Vishakh Padmakumar", "site": "https://vishakhpk.github.io/"},
+                {"name": "Kevin Xiang Li", "site": "https://kevinx.li/"},
+                {"name": "John Yang"},
+                {"name": "Diyi Yang", "site": "https://cs.stanford.edu/~diyiy/index.html"},
+                {"name": "Sanmi Koyejo", "site": "https://cs.stanford.edu/~sanmi/"}
+            ],
+            "year": 2026,
+            "paper": "https://arxiv.org/abs/2604.20779",
+            "tweet": "https://x.com/joabaum/status/2048805584158208317/photo/1",
+            "site": "https://www.swe-chat.com/",
+            "code": "SALT-NLP/SWE-chat"
+        },
+        {
             "title": "Position: Humans are Missing from AI Coding Agent Research",
             "authors": [
                 {"name": "John Yang*"},
