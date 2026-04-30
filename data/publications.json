@@ -36,7 +36,9 @@
             "year": 2026,
             "paper": "https://zorazrw.github.io/files/position-haicode.pdf",
             "tweet": "https://x.com/ZhiruoW/status/2021603778982473813"
-        },
+        }
+    ],
+    "Peer Reviewed": [
         {
             "title": "CodeClash: Benchmarking Goal-Oriented Software Engineering",
             "authors": [
@@ -44,19 +46,20 @@
                 {"name": "Kilian Lieret*", "site": "https://www.lieret.net/"},
                 {"name": "Joyce Yang", "site": "https://joycebyang.github.io/"},
                 {"name": "Carlos E. Jimenez", "site": "http://www.carlosejimenez.com/"},
+                {"name": "Muhtasham Oblokulov", "site": "https://muhtasham.github.io/blog/"},
+                {"name": "Aryan Siddiqui", "site": "https://x.com/Ar_boian"},
                 {"name": "Ofir Press", "site": "https://ofir.io/"},
                 {"name": "Ludwig Schmidt", "site": "https://people.csail.mit.edu/ludwigs/"},
                 {"name": "Diyi Yang", "site": "https://cs.stanford.edu/~diyiy/index.html"}
             ],
-            "year": 2025,
+            "year": 2026,
             "paper": "https://arxiv.org/abs/2511.00839",
             "code": "CodeClash-ai/CodeClash",
             "site": "https://codeclash.ai/",
             "tweet": "https://x.com/jyangballin/status/1986093902122942700",
-            "poster": "static/pictures/posters/2026-CodeClash.png"
-        }
-    ],
-    "Peer Reviewed": [
+            "poster": "static/pictures/posters/2026-CodeClash.png",
+            "venue": "ICML"
+        },
         {
             "title": "Collaborative Gym: A Framework for Enabling and Evaluating Human-Agent Collaboration",
             "authors": [
