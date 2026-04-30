@@ -19,7 +19,7 @@
   </span>
   <br />
   <span>
-    {{ pub.year }} 
+    {{ pub.year }}
     {% if pub.venue_link and pub.venue %}
     &bull;
     <a href="{{ pub.venue_link }}">
@@ -75,5 +75,6 @@
   </span>
 </div>
 {% endfor %}
+<div style="height: 0.5em"></div>
 {% endfor %}
 {% endblock content %}
