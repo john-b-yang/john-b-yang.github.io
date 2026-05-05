@@ -1,6 +1,28 @@
 {
     "Preprint": [
         {
+            "title": "ProgramBench: Can Language Models Rebuild Programs From Scratch?",
+            "authors": [
+                {"name": "John Yang", "site": "https://john-b-yang.github.io/"},
+                {"name": "Kilian Lieret", "site": "https://www.lieret.net/"},
+                {"name": "Jeffrey Ma", "site": "https://18jeffreyma.github.io/"},
+                {"name": "Parth Thakkar", "site": "https://thakkarparth007.github.io/"},
+                {"name": "Dmitrii Pedchenko", "site": "https://scholar.google.com/citations?user=izGGAnQAAAAJ&hl=en"},
+                {"name": "Sten Sootla", "site": "https://scholar.google.com/citations?user=UAx_woYAAAAJ&hl=en"},
+                {"name": "Emily McMilin", "site": "https://2dot71mily.github.io/"},
+                {"name": "Pengcheng Yin", "site": "https://pengcheng.in/"},
+                {"name": "Rui Hou", "site": "https://scholar.google.com/citations?user=PKHKqX0AAAAJ&hl=en"},
+                {"name": "Gabriel Synnaeve", "site": "https://syhw.github.io/"},
+                {"name": "Diyi Yang", "site": "https://cs.stanford.edu/~diyiy/index.html"},
+                {"name": "Ofir Press", "site": "https://ofir.io/"}
+            ],
+            "year": 2026,
+            "site": "https://programbench.com",
+            "code": "facebookresearch/ProgramBench",
+            "paper": "https://programbench.com/static/paper.pdf",
+	    "tweet": "https://x.com/jyangballin/status/2051677497562210552"
+        },
+        {
             "title": "SWE-chat: Coding Agent Interactions From Real Users in the Wild",
             "authors": [
                 {"name": "Joachim Baumann", "site": "https://joe-baumann.com/"},
