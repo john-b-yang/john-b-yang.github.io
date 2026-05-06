@@ -3,8 +3,8 @@
         {
             "title": "ProgramBench: Can Language Models Rebuild Programs From Scratch?",
             "authors": [
-                {"name": "John Yang", "site": "https://john-b-yang.github.io/"},
-                {"name": "Kilian Lieret", "site": "https://www.lieret.net/"},
+                {"name": "John Yang*"},
+                {"name": "Kilian Lieret*", "site": "https://www.lieret.net/"},
                 {"name": "Jeffrey Ma", "site": "https://18jeffreyma.github.io/"},
                 {"name": "Parth Thakkar", "site": "https://thakkarparth007.github.io/"},
                 {"name": "Dmitrii Pedchenko", "site": "https://scholar.google.com/citations?user=izGGAnQAAAAJ&hl=en"},
