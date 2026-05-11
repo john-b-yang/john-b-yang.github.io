@@ -10,6 +10,6 @@ dependencies = [
     "jinja2==3.1.6",
     "markdown==3.10.2",
     "markupsafe==3.0.3",
-    "urllib3==2.6.3",
+    "urllib3==2.7.0",
     "werkzeug==3.1.8",
 ]
