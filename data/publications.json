@@ -20,7 +20,8 @@
             "site": "https://programbench.com",
             "code": "facebookresearch/ProgramBench",
             "paper": "https://arxiv.org/abs/2605.03546",
-	    "tweet": "https://x.com/jyangballin/status/2051677497562210552"
+	    "tweet": "https://x.com/jyangballin/status/2051677497562210552",
+	    "poster": "static/pictures/posters/2026-ProgramBench.png"
         },
         {
             "title": "SWE-chat: Coding Agent Interactions From Real Users in the Wild",
