@@ -43,7 +43,7 @@
     </a>
     {% endif %}
     {% if pub.blog %}
-    <a href="{{ '/' ~ pub.blog.lstrip('/') }}">
+    <a href="{{ pub.blog if pub.blog.startswith('http') else '/' ~ pub.blog.lstrip('/') }}">
       <button>Blog</button>
     </a>
     {% endif %}

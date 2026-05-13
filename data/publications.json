@@ -172,7 +172,8 @@
             "talk": "https://www.youtube.com/watch?v=DrLdvbkgmeA",
             "tweet": "https://twitter.com/jyangballin/status/1711822353473437953",
             "award": "Oral",
-            "poster": "static/pictures/posters/2024-SWEbench.png"
+            "poster": "static/pictures/posters/2024-SWEbench.png",
+            "blog": "https://pli.princeton.edu/blog/2023/swe-bench-can-language-models-resolve-real-world-github-issues"
         },
         {
             "title": "InterCode: Standardizing and Benchmarking Interactive Coding with Execution Feedback",
