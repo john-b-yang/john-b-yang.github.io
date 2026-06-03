@@ -1,6 +1,12 @@
 {
 "Talks": [
     {
+        "title": "Benchtalks #2: From SWE-bench to ProgramBench: The Future of Coding Benchmarks with John Yang",
+        "publisher": "Snorkel AI",
+        "link": "https://x.com/vincentsunnchen/status/2062243266461082090",
+        "date": "2026-06-03"
+    },
+    {
         "title": "[State of Code Evals] After SWE-bench, Code Clash & SOTA Coding Benchmarks recap — John Yang",
         "publisher": "Latent Space Podcast",
         "link": "https://www.youtube.com/watch?v=MxB-xRGXxkk",
