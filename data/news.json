@@ -57,6 +57,12 @@
 ],
 "Press": [
     {
+        "title": "Testing Mythos and Fable, Moving Beyond SWE-bench, Nvidia's Open Contender",
+        "publisher": "DeepLearning.AI | Andrew Ng",
+        "link": "https://www.deeplearning.ai/the-batch/issue-358",
+        "date": "2026-06-19"
+    },
+    {
         "title": "Project Glasswing: Securing critical software for the AI era",
         "publisher": "Anthropic",
         "link": "https://www.anthropic.com/glasswing",
