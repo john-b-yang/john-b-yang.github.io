@@ -1,7 +1,7 @@
 :root {
-  --black: #fefff8;
+  --black: #fefcfa;
   --black-2: #fcfcf3;
-  --blue: #0366d6;
+  --blue: #8f867a;
   --gray: #586069;
   --green: #2ea043;
   --white: #24292e;
@@ -15,7 +15,7 @@
 [data-theme="dark"] {
   --black: #0f1218;
   --black-2: #161c22;
-  --blue: #1b9ce2;
+  --blue: #b0a594;
   --gray: #8c8b8b;
   --green: #2ea043;
   --white: #c8d1d9;
@@ -27,7 +27,7 @@
 }
 
 body {
-  font-family: 'et-bembo', Palatino, 'Palatino Linotype', 'Book Antiqua', Georgia, serif;
+  font-family: 'Charter', 'Charter BT', Palatino, 'Palatino Linotype', 'Book Antiqua', Georgia, serif;
   font-size: 1.05em;
   background-color: var(--background);
   color: var(--text);

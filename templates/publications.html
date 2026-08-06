@@ -6,7 +6,7 @@
 <div class="publication">
   <b>{{ pub.title }}</b>
   <br />
-  <span style="opacity: 0.6;">
+  <span style="opacity: 0.8;">
     {% for author in pub.authors %}
       {% if author.site %}
         <a href="{{ author.site }}">{{ author.name }}</a>{% if not loop.last %},{% endif %}

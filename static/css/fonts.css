@@ -1,16 +1,34 @@
-/* et-bembo */
+/* charter */
 @font-face {
-  font-family: 'et-bembo';
+  font-family: 'Charter';
   font-style: normal;
   font-weight: 400;
-  src: url('../fonts/et-bembo-roman-old-style.woff') format('woff');
+  font-display: swap;
+  src: local('Charter'), url('../fonts/charter_regular.woff2') format('woff2');
 }
 
 @font-face {
-  font-family: 'et-bembo';
+  font-family: 'Charter';
   font-style: italic;
   font-weight: 400;
-  src: url('../fonts/et-bembo-italic.woff') format('woff');
+  font-display: swap;
+  src: local('Charter Italic'), url('../fonts/charter_italic.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Charter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Charter Bold'), url('../fonts/charter_bold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Charter';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Charter Bold Italic'), url('../fonts/charter_bold_italic.woff2') format('woff2');
 }
 
 /* fira-sans-regular - latin */
