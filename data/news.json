@@ -69,6 +69,12 @@
         "date": "2026-04-10"
     },
     {
+        "title": "Why SWE-bench Verified no longer measures frontier coding capabilities",
+        "publisher": "OpenAI",
+        "link": "https://openai.com/index/why-we-no-longer-evaluate-swe-bench-verified/",
+        "date": "2026-02-23"
+    },
+    {
         "title": "Introducing GPT-5.1 for Developers",
         "publisher": "OpenAI",
         "link": "https://openai.com/index/gpt-5-1-for-developers/",
