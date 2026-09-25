@@ -1,29 +1,6 @@
 {
     "Preprint": [
         {
-            "title": "ProgramBench: Can Language Models Rebuild Programs From Scratch?",
-            "authors": [
-                {"name": "John Yang*"},
-                {"name": "Kilian Lieret*", "site": "https://www.lieret.net/"},
-                {"name": "Jeffrey Ma", "site": "https://18jeffreyma.github.io/"},
-                {"name": "Parth Thakkar", "site": "https://thakkarparth007.github.io/"},
-                {"name": "Dmitrii Pedchenko", "site": "https://scholar.google.com/citations?user=izGGAnQAAAAJ&hl=en"},
-                {"name": "Sten Sootla", "site": "https://scholar.google.com/citations?user=UAx_woYAAAAJ&hl=en"},
-                {"name": "Emily McMilin", "site": "https://2dot71mily.github.io/"},
-                {"name": "Pengcheng Yin", "site": "https://pengcheng.in/"},
-                {"name": "Rui Hou", "site": "https://scholar.google.com/citations?user=PKHKqX0AAAAJ&hl=en"},
-                {"name": "Gabriel Synnaeve", "site": "https://syhw.github.io/"},
-                {"name": "Diyi Yang", "site": "https://cs.stanford.edu/~diyiy/index.html"},
-                {"name": "Ofir Press", "site": "https://ofir.io/"}
-            ],
-            "year": 2026,
-            "site": "https://programbench.com",
-            "code": "facebookresearch/ProgramBench",
-            "paper": "https://arxiv.org/abs/2605.03546",
-	    "tweet": "https://x.com/jyangballin/status/2051677497562210552",
-	    "poster": "static/pictures/posters/2026-ProgramBench.png"
-        },
-        {
             "title": "Position: Humans are Missing from AI Coding Agent Research",
             "authors": [
                 {"name": "John Yang*"},
@@ -46,6 +23,30 @@
         }
     ],
     "Peer Reviewed": [
+        {
+            "title": "ProgramBench: Can Language Models Rebuild Programs From Scratch?",
+            "authors": [
+                {"name": "John Yang*"},
+                {"name": "Kilian Lieret*", "site": "https://www.lieret.net/"},
+                {"name": "Jeffrey Ma", "site": "https://18jeffreyma.github.io/"},
+                {"name": "Parth Thakkar", "site": "https://thakkarparth007.github.io/"},
+                {"name": "Dmitrii Pedchenko", "site": "https://scholar.google.com/citations?user=izGGAnQAAAAJ&hl=en"},
+                {"name": "Sten Sootla", "site": "https://scholar.google.com/citations?user=UAx_woYAAAAJ&hl=en"},
+                {"name": "Emily McMilin", "site": "https://2dot71mily.github.io/"},
+                {"name": "Pengcheng Yin", "site": "https://pengcheng.in/"},
+                {"name": "Rui Hou", "site": "https://scholar.google.com/citations?user=PKHKqX0AAAAJ&hl=en"},
+                {"name": "Gabriel Synnaeve", "site": "https://syhw.github.io/"},
+                {"name": "Diyi Yang", "site": "https://cs.stanford.edu/~diyiy/index.html"},
+                {"name": "Ofir Press", "site": "https://ofir.io/"}
+            ],
+            "year": 2026,
+            "site": "https://programbench.com",
+            "code": "facebookresearch/ProgramBench",
+            "paper": "https://arxiv.org/abs/2605.03546",
+            "tweet": "https://x.com/jyangballin/status/2051677497562210552",
+            "poster": "static/pictures/posters/2026-ProgramBench.png",
+            "venue": "NeurIPS (Datasets & Benchmarks)"
+        },
         {
             "title": "CodeClash: Benchmarking Goal-Oriented Software Engineering",
             "authors": [
@@ -228,6 +229,22 @@
             "site": "https://www.swe-chat.com/",
             "code": "SALT-NLP/SWE-chat",
             "venue": "COLM"
+        },
+        {
+            "title": "SWE-Protégé: Learning to Selectively Collaborate With an Expert Unlocks Small Language Models as Software Engineering Agents",
+            "authors": [
+                {"name": "Patrick Tser Jern Kon", "site": "https://www.cs-pk.com/"},
+                {"name": "Archana Pradeep", "site": "https://github.com/archthegit"},
+                {"name": "Ang Chen", "site": "https://web.eecs.umich.edu/~chenang/"},
+                {"name": "Alexander P. Ellis"},
+                {"name": "Warren Hunt", "site": "https://www.linkedin.com/in/warren-hunt-b6b1bab/"},
+                {"name": "Zijian Wang", "site": "https://zijianwang.me/"},
+                {"name": "John Yang"},
+                {"name": "Samuel Thompson"}
+            ],
+            "year": 2026,
+            "paper": "https://arxiv.org/abs/2602.22124",
+            "venue": "NeurIPS"
         },
         {
             "title": "Collaborative Gym: A Framework for Enabling and Evaluating Human-Agent Collaboration",
