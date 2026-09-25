@@ -247,6 +247,46 @@
             "venue": "NeurIPS"
         },
         {
+            "title": "Terminal-Bench: Benchmarking Agents on Hard, Realistic Tasks in Command Line Interfaces",
+            "authors": [
+                {"name": "Mike A. Merrill", "site": "https://mikemerrill.io/"},
+                {"name": "Alexander G. Shaw", "site": "https://www.alexgshaw.com/"},
+                {"name": "Nicholas Carlini", "site": "https://nicholas.carlini.com/"},
+                {"name": "..."},
+                {"name": "John Yang"},
+                {"name": "..."},
+                {"name": "Alex Dimakis", "site": "https://people.eecs.berkeley.edu/~alexdimakis/"},
+                {"name": "Andy Konwinski", "site": "https://andykonwinski.com/"},
+                {"name": "Ludwig Schmidt", "site": "https://people.csail.mit.edu/ludwigs/"}
+            ],
+            "year": 2026,
+            "paper": "https://arxiv.org/abs/2601.11868",
+            "code": "harbor-framework/terminal-bench",
+            "site": "https://www.tbench.ai/",
+            "tweet": "https://x.com/Mike_A_Merrill/status/1924579504506413199",
+            "venue": "ICLR"
+        },
+        {
+            "title": "OpenThoughts: Data Recipes for Reasoning Models",
+            "authors": [
+                {"name": "Etash Guha", "site": "http://etash.me/"},
+                {"name": "Ryan Marten", "site": "https://scholar.google.com/citations?user=76LRPYuZDwkC&hl=en"},
+                {"name": "Sedrick Keh", "site": "https://sedrickkeh.github.io/"},
+                {"name": "..."},
+                {"name": "John Yang"},
+                {"name": "..."},
+                {"name": "Maheswaran Sathiamoorthy", "site": "https://scholar.google.com/citations?user=HLkvYl0AAAAJ&hl=en"},
+                {"name": "Alexandros G. Dimakis", "site": "https://people.eecs.berkeley.edu/~alexdimakis/"},
+                {"name": "Ludwig Schmidt", "site": "https://people.csail.mit.edu/ludwigs/"}
+            ],
+            "year": 2026,
+            "paper": "https://arxiv.org/abs/2506.04178",
+            "code": "open-thoughts/open-thoughts",
+            "site": "https://openthoughts.ai/",
+            "venue": "ICLR",
+            "award": "Oral"
+        },
+        {
             "title": "Collaborative Gym: A Framework for Enabling and Evaluating Human-Agent Collaboration",
             "authors": [
                 {"name": "Yijia Shao", "site": "https://cs.stanford.edu/~shaoyj/"},
@@ -259,6 +299,51 @@
             "paper": "https://arxiv.org/abs/2412.15701",
             "code": "SALT-NLP/collaborative-gym",
             "tweet": "https://x.com/EchoShao8899/status/1880291718496670097",
+            "venue": "ICLR"
+        },
+        {
+            "title": "EnIGMA: Interactive Tools Substantially Assist LM Agents in Finding Security Vulnerabilities",
+            "authors": [
+                {"name": "Talor Abramovich", "site": "https://talorabr.github.io/"},
+                {"name": "Meet Udeshi", "site": "https://mudeshi.in/"},
+                {"name": "Minghao Shao", "site": "https://www.linkedin.com/in/shao-minghao/"},
+                {"name": "Kilian Lieret", "site": "https://lieret.net/"},
+                {"name": "Haoran Xi", "site": "https://www.linkedin.com/in/haoran-xi-22841327b"},
+                {"name": "Kimberly Milner"},
+                {"name": "Sofija Jancheska", "site": "https://www.linkedin.com/in/sofija-jancheska/"},
+                {"name": "John Yang"},
+                {"name": "Carlos E. Jimenez", "site": "https://www.carlosejimenez.com/"},
+                {"name": "Farshad Khorrami", "site": "https://engineering.nyu.edu/faculty/farshad-khorrami"},
+                {"name": "Prashanth Krishnamurthy"},
+                {"name": "Brendan Dolan-Gavitt", "site": "http://engineering.nyu.edu/people/brendan-dolan-gavitt"},
+                {"name": "Muhammad Shafique", "site": "https://nyuad.nyu.edu/en/academics/divisions/engineering/faculty/muhammad-shafique.html"},
+                {"name": "Karthik Narasimhan", "site": "http://www.karthiknarasimhan.com/"},
+                {"name": "Ramesh Karri", "site": "http://engineering.nyu.edu/people/ramesh-karri/"},
+                {"name": "Ofir Press", "site": "https://ofir.io/"}
+            ],
+            "year": 2025,
+            "paper": "https://arxiv.org/abs/2409.16165",
+            "code": "SWE-agent/SWE-agent",
+            "site": "https://enigma-agent.com/",
+            "venue": "ICML"
+        },
+        {
+            "title": "MMTEB: Massive Multilingual Text Embedding Benchmark",
+            "authors": [
+                {"name": "Kenneth Enevoldsen", "site": "https://kennethenevoldsen.com/"},
+                {"name": "Isaac Chung", "site": "https://isaac-chung.github.io/"},
+                {"name": "Imene Kerboua", "site": "https://imenelydiaker.github.io/"},
+                {"name": "..."},
+                {"name": "John Yang"},
+                {"name": "..."},
+                {"name": "Orion Weller", "site": "https://orionweller.github.io/"},
+                {"name": "Siva Reddy", "site": "http://sivareddy.in/"},
+                {"name": "Niklas Muennighoff", "site": "https://muennighoff.com/"}
+            ],
+            "year": 2025,
+            "paper": "https://arxiv.org/abs/2502.13595",
+            "code": "embeddings-benchmark/mteb",
+            "site": "https://huggingface.co/spaces/mteb/leaderboard",
             "venue": "ICLR"
         },
         {
@@ -302,6 +387,17 @@
             "award": "Oral",
             "paper": "https://arxiv.org/abs/2403.08604",
             "code": "open-compass/DevEval"
+        },
+        {
+            "title": "Disentangled Prompt Learning for Transferable, Multimodal, Few-Shot Image Classification",
+            "authors": [
+                {"name": "John Yang"},
+                {"name": "Alessandro Magnani", "site": "https://scholar.google.com/citations?user=FV76LCYAAAAJ&hl=en&oi=ao"},
+                {"name": "Binwei Yang", "site": "https://www.linkedin.com/in/binwei-yang"}
+            ],
+            "year": 2024,
+            "paper": "https://doi.org/10.1109/BIGDATA62323.2024.10825383",
+            "venue": "IEEE BigData"
         },
         {
             "title": "Introducing SWE-bench Verified",
