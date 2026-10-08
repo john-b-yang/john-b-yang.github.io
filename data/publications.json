@@ -1,6 +1,27 @@
 {
     "Preprint": [
         {
+            "title": "SWE-sweep: Can Agents Autonomously Find and Fix Bugs?",
+            "authors": [
+                {"name": "Kilian Lieret", "site": "https://www.lieret.net/"},
+                {"name": "Jeffrey Jian Ma", "site": "https://18jeffreyma.github.io/"},
+                {"name": "Rahul Kindi", "site": "https://github.com/rkindi"},
+                {"name": "Yuxiang Wei", "site": "https://yuxiang.cs.illinois.edu/"},
+                {"name": "Jeremy Ma", "site": "https://github.com/Awayfaring"},
+                {"name": "Sten Sootla", "site": "https://scholar.google.com/citations?user=UAx_woYAAAAJ&hl=en"},
+                {"name": "Parth Thakkar", "site": "https://thakkarparth007.github.io/"},
+                {"name": "Chao Beyond Zhou", "site": "https://github.com/think-step-by-step"},
+                {"name": "Pengcheng Yin", "site": "https://pengcheng.in/"},
+                {"name": "Rui Hou", "site": "https://scholar.google.com/citations?user=PKHKqX0AAAAJ&hl=en"},
+                {"name": "Ofir Press", "site": "https://ofir.io/"},
+                {"name": "John Yang"}
+            ],
+            "year": 2026,
+            "paper": "https://swesweep.com/paper",
+            "code": "facebookresearch/swe-sweep",
+            "site": "https://swesweep.com/"
+        },
+        {
             "title": "Position: Humans are Missing from AI Coding Agent Research",
             "authors": [
                 {"name": "John Yang*"},
